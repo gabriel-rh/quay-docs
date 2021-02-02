@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay for proof-of-concept (non-production) purposes</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Get started with Red Hat Quay"/><link rel="next" href="#idm46222044206736" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46222044232800"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.4</span></div><div><h1 class="title">Deploy Red Hat Quay for proof-of-concept (non-production) purposes</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm46222019956512">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay for proof-of-concept (non-production) purposes</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Get started with Red Hat Quay"/><link rel="next" href="#idm46035354570016" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46035354443200"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.4</span></div><div><h1 class="title">Deploy Red Hat Quay for proof-of-concept (non-production) purposes</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm46035332422880">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Get started with Red Hat Quay
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm46222044206736">Preface</a></span></li><li><span class="chapter"><a href="#overview">1. Overview</a></span><ul><li><span class="section"><a href="#architecture">1.1. Architecture</a></span><ul><li><span class="section"><a href="#internal_components">1.1.1. Internal components</a></span></li><li><span class="section"><a href="#external_components">1.1.2. External components</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#preparing_a_proof_of_concept_deployment_of_red_hat_quay">2. Preparing a proof-of-concept deployment of Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites">2.1. Prerequisites</a></span></li><li><span class="section"><a href="#add_quay_to_your_etc_hosts_mapping_to_localhost">2.2. Add 'quay' to your /etc/hosts mapping to localhost</a></span><ul><li><span class="section"><a href="#using_podman">2.2.1. Using podman</a></span></li><li><span class="section"><a href="#restarting_containers">2.2.2. Restarting containers</a></span></li></ul></li><li><span class="section"><a href="#configuring_the_rhel_server">2.3. Configuring the RHEL server</a></span><ul><li><span class="section"><a href="#install_and_register_red_hat_enterprise_linux_server">2.3.1. Install and register Red Hat Enterprise Linux server</a></span></li><li><span class="section"><a href="#registry_authentication">2.3.2. Registry authentication</a></span></li><li><span class="section"><a href="#firewall_configuration">2.3.3. Firewall configuration</a></span></li></ul></li><li><span class="section"><a href="#configuring_the_database">2.4. Configuring the database</a></span><ul><li><span class="section"><a href="#setting_up_postgres">2.4.1. Setting up Postgres</a></span></li><li><span class="section"><a href="#determine_the_ip_address_of_the_database_server">2.4.2. Determine the IP address of the database server</a></span></li></ul></li><li><span class="section"><a href="#configuring_redis">2.5. Configuring Redis</a></span><ul><li><span class="section"><a href="#setting_up_redis">2.5.1. Setting up Redis</a></span></li><li><span class="section"><a href="#determine_the_ip_address_of_the_database_server_2">2.5.2. Determine the IP address of the database server</a></span></li></ul></li><li><span class="section"><a href="#configuring_red_hat_quay">2.6. Configuring Red Hat Quay</a></span><ul><li><span class="section"><a href="#red_hat_quay_setup">2.6.1. Red Hat Quay setup</a></span></li><li><span class="section"><a href="#validate_and_download_configuration">2.6.2. Validate and download configuration</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#deploying_red_hat_quay">3. Deploying Red Hat Quay</a></span><ul><li><span class="section"><a href="#add_clair_image_scanning_to_red_hat_quay">3.1. Add Clair image scanning to Red Hat Quay</a></span></li><li><span class="section"><a href="#add-repo-mirroring">3.2. Add repository mirroring Red Hat Quay</a></span></li></ul></li><li><span class="chapter"><a href="#starting_to_use_red_hat_quay">4. Starting to use Red Hat Quay</a></span></li></ul></div><section class="preface" id="idm46222044206736"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm46035354570016">Preface</a></span></li><li><span class="chapter"><a href="#overview">1. Overview</a></span><ul><li><span class="section"><a href="#architecture">1.1. Architecture</a></span><ul><li><span class="section"><a href="#internal_components">1.1.1. Internal components</a></span></li><li><span class="section"><a href="#external_components">1.1.2. External components</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#preparing_a_proof_of_concept_deployment_of_red_hat_quay">2. Preparing a proof-of-concept deployment of Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites">2.1. Prerequisites</a></span></li><li><span class="section"><a href="#add_quay_to_your_etc_hosts_mapping_to_localhost">2.2. Add 'quay' to your /etc/hosts mapping to localhost</a></span></li><li><span class="section"><a href="#using_podman">2.3. Using podman</a></span></li><li><span class="section"><a href="#restarting_containers">2.4. Restarting containers</a></span></li><li><span class="section"><a href="#configuring_the_rhel_server">2.5. Configuring the RHEL server</a></span><ul><li><span class="section"><a href="#install_and_register_red_hat_enterprise_linux_server">2.5.1. Install and register Red Hat Enterprise Linux server</a></span></li><li><span class="section"><a href="#registry_authentication">2.5.2. Registry authentication</a></span></li><li><span class="section"><a href="#firewall_configuration">2.5.3. Firewall configuration</a></span></li></ul></li><li><span class="section"><a href="#configuring_the_database">2.6. Configuring the database</a></span><ul><li><span class="section"><a href="#setting_up_postgres">2.6.1. Setting up Postgres</a></span></li><li><span class="section"><a href="#determine_the_ip_address_of_the_database_server">2.6.2. Determine the IP address of the database server</a></span></li></ul></li><li><span class="section"><a href="#configuring_redis">2.7. Configuring Redis</a></span><ul><li><span class="section"><a href="#setting_up_redis">2.7.1. Setting up Redis</a></span></li><li><span class="section"><a href="#determine_the_ip_address_of_the_database_server_2">2.7.2. Determine the IP address of the database server</a></span></li></ul></li><li><span class="section"><a href="#configuring_red_hat_quay">2.8. Configuring Red Hat Quay</a></span><ul><li><span class="section"><a href="#red_hat_quay_setup">2.8.1. Red Hat Quay setup</a></span></li><li><span class="section"><a href="#validate_and_download_configuration">2.8.2. Validate and download configuration</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#deploying_and_using_red_hat_quay">3. Deploying and using Red Hat Quay</a></span><ul><li><span class="section"><a href="#deploying_red_hat_quay">3.1. Deploying Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites_2">3.1.1. Prerequisites</a></span></li><li><span class="section"><a href="#prepare_config_folder">3.1.2. Prepare config folder</a></span></li><li><span class="section"><a href="#prepare_local_storage_for_image_data">3.1.3. Prepare local storage for image data</a></span></li><li><span class="section"><a href="#deploy_the_red_hat_quay_registry">3.1.4. Deploy the Red Hat Quay registry</a></span></li></ul></li><li><span class="section"><a href="#using_red_hat_quay">3.2. Using Red Hat Quay</a></span><ul><li><span class="section"><a href="#push_and_pull_images">3.2.1. Push and pull images</a></span></li></ul></li><li><span class="section"><a href="#next_steps">3.3. Next steps</a></span></li></ul></li></ul></div><section class="preface" id="idm46035354570016"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
 			Red Hat Quay is an enterprise-quality registry for building, securing and serving container images. This procedure describes how to deploy Red Hat Quay for proof-of-concept (non-production) purposes.
 		</p></section><section class="chapter" id="overview"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Overview</h1></div></div></div><p>
 			Features of Red Hat Quay include:
@@ -78,11 +78,11 @@
 				This step is not strictly required but makes using the ConfigTool easier.
 			</p><pre class="literallayout">$ cat /etc/hosts
 ...
-127.0.0.1   quay</pre><section class="section" id="using_podman"><div class="titlepage"><div><div><h3 class="title">2.2.1. Using podman</h3></div></div></div><p>
-					This document uses <code class="literal">podman</code> for creating and deploying containers. If you do not have <code class="literal">podman</code> installed on your system, you should be able to use the equivalent <code class="literal">docker</code> commands. For more information on podman and related technologies, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index">Building, running, and managing Linux containers on Red Hat Enterprise Linux 8</a>.
-				</p></section><section class="section" id="restarting_containers"><div class="titlepage"><div><div><h3 class="title">2.2.2. Restarting containers</h3></div></div></div><p>
-					Because the <code class="literal">--restart</code> option is not fully supported by podman, instead of using <code class="literal">--restart</code>, you could configure <code class="literal">podman</code> as a systemd service, as described in <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#porting-containers-to-systemd-using-podman_building-running-and-managing-containers">Porting containers to systemd using Podman</a>
-				</p></section></section><section class="section" id="configuring_the_rhel_server"><div class="titlepage"><div><div><h2 class="title">2.3. Configuring the RHEL server</h2></div></div></div><section class="section" id="install_and_register_red_hat_enterprise_linux_server"><div class="titlepage"><div><div><h3 class="title">2.3.1. Install and register Red Hat Enterprise Linux server</h3></div></div></div><p>
+127.0.0.1   quay</pre></section><section class="section" id="using_podman"><div class="titlepage"><div><div><h2 class="title">2.3. Using podman</h2></div></div></div><p>
+				This document uses <code class="literal">podman</code> for creating and deploying containers. If you do not have <code class="literal">podman</code> installed on your system, you should be able to use the equivalent <code class="literal">docker</code> commands. For more information on podman and related technologies, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index">Building, running, and managing Linux containers on Red Hat Enterprise Linux 8</a>.
+			</p></section><section class="section" id="restarting_containers"><div class="titlepage"><div><div><h2 class="title">2.4. Restarting containers</h2></div></div></div><p>
+				Because the <code class="literal">--restart</code> option is not fully supported by podman, instead of using <code class="literal">--restart</code>, you could configure <code class="literal">podman</code> as a systemd service, as described in <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#porting-containers-to-systemd-using-podman_building-running-and-managing-containers">Porting containers to systemd using Podman</a>
+			</p></section><section class="section" id="configuring_the_rhel_server"><div class="titlepage"><div><div><h2 class="title">2.5. Configuring the RHEL server</h2></div></div></div><section class="section" id="install_and_register_red_hat_enterprise_linux_server"><div class="titlepage"><div><div><h3 class="title">2.5.1. Install and register Red Hat Enterprise Linux server</h3></div></div></div><p>
 					Install the latest RHEL 8 server. You can do a minimal install (shell access only) or Server plus GUI (if you want a desktop). Register and subscribe your RHEL server system as described in <a class="link" href="https://access.redhat.com/solutions/253273">How to register and subscribe a system…​</a>. The following commands register your system and list available subscriptions. Choose an available RHEL server subscription, attach to its pool ID and upgrade to the latest software:
 				</p><p>
 					+
@@ -90,18 +90,18 @@
 # subscription-manager refresh
 # subscription-manager list --available
 # subscription-manager attach --pool=&lt;pool_id&gt;
-# yum update -y</pre></section><section class="section" id="registry_authentication"><div class="titlepage"><div><div><h3 class="title">2.3.2. Registry authentication</h3></div></div></div><p>
+# yum update -y</pre></section><section class="section" id="registry_authentication"><div class="titlepage"><div><div><h3 class="title">2.5.2. Registry authentication</h3></div></div></div><p>
 					Set up authentication to registry.redhat.io, so that you can pull the quay container, as described in <a class="link" href="https://access.redhat.com/RegistryAuthentication">Red Hat Container Registry Authentication</a>. Note that this differs from earlier Red Hat Quay releases where the images were hosted on quay.io.
-				</p></section><section class="section" id="firewall_configuration"><div class="titlepage"><div><div><h3 class="title">2.3.3. Firewall configuration</h3></div></div></div><p>
+				</p></section><section class="section" id="firewall_configuration"><div class="titlepage"><div><div><h3 class="title">2.5.3. Firewall configuration</h3></div></div></div><p>
 					If you have a firewall running on your system, to access the Red Hat Quay config tool (port 8443) and application (ports 8080 and 443) outside of the local system, run the following commands (add <code class="literal">--zone=&lt;yourzone&gt;</code> for each command to open ports on a particular zone):
 				</p><p>
 					+
 				</p><pre class="literallayout"># firewall-cmd --permanent --add-port=8443/tcp
 # firewall-cmd --permanent --add-port=8080/tcp
 # firewall-cmd --permanent --add-port=443/tcp
-# firewall-cmd --reload</pre></section></section><section class="section" id="configuring_the_database"><div class="titlepage"><div><div><h2 class="title">2.4. Configuring the database</h2></div></div></div><p>
+# firewall-cmd --reload</pre></section></section><section class="section" id="configuring_the_database"><div class="titlepage"><div><div><h2 class="title">2.6. Configuring the database</h2></div></div></div><p>
 				Quay requires a database for storing metadata and Postgres is recommended, especially for highly available configurations. Alternatively, you can use MySQL with a similar approach to configuration as described below for Postgres.
-			</p><section class="section" id="setting_up_postgres"><div class="titlepage"><div><div><h3 class="title">2.4.1. Setting up Postgres</h3></div></div></div><p>
+			</p><section class="section" id="setting_up_postgres"><div class="titlepage"><div><div><h3 class="title">2.6.1. Setting up Postgres</h3></div></div></div><p>
 					In this proof-of-concept scenario, you will use a directory on the local file system to persist database data.
 				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 							In the installation folder, denoted here by the variable $QUAY, create a directory for the database data and set the permissions appropriately:
@@ -116,24 +116,24 @@ $ setfacl -m u:26:-wx $QUAY/postgres</pre></li><li class="listitem"><p class="si
 	-v $QUAY/postgres:/var/lib/postgresql/data:Z \
 	postgres:10.12</pre></li><li class="listitem"><p class="simpara">
 							Install the Postgres <code class="literal">pg_trgm</code> module installed, as it is required by Quay:
-						</p><pre class="literallayout">$ sudo podman exec -it postgresql /bin/bash -c 'echo "CREATE EXTENSION IF NOT EXISTS pg_trgm" | psql -d quay -U user'</pre></li></ul></div></section><section class="section" id="determine_the_ip_address_of_the_database_server"><div class="titlepage"><div><div><h3 class="title">2.4.2. Determine the IP address of the database server</h3></div></div></div><p>
+						</p><pre class="literallayout">$ sudo podman exec -it postgresql /bin/bash -c 'echo "CREATE EXTENSION IF NOT EXISTS pg_trgm" | psql -d quay -U user'</pre></li></ul></div></section><section class="section" id="determine_the_ip_address_of_the_database_server"><div class="titlepage"><div><div><h3 class="title">2.6.2. Determine the IP address of the database server</h3></div></div></div><p>
 					Use the <code class="literal">podman inspect</code> command to determine the IP address for the database. You will need this information when using the configuration editor later.
 				</p><pre class="literallayout">$ sudo podman inspect -f "{{.NetworkSettings.IPAddress}}" postgresql
-10.88.0.18</pre></section></section><section class="section" id="configuring_redis"><div class="titlepage"><div><div><h2 class="title">2.5. Configuring Redis</h2></div></div></div><p>
+10.88.0.18</pre></section></section><section class="section" id="configuring_redis"><div class="titlepage"><div><div><h2 class="title">2.7. Configuring Redis</h2></div></div></div><p>
 				Redis ia a key-value store, used by Quay for live builder logs and the Red Hat Quay tutorial.
-			</p><section class="section" id="setting_up_redis"><div class="titlepage"><div><div><h3 class="title">2.5.1. Setting up Redis</h3></div></div></div><p>
+			</p><section class="section" id="setting_up_redis"><div class="titlepage"><div><div><h3 class="title">2.7.1. Setting up Redis</h3></div></div></div><p>
 					Use podman to run the Redis container, specifying the port and password:
 				</p><pre class="literallayout">$ sudo podman run -d --rm --name redis \
         -p 6379:6379 \
         redis:5.0.7 \
-        --requirepass strongpassword</pre></section><section class="section" id="determine_the_ip_address_of_the_database_server_2"><div class="titlepage"><div><div><h3 class="title">2.5.2. Determine the IP address of the database server</h3></div></div></div><p>
+        --requirepass strongpassword</pre></section><section class="section" id="determine_the_ip_address_of_the_database_server_2"><div class="titlepage"><div><div><h3 class="title">2.7.2. Determine the IP address of the database server</h3></div></div></div><p>
 					Use the <code class="literal">podman inspect</code> command to determine the IP address for Redis. You will need this information when using the configuration editor later.
 				</p><pre class="literallayout">$ sudo podman inspect -f "{{.NetworkSettings.IPAddress}}" redis
-10.88.0.18</pre></section></section><section class="section" id="configuring_red_hat_quay"><div class="titlepage"><div><div><h2 class="title">2.6. Configuring Red Hat Quay</h2></div></div></div><p>
-				Before running the Red Hat Quay service, you need to generate a configuration file containing details for all the components, including registry settings, and database and Redis connection parameters. To generate the configuration file, you run the quay container in <code class="literal">config</code> mode, specifying a password (in this instance, <code class="literal">secret</code>) for the <code class="literal">quayconfig</code> user:
-			</p><pre class="literallayout"># podman run --rm -it --name quay_config -p 8080:8080 registry.redhat.io/quay/quay-rhel8:v3.4.0 config secret</pre><p>
-				Use your browser to access the user interface for the configuration tool at <code class="literal">quay:8080</code> (assuming you have configured the <code class="literal">quay</code> hostname to point at 127.0.0.1 in your hosts file). Login with the username <code class="literal">quayconfig</code> and password <code class="literal">secret</code> (or whatever you specified in the podman run command above).
-			</p><section class="section" id="red_hat_quay_setup"><div class="titlepage"><div><div><h3 class="title">2.6.1. Red Hat Quay setup</h3></div></div></div><p>
+10.88.0.18</pre></section></section><section class="section" id="configuring_red_hat_quay"><div class="titlepage"><div><div><h2 class="title">2.8. Configuring Red Hat Quay</h2></div></div></div><p>
+				Before running the Red Hat Quay service, you need to generate a configuration file containing details of all the components, including registry settings, and database and Redis connection parameters. To generate the configuration file, you run the quay container in <code class="literal">config</code> mode, specifying a password (in this instance, <code class="literal">secret</code>) for the <code class="literal">quayconfig</code> user:
+			</p><pre class="literallayout">$ sudo podman run --rm -it --name quay_config -p 8080:8080 registry.redhat.io/quay/quay-rhel8:v3.4.0 config secret</pre><p>
+				Use your browser to access the user interface for the configuration tool at <code class="literal">quay:8080</code> (assuming you have configured the <code class="literal">quay</code> hostname to point at 127.0.0.1 in your hosts file). Login with the username <code class="literal">quayconfig</code> and password <code class="literal">secret</code> (or whatever value you specified in the podman run command above).
+			</p><section class="section" id="red_hat_quay_setup"><div class="titlepage"><div><div><h3 class="title">2.8.1. Red Hat Quay setup</h3></div></div></div><p>
 					In the configuration editor, you enter details for the following:
 				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 							Basic configuration
@@ -143,11 +143,11 @@ $ setfacl -m u:26:-wx $QUAY/postgres</pre></li><li class="listitem"><p class="si
 							Database
 						</li><li class="listitem">
 							Redis
-						</li></ul></div><section class="section" id="basic_configuration"><div class="titlepage"><div><div><h4 class="title">2.6.1.1. Basic configuration</h4></div></div></div><p>
+						</li></ul></div><section class="section" id="basic_configuration"><div class="titlepage"><div><div><h4 class="title">2.8.1.1. Basic configuration</h4></div></div></div><p>
 						In the basic configuration setting, complete the registry title and the registry short title fields (or you can use the default values, if they are specified).
-					</p></section><section class="section" id="server_configuration"><div class="titlepage"><div><div><h4 class="title">2.6.1.2. Server configuration</h4></div></div></div><p>
-						Specify the HTTP host and port, for the location where the registry will be accessible on the network, in the server configuration section.
-					</p></section><section class="section" id="database"><div class="titlepage"><div><div><h4 class="title">2.6.1.3. Database</h4></div></div></div><p>
+					</p></section><section class="section" id="server_configuration"><div class="titlepage"><div><div><h4 class="title">2.8.1.2. Server configuration</h4></div></div></div><p>
+						Specify the HTTP host and port, for the location where the registry will be accessible on the network, in this instance, <code class="literal">quay:8080</code>.
+					</p></section><section class="section" id="database"><div class="titlepage"><div><div><h4 class="title">2.8.1.3. Database</h4></div></div></div><p>
 						In the database section, specify connection details for the database that Red Hat Quay uses to store metadata. If you have followed the instructions in this document for deploying a proof-of-concept system, the following values would be entered:
 					</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 								<span class="strong strong"><strong>Database Type:</strong></span> Postgres
@@ -159,92 +159,111 @@ $ setfacl -m u:26:-wx $QUAY/postgres</pre></li><li class="listitem"><p class="si
 								<span class="strong strong"><strong>Password:</strong></span> pass
 							</li><li class="listitem">
 								<span class="strong strong"><strong>Database Name:</strong></span> quay
-							</li></ul></div></section><section class="section" id="redis"><div class="titlepage"><div><div><h4 class="title">2.6.1.4. Redis</h4></div></div></div><p>
+							</li></ul></div></section><section class="section" id="redis"><div class="titlepage"><div><div><h4 class="title">2.8.1.4. Redis</h4></div></div></div><p>
 						The Redis key-value store is used to store real-time events and build logs. If you have followed the instructions in this document for deploying a proof-of-concept system, the following values would be specified:
 					</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 								<span class="strong strong"><strong>Redis Hostname:</strong></span> 10.88.0.18
 							</li><li class="listitem">
-								<span class="strong strong"><strong>*Redis port:</strong></span> 6379 (default)
+								<span class="strong strong"><strong>Redis port:</strong></span> 6379 (default)
 							</li><li class="listitem">
 								<span class="strong strong"><strong>Redis password:</strong></span> strongpassword
-							</li></ul></div></section></section><section class="section" id="validate_and_download_configuration"><div class="titlepage"><div><div><h3 class="title">2.6.2. Validate and download configuration</h3></div></div></div><p>
+							</li></ul></div></section></section><section class="section" id="validate_and_download_configuration"><div class="titlepage"><div><div><h3 class="title">2.8.2. Validate and download configuration</h3></div></div></div><p>
 					When all required fields have been set, validate your settings by choosing the Validate Configuration Changes button. If any errors are reported, continue editing your configuration until all required fields are valid and Red Hat Quay can connect to your database and Redis servers.
 				</p><p>
-					Once your configuration is valid, download the configuration file.
-				</p></section></section></section><section class="chapter" id="deploying_red_hat_quay"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Deploying Red Hat Quay</h1></div></div></div><p>
-			To deploy the Red Hat Quay service on the nodes in your cluster, you use the same quay container you used to create the configuration file. The differences here are that you:
-		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-					Identify directories where the configuration files and data are stored
-				</li><li class="listitem">
-					Run the command with <code class="literal">--sysctl net.core.somaxconn=4096</code>
-				</li><li class="listitem">
-					Don’t use the <code class="literal">config</code> option or password
-				</li></ul></div><p>
-			For a basic setup, you can deploy on a single node; for high availability you probably want three or more nodes (for example, quay01, quay02, and quay03).
-		</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-				The resulting Red Hat Quay service will listen on regular port 8080 and SSL port 8443. This is different from previous releases of Red Hat Quay, which listened on standard ports 80 and 443, respectively. In this document, we map 8080 and 8443 to standard ports 80 and 443 on the host, respectively. Througout the rest of this document, we assume you have mapped the ports in this way.
-			</p></div></div><p>
-			Here is what you do:
-		</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-					<span class="strong strong"><strong>Create directories</strong></span>: Create two directories to store configuration information and data on the host. For example:
-				</p><pre class="literallayout"># mkdir -p /mnt/quay/config
-# #optional: if you don't choose to install an Object Store
-# mkdir -p /mnt/quay/storage</pre></li><li class="listitem"><p class="simpara">
-					<span class="strong strong"><strong>Copy config files</strong></span>: Copy the tarball (<code class="literal">quay-config.tar.gz</code>) to the configuration directory and unpack it. For example:
-				</p><pre class="literallayout"># cp quay-config.tar.gz /mnt/quay/config/
-# tar xvf quay-config.tar.gz
-config.yaml ssl.cert ssl.key</pre></li><li class="listitem"><p class="simpara">
-					<span class="strong strong"><strong>Deploy Red Hat Quay</strong></span>: Having already authenticated to Quay.io (see <a class="link" href="https://access.redhat.com/solutions/3533201">Accessing Red Hat Quay</a>) run Red Hat Quay as a container, as follows:
-				</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-						Add <code class="literal">-e DEBUGLOG=true</code> to the <code class="literal">podman run</code> command line for the quay container to enable debug level logging. Add <code class="literal">-e IGNORE_VALIDATION=true</code> to bypass validation during the startup process.
-					</p></div></div><pre class="screen"># podman run --restart=always -p 443:8443 -p 80:8080 \
-   --sysctl net.core.somaxconn=4096 \
-   --privileged=true \
-   -v /mnt/quay/config:/conf/stack:Z \
-   -v /mnt/quay/storage:/datastorage:Z \
-   -d registry.redhat.io/quay/quay-rhel8:v3.4.0</pre></li><li class="listitem">
-					<span class="strong strong"><strong>Open browser to UI</strong></span>: Once the quay container has started, go to your web browser and open the URL, to the node running the quay container.
-				</li><li class="listitem">
-					<span class="strong strong"><strong>Log into Red Hat Quay</strong></span>: Using the superuser account you created during configuration, log in and make sure Red Hat Quay is working properly.
-				</li><li class="listitem">
-					<span class="strong strong"><strong>Add more Red Hat Quay nodes</strong></span>: At this point, you have the option of adding more nodes to this Red Hat Quay cluster by simply going to each node, then adding the tarball and starting the quay container as just shown.
-				</li><li class="listitem">
-					<span class="strong strong"><strong>Add optional features</strong></span>: To add more features to your Red Hat Quay cluster, such as Clair images scanning and Repository Mirroring, continue on to the next section.
-				</li></ol></div><section class="section" id="add_clair_image_scanning_to_red_hat_quay"><div class="titlepage"><div><div><h2 class="title">3.1. Add Clair image scanning to Red Hat Quay</h2></div></div></div><p>
-				Setting up and deploying Clair image scanning for your Red Hat Quay deployment is described in <a class="link" href="manage_quay.html#clair-v4">Clair Security Scanning</a>
-			</p></section><section class="section" id="add-repo-mirroring"><div class="titlepage"><div><div><h2 class="title">3.2. Add repository mirroring Red Hat Quay</h2></div></div></div><p>
-				Enabling repository mirroring allows you to create container image repositories on your Red Hat Quay cluster that exactly match the content of a selected external registry, then sync the contents of those repositories on a regular schedule and on demand.
+					Once your configuration is valid, download the configuration file and then stop the quay container running the configuration editor.
+				</p></section></section></section><section class="chapter" id="deploying_and_using_red_hat_quay"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Deploying and using Red Hat Quay</h1></div></div></div><p>
+			This chapter shows you how to deploy Red Hat Quay using the configuration you have created, and then how to get started using the registry.
+		</p><section class="section" id="deploying_red_hat_quay"><div class="titlepage"><div><div><h2 class="title">3.1. Deploying Red Hat Quay</h2></div></div></div><section class="section" id="prerequisites_2"><div class="titlepage"><div><div><h3 class="title">3.1.1. Prerequisites</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Your database and redis servers are running.
+						</li><li class="listitem">
+							You have generated a valid configuration bundle.
+						</li><li class="listitem">
+							You have stopped the quay container that you used to run the configuration editor.
+						</li></ul></div></section><section class="section" id="prepare_config_folder"><div class="titlepage"><div><div><h3 class="title">3.1.2. Prepare config folder</h3></div></div></div><p>
+					Unpack the configuration bundle so that Quay can use it:
+				</p><pre class="literallayout">$ mkdir $QUAY/config
+$ cp quay-config.tar.gz $QUAY/config
+$ cd $QUAY/config
+$ tar xvf quay-config.tar.gz</pre></section><section class="section" id="prepare_local_storage_for_image_data"><div class="titlepage"><div><div><h3 class="title">3.1.3. Prepare local storage for image data</h3></div></div></div><p>
+					In this proof-of-concept deployment, use the local file system to store the registry images:
+				</p><pre class="literallayout">$ mkdir $QUAY/storage
+$ setfacl -m u:1001:-wx $QUAY/storage</pre></section><section class="section" id="deploy_the_red_hat_quay_registry"><div class="titlepage"><div><div><h3 class="title">3.1.4. Deploy the Red Hat Quay registry</h3></div></div></div><p>
+					Use podman to run the quay container, specifying the appropriate volumes for your configuration data and local storage for image data:
+				</p><pre class="literallayout">$ sudo podman run --rm -p 8080:8080  \
+   --name=quay \
+   -v $QUAY/config:/conf/stack:Z \
+   -v $QUAY/storage:/datastorage:Z \
+   registry.redhat.io/quay/quay-rhel8:v3.4.0</pre></section></section><section class="section" id="using_red_hat_quay"><div class="titlepage"><div><div><h2 class="title">3.2. Using Red Hat Quay</h2></div></div></div><p>
+				Use your browser to access the user interface for the Red Hat Quay registry at <code class="literal">quay:8080</code> (assuming you have configured the <code class="literal">quay</code> hostname to point at 127.0.0.1 in your hosts file). Select 'Create User' and add a user, for example, 'quayadmin' with a password <code class="literal">password</code>.
 			</p><p>
-				To add the repository mirroring feature to your Red Hat Quay cluster:
+				You can now use the user interface to create new organizations and repositories, and to search and browse existing repositories. Alternatively, you can use the command line interface to interact with the registry and to pull and push images.
+			</p><p>
+				From the command line, log in to the registry:
+			</p><pre class="literallayout">$ sudo podman login --tls-verify=false quay:8080
+Username: quayadmin
+Password:
+Login Succeeded!</pre><section class="section" id="push_and_pull_images"><div class="titlepage"><div><div><h3 class="title">3.2.1. Push and pull images</h3></div></div></div><p>
+					To test pushing and pulling images from the Red Hat Quay registry, first pull a sample image from an external registry:
+				</p><pre class="literallayout">$ sudo podman pull busybox
+Trying to pull docker.io/library/busybox...
+Getting image source signatures
+Copying blob 4c892f00285e done  
+Copying config 22667f5368 done  
+Writing manifest to image destination
+Storing signatures
+22667f53682a2920948d19c7133ab1c9c3f745805c14125859d20cede07f11f9</pre><p>
+					Use the <code class="literal">podman images</code> command to see the local copy:
+				</p><pre class="literallayout">$ sudo podman images
+REPOSITORY                          TAG      IMAGE ID       CREATED         SIZE
+docker.io/library/busybox           latest   22667f53682a   14 hours ago    1.45 MB
+...</pre><p>
+					Tag this image, in preparation for pushing it to the Red Hat Quay registry:
+				</p><pre class="literallayout">$ sudo podman tag docker.io/library/busybox quay:8080/quayadmin/busybox:test</pre><p>
+					Now push the image to the Red Hat Quay registry:
+				</p><pre class="literallayout">$ sudo podman push --tls-verify=false quay:8080/quayadmin/busybox:test
+Getting image source signatures
+Copying blob 6b245f040973 done  
+Copying config 22667f5368 done  
+Writing manifest to image destination
+Storing signatures</pre><p>
+					At this point, you can use your browser to see the tagged image in your repository. To test access to the image from the command line, first delete the local copy of the image:
+				</p><pre class="literallayout">$ sudo podman rmi quay:8080/quayadmin/busybox:test
+Untagged: quay:8080/quayadmin/busybox:test</pre><p>
+					Now pull the image again, this time from your Red Hat Quay registry:
+				</p><pre class="literallayout">$ sudo podman pull --tls-verify=false quay:8080/quayadmin/busybox:test
+Trying to pull quay:8080/quayadmin/busybox:test...
+Getting image source signatures
+Copying blob 6ef22a7134ba [--------------------------------------] 0.0b / 0.0b
+Copying config 22667f5368 done  
+Writing manifest to image destination
+Storing signatures
+22667f53682a2920948d19c7133ab1c9c3f745805c14125859d20cede07f11f9</pre></section></section><section class="section" id="next_steps"><div class="titlepage"><div><div><h2 class="title">3.3. Next steps</h2></div></div></div><p>
+				This document shows how to configure and deploy a proof-of-concept version of Red Hat Quay. For more information on deploying to a production environment, see the guide "Deploy Red Hat Quay - High Availability".
+			</p><p>
+				The "Use Red Hat Quay" guide shows you how to:
 			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						Run the repository mirroring worker. To do this, you start a quay pod with the <code class="literal">repomirror</code> option.
+						Add users and repositories
 					</li><li class="listitem">
-						Select "Enable Repository Mirroring in the Red Hat Quay Setup tool.
+						Use tags
 					</li><li class="listitem">
-						Log into your Red Hat Quay Web UI and begin creating mirrored repositories as described in <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.4/html-single/manage_red_hat_quay/index">Repository Mirroring in Red Hat Quay</a>.
+						Automatically build Dockerfiles with build workers
+					</li><li class="listitem">
+						Set up build triggers
+					</li><li class="listitem">
+						Add notifications for repository events
 					</li></ul></div><p>
-				The following procedure assumes you already have a running Red Hat Quay cluster on an OpenShift platform, with the Red Hat Quay Setup container running in your browser:
-			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-						<span class="strong strong"><strong>Start the repo mirroring worker</strong></span>: Start the quay container in <code class="literal">repomirror</code> mode. This example assumes you have configured TLS communications using a certificate that is currently stored in <code class="literal">/root/ca.crt</code>. If not, then remove the line that adds <code class="literal">/root/ca.crt</code> to the container:
-					</p><pre class="screen">$ podman run -d --name mirroring-worker \
-  -v /mnt/quay/config:/conf/stack \
-  -v /root/ca.crt:/etc/pki/ca-trust/source/anchors/ca.crt \
-  registry.redhat.io/quay/quay-rhel8:v3.4.0 repomirror</pre></li><li class="listitem">
-						<span class="strong strong"><strong>Log into config tool</strong></span>: Log into the Red Hat Quay Setup Web UI (config tool).
+				The "Manage Red Hat Quay" guide shows you how to:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						Use SSL and TLS
 					</li><li class="listitem">
-						<span class="strong strong"><strong>Enable repository mirroring</strong></span>: Scroll down the the Repository Mirroring section and select the Enable Repository Mirroring check box, as shown here:
+						Enable security scanning with Clair
 					</li><li class="listitem">
-						<span class="strong strong"><strong>Select HTTPS and cert verification</strong></span>: If you want to require HTTPS communications and verify certificates during mirroring, select this check box. 
-						<span class="inlinemediaobject"><img src="images/repo_mirror_config.png" alt="Enable mirroring and require HTTPS and verified certificates"/></span>
+						Use repository mirroring
 					</li><li class="listitem">
-						<span class="strong strong"><strong>Save configuration</strong></span>: Select the Save Configuration Changes button. Repository mirroring should now be enabled on your Red Hat Quay cluster. Refer to <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.4/html-single/manage_red_hat_quay/index">Repository Mirroring in Red Hat Quay</a> for details on setting up your own mirrored container image repositories.
-					</li></ol></div></section></section><section class="chapter" id="starting_to_use_red_hat_quay"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Starting to use Red Hat Quay</h1></div></div></div><p>
-			With Red Hat Quay now running, you can:
-		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-					Select Tutorial from the Quay home page to try the 15-minute tutorial. In the tutorial, you learn to log into Quay, start a container, create images, push repositories, view repositories, and change repository permissions with Quay.
-				</li><li class="listitem">
-					Refer to the <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.4/html-single/use_red_hat_quay/">Use Red Hat Quay</a> for information on working with Red Hat Quay repositories.
-				</li></ul></div></section><div><div xml:lang="en-US" class="legalnotice" id="idm46222019956512"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+						Configure LDAP authentication
+					</li><li class="listitem">
+						Use georeplication of storage
+					</li></ul></div></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm46035332422880"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2021 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
