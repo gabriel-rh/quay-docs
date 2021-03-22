@@ -1,8 +1,70 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Upgrade Red Hat Quay</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Upgrade Red Hat Quay"/><link rel="next" href="#idm46279852600448" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46279852889504"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.4</span></div><div><h1 class="title">Upgrade Red Hat Quay</h1></div><div><h2 class="subtitle">Upgrade Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm46279834053840">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Upgrade Red Hat Quay</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Upgrade Red Hat Quay"/><link rel="next" href="#upgrading_quay_using_the_quay_operator" title="Chapter 1. Upgrading Quay using the Quay Operator"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46492566565696"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.4</span></div><div><h1 class="title">Upgrade Red Hat Quay</h1></div><div><h2 class="subtitle">Upgrade Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm46492549760384">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Upgrade Red Hat Quay
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm46279852600448">Preface</a></span></li><li><span class="chapter"><a href="#upgrade_to_v3_4_3_from_v3_4">1. Upgrade to v3.4.3 from v3.4.*</a></span><ul><li><span class="section"><a href="#target_images">1.1. Target images</a></span></li></ul></li><li><span class="chapter"><a href="#upgrade_to_v3_4_3_from_v3_3">2. Upgrade to v3.4.3 from v3.3.*</a></span><ul><li><span class="section"><a href="#target_images_2">2.1. Target images</a></span></li></ul></li><li><span class="chapter"><a href="#upgrade_to_v3_3_4_from_v3_2_z">3. Upgrade to v3.3.4 from v3.2.z</a></span><ul><li><span class="section"><a href="#target_images_3">3.1. Target images</a></span></li></ul></li><li><span class="chapter"><a href="#upgrade_to_v3_2_2_from_v3_1_z">4. Upgrade to v3.2.2 from v3.1.z</a></span><ul><li><span class="section"><a href="#target_images_4">4.1. Target images</a></span></li></ul></li><li><span class="chapter"><a href="#upgrade_to_v3_1_3_from_v3_0_z">5. Upgrade to v3.1.3 from v3.0.z</a></span><ul><li><span class="section"><a href="#target_images_5">5.1. Target images</a></span></li></ul></li><li><span class="chapter"><a href="#upgrade_to_v3_0_5_from_v2_y_z">6. Upgrade to v3.0.5 from v2.y.z</a></span></li><li><span class="chapter"><a href="#upgrade-v3-concept">7. Overview of Red Hat Quay to v3.0.5 upgrade from v2.y.z</a></span></li><li><span class="chapter"><a href="#quay-upgrade-prereq">8. Prerequisites</a></span></li><li><span class="chapter"><a href="#upgrade-v3-proc">9. Running the upgrade to Red Hat Quay v3.0.z from v2.y.z</a></span><ul><li><span class="section"><a href="#sync-upgrade-v3">9.1. Run a synchronous upgrade</a></span></li><li><span class="section"><a href="#background-upgrade-v3">9.2. Run a background upgrade</a></span></li><li><span class="section"><a href="#target_images_6">9.3. Target images</a></span></li></ul></li></ul></div><section class="preface" id="idm46279852600448"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="chapter"><a href="#upgrading_quay_using_the_quay_operator">1. Upgrading Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#operator_lifecycle_manager">1.1. Operator Lifecycle Manager</a></span></li><li><span class="section"><a href="#upgrading_a_quayregistry">1.2. Upgrading a QuayRegistry</a></span></li><li><span class="section"><a href="#upgrading_a_quayecosystem">1.3. Upgrading a QuayEcosystem</a></span><ul><li><span class="section"><a href="#reverting_quayecosystem_upgrade">1.3.1. Reverting QuayEcosystem Upgrade</a></span></li><li><span class="section"><a href="#supported_quayecosystem_configurations_for_upgrades">1.3.2. Supported QuayEcosystem Configurations for Upgrades</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#standalone_upgrade">2. Standalone upgrade</a></span><ul><li><span class="section"><a href="#upgrade_to_v3_4_3_from_v3_4">2.1. Upgrade to v3.4.3 from v3.4.*</a></span><ul><li><span class="section"><a href="#target_images">2.1.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_v3_4_3_from_v3_3">2.2. Upgrade to v3.4.3 from v3.3.*</a></span><ul><li><span class="section"><a href="#target_images_2">2.2.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_v3_3_4_from_v3_2_z">2.3. Upgrade to v3.3.4 from v3.2.z</a></span><ul><li><span class="section"><a href="#target_images_3">2.3.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_v3_2_2_from_v3_1_z">2.4. Upgrade to v3.2.2 from v3.1.z</a></span><ul><li><span class="section"><a href="#target_images_4">2.4.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_v3_1_3_from_v3_0_z">2.5. Upgrade to v3.1.3 from v3.0.z</a></span><ul><li><span class="section"><a href="#target_images_5">2.5.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_v3_0_5_from_v2_y_z">2.6. Upgrade to v3.0.5 from v2.y.z</a></span></li><li><span class="section"><a href="#upgrade-v3-concept">2.7. Overview of Red Hat Quay to v3.0.5 upgrade from v2.y.z</a></span></li><li><span class="section"><a href="#quay-upgrade-prereq">2.8. Prerequisites</a></span></li><li><span class="section"><a href="#upgrade-v3-proc">2.9. Running the upgrade to Red Hat Quay v3.0.z from v2.y.z</a></span><ul><li><span class="section"><a href="#sync-upgrade-v3">2.9.1. Run a synchronous upgrade</a></span></li><li><span class="section"><a href="#background-upgrade-v3">2.9.2. Run a background upgrade</a></span></li><li><span class="section"><a href="#target_images_6">2.9.3. Target images</a></span></li></ul></li></ul></li></ul></div><section class="chapter" id="upgrading_quay_using_the_quay_operator"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Upgrading Quay using the Quay Operator</h1></div></div></div><p>
+			The Quay Operator follows a <span class="emphasis"><em>synchronized versioning</em></span> scheme, which means that each version of the Operator is tied to the version of Quay and its components which it manages. There is no field on the <code class="literal">QuayRegistry</code> custom resource which sets the version of Quay to deploy; the Operator only knows how to deploy a single version of all components. This scheme was chosen to ensure that all components work well together and to reduce complexity of the Operator needing to know how to manage the lifecycles of many different versions of Quay on Kubernetes.
+		</p><section class="section" id="operator_lifecycle_manager"><div class="titlepage"><div><div><h2 class="title">1.1. Operator Lifecycle Manager</h2></div></div></div><p>
+				The Quay Operator should be installed and upgraded using the <a class="link" href="https://docs.openshift.com/container-platform/4.6/operators/understanding/olm/olm-understanding-olm.html">Operator Lifecycle Manager (OLM)</a>. This powerful and complex piece of software takes care of the full lifecycle of Operators, including installation, configuration, automatic upgrades, UX enhancements, etc. When creating a <code class="literal">Subscription</code> with the default <code class="literal">approvalStrategy: Automatic</code>, OLM will automatically upgrade the Quay Operator whenever a new version becomes available. <span class="strong strong"><strong>NOTE</strong></span>:
+			</p><div class="admonition warning"><div class="admonition_header">Warning</div><div><p>
+					When the Quay Operator is installed via Operator Lifecycle Manager it may be configured to support automatic or manual upgrades. This option is shown on the Operator Hub page for the Quay Operator during installation. It can also be found in the Quay Operator <code class="literal">Subscription</code> object via the <code class="literal">approvalStrategy</code> field. Choosing Automatic` means that your Quay Operator will automatically be upgraded whenever a new Operator version is released. If this is not desireable, then the <code class="literal">Manual</code> approval strategy should be selected.
+				</p></div></div></section><section class="section" id="upgrading_a_quayregistry"><div class="titlepage"><div><div><h2 class="title">1.2. Upgrading a QuayRegistry</h2></div></div></div><p>
+				When the Quay Operator starts up, it immediately looks for any <code class="literal">QuayRegistries</code> it can find in the namespace(s) it is configured to watch. When it finds one, the following logic is used:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						If <code class="literal">status.currentVersion</code> is unset, reconcile as normal.
+					</li><li class="listitem">
+						If <code class="literal">status.currentVersion</code> equals the Operator version, reconcile as normal.
+					</li><li class="listitem">
+						If <code class="literal">status.currentVersion</code> does not equal the Operator version, check if it can be upgraded. If it can, perform upgrade tasks and set the <code class="literal">status.currentVersion</code> to the Operator’s version once complete. If it cannot be upgraded, return an error and leave the <code class="literal">QuayRegistry</code> and its deployed Kubernetes objects alone.
+					</li></ul></div></section><section class="section" id="upgrading_a_quayecosystem"><div class="titlepage"><div><div><h2 class="title">1.3. Upgrading a QuayEcosystem</h2></div></div></div><p>
+				Upgrades are supported from previous versions of the Operator which used the <code class="literal">QuayEcosystem</code> API for a limited set of configurations. To ensure that migrations do not happen unexpectedly, a special label needs to be applied to the <code class="literal">QuayEcosystem</code> for it to be migrated. A new <code class="literal">QuayRegistry</code> will be created for the Operator to manage, but the old <code class="literal">QuayEcosystem</code> will remain until manually deleted to ensure that you can roll back and still access Quay in case anything goes wrong. To migrate an existing <code class="literal">QuayEcosystem</code> to a new <code class="literal">QuayRegistry</code>, follow these steps:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Add <code class="literal">"quay-operator/migrate": "true"</code> to the <code class="literal">metadata.labels</code> of the <code class="literal">QuayEcosystem</code>.
+					</li><li class="listitem">
+						Wait for a <code class="literal">QuayRegistry</code> to be created with the same <code class="literal">metadata.name</code> as your <code class="literal">QuayEcosystem</code>. The <code class="literal">QuayEcosystem</code> will be marked with the label <code class="literal">"quay-operator/migration-complete": "true"</code>.
+					</li><li class="listitem">
+						Once the <code class="literal">status.registryEndpoint</code> of the new <code class="literal">QuayRegistry</code> is set, access Quay and confirm all data and settings were migrated successfully.
+					</li><li class="listitem">
+						When you are confident everything worked correctly, you may delete the <code class="literal">QuayEcosystem</code> and Kubernetes garbage collection will clean up all old resources.
+					</li></ol></div><section class="section" id="reverting_quayecosystem_upgrade"><div class="titlepage"><div><div><h3 class="title">1.3.1. Reverting QuayEcosystem Upgrade</h3></div></div></div><p>
+					If something goes wrong during the automatic upgrade from <code class="literal">QuayEcosystem</code> to <code class="literal">QuayRegistry</code>, follow these steps to revert back to using the <code class="literal">QuayEcosystem</code>:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Delete the <code class="literal">QuayRegistry</code> using either the UI or <code class="literal">kubectl</code>:
+						</li></ul></div><pre class="programlisting language-sh">$ kubectl delete -n &lt;namespace&gt; quayregistry &lt;quayecosystem-name&gt;</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							If external access was provided using a <code class="literal">Route</code>, change the <code class="literal">Route</code> to point back to the original <code class="literal">Service</code> using the UI or <code class="literal">kubectl</code>.
+						</li></ul></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+						If your <code class="literal">QuayEcosystem</code> was managing the Postgres database, the upgrade process will migrate your data to a new Postgres database managed by the upgraded Operator. Your old database will not be changed or removed but Quay will no longer use it once the migration is completed. If there are issues during the data migration, the upgrade process will exit and it is recommended that you continue with your database as an unmanaged component.
+					</p></div></div></section><section class="section" id="supported_quayecosystem_configurations_for_upgrades"><div class="titlepage"><div><div><h3 class="title">1.3.2. Supported QuayEcosystem Configurations for Upgrades</h3></div></div></div><p>
+					The Quay Operator will report errors in its logs and in <code class="literal">status.conditions</code> if migrating a <code class="literal">QuayEcosystem</code> component fails or is unsupported. All unmanaged components should migrate successfully because no Kubernetes resources need to be adopted and all the necessary values are already provided in Quay’s <code class="literal">config.yaml</code>.
+				</p><p>
+					<span class="strong strong"><strong>Database</strong></span>
+				</p><p>
+					Ephemeral database not supported (<code class="literal">volumeSize</code> field must be set).
+				</p><p>
+					<span class="strong strong"><strong>Redis</strong></span>
+				</p><p>
+					Nothing special needed.
+				</p><p>
+					<span class="strong strong"><strong>External Access</strong></span>
+				</p><p>
+					Only <code class="literal">Route</code> access supported for automatic migration. Manual migration required for other methods.
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							<code class="literal">LoadBalancer</code> without custom hostname: After the <code class="literal">QuayEcosystem</code> is marked with label <code class="literal">"quay-operator/migration-complete": "true"</code>, delete the <code class="literal">metadata.ownerReferences</code> field from existing <code class="literal">Service</code> <span class="emphasis"><em>before</em></span> deleting the <code class="literal">QuayEcosystem</code> to prevent Kubernetes from garbage collecting the <code class="literal">Service</code> and removing the load balancer. A new <code class="literal">Service</code> will be created with <code class="literal">metadata.name</code> format <code class="literal">&lt;QuayEcosystem-name&gt;-quay-app</code>. Edit the <code class="literal">spec.selector</code> of the existing <code class="literal">Service</code> to match the <code class="literal">spec.selector</code> of the new <code class="literal">Service</code> so traffic to the old load balancer endpoint will now be directed to the new pods. You are now responsible for the old <code class="literal">Service</code>; the Quay Operator will not manage it.
+						</li><li class="listitem">
+							<code class="literal">LoadBalancer</code>/<code class="literal">NodePort</code>/<code class="literal">Ingress</code> with custom hostname: A new <code class="literal">Service</code> of type <code class="literal">LoadBalancer</code> will be created with <code class="literal">metadata.name</code> format <code class="literal">&lt;QuayEcosystem-name&gt;-quay-app</code>. Change your DNS settings to point to the <code class="literal">status.loadBalancer</code> endpoint provided by the new <code class="literal">Service</code>.
+						</li></ul></div><p>
+					<span class="strong strong"><strong>Clair</strong></span>
+				</p><p>
+					Nothing special needed.
+				</p><p>
+					<span class="strong strong"><strong>Object Storage</strong></span>
+				</p><p>
+					<code class="literal">QuayEcosystem</code> did not have a managed object storage component, so object storage will always be marked as unmanaged. Local storage is not supported.
+				</p><p>
+					<span class="strong strong"><strong>Repository Mirroring</strong></span>
+				</p><p>
+					Nothing special needed.
+				</p></section></section></section><section class="chapter" id="standalone_upgrade"><div class="titlepage"><div><div><h1 class="title">Chapter 2. Standalone upgrade</h1></div></div></div><p>
 			In general, Red Hat Quay supports upgrades from a prior (N-1) minor version only. For example, upgrading directly from v3.0.5 to v3.4.3 is not supported. You will need to first upgrade from v3.0.5 to v3.1.3 to v3.2.2 to v3.3.4 and then finally to v3.4.3. This is required to ensure that any necessary database migrations are done correctly and in the right order during the upgrade.
 		</p><p>
 			This document describes the steps needed to perform each individual upgrade. Determine your current version and then follow the steps in sequential order, starting with your current version and working up to your desired target version.
@@ -18,194 +80,188 @@
 					Upgrade to v3.1.3 from v3.0.z
 				</li><li class="listitem">
 					Upgrade to v3.0.5 from v2.y.z
-				</li></ul></div></section><section class="chapter" id="upgrade_to_v3_4_3_from_v3_4"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Upgrade to v3.4.3 from v3.4.*</h1></div></div></div><section class="section" id="target_images"><div class="titlepage"><div><div><h2 class="title">1.1. Target images</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.4.3
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.4.3
-					</li><li class="listitem">
-						<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Redis:</strong></span> registry.redhat.io/rhel8/redis-5:1
-					</li></ul></div></section></section><section class="chapter" id="upgrade_to_v3_4_3_from_v3_3"><div class="titlepage"><div><div><h1 class="title">Chapter 2. Upgrade to v3.4.3 from v3.3.*</h1></div></div></div><p>
-			Upgrading to Quay 3.4 requires a database migration which does not support downgrading back to a prior version of Quay. Please back up your database before performing this migration.
-		</p><section class="section" id="target_images_2"><div class="titlepage"><div><div><h2 class="title">2.1. Target images</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.4.3
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.4.3
-					</li><li class="listitem">
-						<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Redis:</strong></span> registry.redhat.io/rhel8/redis-5:1
-					</li></ul></div></section></section><section class="chapter" id="upgrade_to_v3_3_4_from_v3_2_z"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Upgrade to v3.3.4 from v3.2.z</h1></div></div></div><section class="section" id="target_images_3"><div class="titlepage"><div><div><h2 class="title">3.1. Target images</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.3.4
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Clair:</strong></span> quay.io/redhat/clair-jwt:v3.3.4
-					</li><li class="listitem">
-						<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Redis:</strong></span> registry.access.redhat.com/rhscl/redis-32-rhel7
-					</li></ul></div></section></section><section class="chapter" id="upgrade_to_v3_2_2_from_v3_1_z"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Upgrade to v3.2.2 from v3.1.z</h1></div></div></div><p>
-			Once your cluster is running any Red Hat Quay 3.1.z version, to upgrade your cluster to v3.2.2 you must bring down your entire cluster and make a small change to the configuration before bringing it back up with the v3.2.2 version.
-		</p><div class="admonition warning"><div class="admonition_header">Warning</div><div><p>
-				Once you set the value of DATABASE_SECRET_KEY in this procedure, do not ever change it. If you do, all tokens will need to be regenerated.
-			</p></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
-					Take all hosts in the Red Hat Quay cluster out of service.
-				</li><li class="listitem"><p class="simpara">
-					Generate some random data to use as a database secret key. For example:
-				</p><pre class="screen">$ openssl rand -hex 48
+				</li></ul></div><p>
+			See the <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html-single/red_hat_quay_release_notes/index">Red Hat Quay Release Notes</a> for information on features for individual releases.
+		</p><section class="section" id="upgrade_to_v3_4_3_from_v3_4"><div class="titlepage"><div><div><h2 class="title">2.1. Upgrade to v3.4.3 from v3.4.*</h2></div></div></div><section class="section" id="target_images"><div class="titlepage"><div><div><h3 class="title">2.1.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.4.3
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.4.3
+						</li><li class="listitem">
+							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Redis:</strong></span> registry.redhat.io/rhel8/redis-5:1
+						</li></ul></div></section></section><section class="section" id="upgrade_to_v3_4_3_from_v3_3"><div class="titlepage"><div><div><h2 class="title">2.2. Upgrade to v3.4.3 from v3.3.*</h2></div></div></div><p>
+				Upgrading to Quay 3.4 requires a database migration which does not support downgrading back to a prior version of Quay. Please back up your database before performing this migration.
+			</p><section class="section" id="target_images_2"><div class="titlepage"><div><div><h3 class="title">2.2.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.4.3
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.4.3
+						</li><li class="listitem">
+							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Redis:</strong></span> registry.redhat.io/rhel8/redis-5:1
+						</li></ul></div></section></section><section class="section" id="upgrade_to_v3_3_4_from_v3_2_z"><div class="titlepage"><div><div><h2 class="title">2.3. Upgrade to v3.3.4 from v3.2.z</h2></div></div></div><section class="section" id="target_images_3"><div class="titlepage"><div><div><h3 class="title">2.3.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.3.4
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Clair:</strong></span> quay.io/redhat/clair-jwt:v3.3.4
+						</li><li class="listitem">
+							<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Redis:</strong></span> registry.access.redhat.com/rhscl/redis-32-rhel7
+						</li></ul></div></section></section><section class="section" id="upgrade_to_v3_2_2_from_v3_1_z"><div class="titlepage"><div><div><h2 class="title">2.4. Upgrade to v3.2.2 from v3.1.z</h2></div></div></div><p>
+				Once your cluster is running any Red Hat Quay 3.1.z version, to upgrade your cluster to v3.2.2 you must bring down your entire cluster and make a small change to the configuration before bringing it back up with the v3.2.2 version.
+			</p><div class="admonition warning"><div class="admonition_header">Warning</div><div><p>
+					Once you set the value of DATABASE_SECRET_KEY in this procedure, do not ever change it. If you do, all tokens will need to be regenerated.
+				</p></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Take all hosts in the Red Hat Quay cluster out of service.
+					</li><li class="listitem"><p class="simpara">
+						Generate some random data to use as a database secret key. For example:
+					</p><pre class="screen">$ openssl rand -hex 48
 2d023adb9c477305348490aa0fd9c</pre></li><li class="listitem"><p class="simpara">
-					Add a new DATABASE_SECRET_KEY field to your <code class="literal">config.yaml</code> file. For example:
-				</p><pre class="screen">DATABASE_SECRET_KEY: "2d023adb9c477305348490aa0fd9c"</pre><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-						For an OpenShift installation, the <code class="literal">config.yaml</code> file is stored as a secret.
-					</p></div></div></li><li class="listitem">
-					Bring up one quay container to complete the migration to v3.2.2 .
-				</li><li class="listitem">
-					Once the migration is done, make sure the same <code class="literal">config.yaml</code> is available on all nodes and bring up the new quay v3.2.2 service on those nodes.
-				</li><li class="listitem">
-					Start v3.0.z versions of quay-builder and clair to replace any instances of those containers you want to return to your cluster.
-				</li></ol></div><section class="section" id="target_images_4"><div class="titlepage"><div><div><h2 class="title">4.1. Target images</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.2.2
+						Add a new DATABASE_SECRET_KEY field to your <code class="literal">config.yaml</code> file. For example:
+					</p><pre class="screen">DATABASE_SECRET_KEY: "2d023adb9c477305348490aa0fd9c"</pre><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+							For an OpenShift installation, the <code class="literal">config.yaml</code> file is stored as a secret.
+						</p></div></div></li><li class="listitem">
+						Bring up one quay container to complete the migration to v3.2.2 .
 					</li><li class="listitem">
-						<span class="strong strong"><strong>Clair:</strong></span> quay.io/redhat/clair-jwt:v3.2.2
-					</li><li class="listitem">
-						<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Redis:</strong></span> registry.access.redhat.com/rhscl/redis-32-rhel7
-					</li></ul></div></section></section><section class="chapter" id="upgrade_to_v3_1_3_from_v3_0_z"><div class="titlepage"><div><div><h1 class="title">Chapter 5. Upgrade to v3.1.3 from v3.0.z</h1></div></div></div><section class="section" id="target_images_5"><div class="titlepage"><div><div><h2 class="title">5.1. Target images</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.1.3
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Clair:</strong></span> quay.io/redhat/clair-jwt:v3.1.3
-					</li><li class="listitem">
-						<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Redis:</strong></span> registry.access.redhat.com/rhscl/redis-32-rhel7
-					</li></ul></div></section></section><section class="chapter" id="upgrade_to_v3_0_5_from_v2_y_z"><div class="titlepage"><div><div><h1 class="title">Chapter 6. Upgrade to v3.0.5 from v2.y.z</h1></div></div></div><p>
-			To upgrade from Red Hat Quay v2.y.z to v3.4.3, you must:
-		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-					Upgrade from Red Hat Quay v2.y.z to v3.0.5
-				</li><li class="listitem">
-					Then upgrade from Red Hat Quay v3.0.5 to v3.4.3 sequentially via each minor Red Hat Quay release
-				</li></ul></div><p>
-			For the v2.y.z to v3.0.5 part of the upgrade, you can either do the whole upgrade with Red Hat Quay down (Synchronous) or only bring down Red Hat Quay for a few minutes and have bulk of the upgrade continue with Red Hat Quay running (Background).
-		</p><p>
-			In a background upgrade, it could take much longer to run the upgrade (depending on how many tags need to be processed), but it takes less total downtime. The downside of a background upgrade is that you won’t have access to the latest features until the upgrade completes (the cluster runs from the quay v3 container in v2 compatibility mode until the upgrade is done).
-		</p><p>
-			See the <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html-single/red_hat_quay_release_notes/index">Red Hat Quay Release Notes</a> for information on v3.0 features.
-		</p></section><section class="chapter" id="upgrade-v3-concept"><div class="titlepage"><div><div><h1 class="title">Chapter 7. Overview of Red Hat Quay to v3.0.5 upgrade from v2.y.z</h1></div></div></div><p>
-			Follow the procedure below if you are beginning with a Red Hat Quay v2 cluster. Before upgrading to the latest Red Hat Quay 3.x version, you must first migrate that cluster to v3.0.z, as described here. Once your cluster is running v3.0.5, you can then upgrade to the latest 3.x version by sequentially upgrading to each minor version in turn (3.0 to 3.1 to 3.2, etc…​)
-		</p><p>
-			Before beginning your Red Hat Quay v2 to v3.0 upgrade, please note the following:
-		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-					<span class="strong strong"><strong>Synchronous upgrade</strong></span>: For a synchronous upgrade, expect less than one hour of total downtime for small installations. Consider a small installation to contain a few thousand container image tags or fewer. For that size installation, you could probably get by with just a couple hours of scheduled downtime. The entire Red Hat Quay service is down for the duration, so if you were to try a synchronous upgrade on a registry with millions of tags, you could potentially be down for several days.
-				</li><li class="listitem">
-					<span class="strong strong"><strong>Background upgrade</strong></span>: For a background upgrade (also called a compatibility mode upgrade), after a short shutdown your Red Hat Quay cluster upgrade runs in the background. For large Red Hat Quay registries, this could take weeks to complete, but the cluster continues to operate in v2 mode for the duration of the upgrade. As a point of reference, one Red Hat Quay v3 upgrade took four days to process approximately 30 million tags across six machines.
-				</li><li class="listitem">
-					<span class="strong strong"><strong>Full features on completion</strong></span>: Before you have access to features associated with Docker version 2, schema 2 changes (such as support for containers of different architectures), the entire migration must complete. Other v3 features are immediately available when you switch over.
-				</li><li class="listitem">
-					<span class="strong strong"><strong>Upgrade complete</strong></span>: When the upgrade is complete, you need to set <span class="strong strong"><strong>V3_UPGRADE_MODE: complete</strong></span> in the Red Hat Quay <code class="literal">config.yaml</code> file for the new features to be available. All new Red Hat Quay v3 installations automatically have that set.
-				</li></ul></div></section><section class="chapter" id="quay-upgrade-prereq"><div class="titlepage"><div><div><h1 class="title">Chapter 8. Prerequisites</h1></div></div></div><p>
-			To assure the best results, we recommend the following prerequisites:
-		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-					Back up your Red Hat Quay database before starting the upgrade (doing regular backups is a general best practice). A good time to do this is right after you have taken down the Red Hat Quay cluster to do the upgrade.
-				</li><li class="listitem">
-					Back up your storage (also a general best practice).
-				</li><li class="listitem"><p class="simpara">
-					Upgrade your current Red Hat Quay 2.y.z setup to the latest 2.y.z version (currently 2.9.5) before starting the v3 upgrade. To do that:
-				</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
-							While the Red Hat Quay cluster is still running, take one node and change the quay container on that system to a quay container that is running the latest 2.9.z version.
-						</li><li class="listitem">
-							Wait for all the database migrations to run, bringing the database up to the latest 2.9.z version. This should only take a few minutes to a half an hour.
-						</li><li class="listitem">
-							Once that is done, replace the quay container on all the existing nodes with the same latest 2.9.z version. With the entire Red Hat Quay cluster on the new version, you can proceed to the v3 upgrade.
-						</li></ul></div></li></ul></div></section><section class="chapter" id="upgrade-v3-proc"><div class="titlepage"><div><div><h1 class="title">Chapter 9. Running the upgrade to Red Hat Quay v3.0.z from v2.y.z</h1></div></div></div><p>
-			Choose between a synchronous upgrade (complete the upgrade in downtime) and a background upgrade (complete the upgrade while Red Hat Quay is still running). Both of these major-release upgrades require that the Red Hat Quay cluster be down for at least a short period of time.
-		</p><p>
-			Regardless of which upgrade type you choose, during the time that the Red Hat Quay cluster is down, if you are using builder and clair images, you need to also upgrade to those new images:
-		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-					The builder image (quay.io/redhat/quay-builder:v3.0.5)
-				</li><li class="listitem">
-					The clair image (quay.io/redhat/clair-jwt:v3.0.5)
-				</li></ul></div><p>
-			Both of those images are available from the registry.redhat.io/quay repository.
-		</p><section class="section" id="sync-upgrade-v3"><div class="titlepage"><div><div><h2 class="title">9.1. Run a synchronous upgrade</h2></div></div></div><p>
-				To run a synchronous upgrade, where your whole cluster is down for the entire upgrade, do the following:
-			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
-						Take down your entire Red Hat Quay cluster, including any quay-builder and clair containers.
-					</li><li class="listitem"><p class="simpara">
-						Add the following setting to the <code class="literal">config.yaml</code> file on all nodes:
-					</p><div class="informalexample"><p>
-						V3_UPGRADE_MODE: complete
-					</p></div></li><li class="listitem"><p class="simpara">
-						Pull and start up the v3 container on a single node and wait for however long it takes to do the upgrade (it should take just a few minutes). Use the following container or later:
-					</p><div class="informalexample"><p>
-						quay.io/redhat/quay:v3.0.5
-					</p></div><p class="simpara">
-						Note that the quay container comes up on ports 8080 and 8443 for v3, instead of 80 and 443, as they did for v2. Therefore, we recommend remapping 8080 and 8443 into 80 and 443, respectively, as shown in this example:
-					</p><pre class="screen"># docker run --restart=always -p 443:8443 -p 80:8080 \
-   --sysctl net.core.somaxconn=4096 \
-   --privileged=true \
-   -v /mnt/quay/config:/conf/stack:Z \
-   -v /mnt/quay/storage:/datastorage:Z \
-   -d quay.io/redhat/quay:v3.0.5</pre></li><li class="listitem">
-						After the upgrade completes, bring the Red Hat Quay v3 container up on all other nodes.
+						Once the migration is done, make sure the same <code class="literal">config.yaml</code> is available on all nodes and bring up the new quay v3.2.2 service on those nodes.
 					</li><li class="listitem">
 						Start v3.0.z versions of quay-builder and clair to replace any instances of those containers you want to return to your cluster.
-					</li><li class="listitem">
-						Verify that Red Hat Quay is working, including pushes and pulls of containers compatible with Docker version 2, schema 2. This can include windows container images and images of different computer architectures (arm, ppc, etc.).
-					</li></ol></div></section><section class="section" id="background-upgrade-v3"><div class="titlepage"><div><div><h2 class="title">9.2. Run a background upgrade</h2></div></div></div><p>
-				To run a background upgrade, you need only bring down your cluster for a short period of time on two occasions. When you bring the cluster back up after the first downtime, the quay v3 container runs in v2 compatibility mode as it backfills the database. This background process can take hours or even days to complete. Background upgrades are recommended for large installations where downtime of more than a few hours would be a problem.
+					</li></ol></div><section class="section" id="target_images_4"><div class="titlepage"><div><div><h3 class="title">2.4.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.2.2
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Clair:</strong></span> quay.io/redhat/clair-jwt:v3.2.2
+						</li><li class="listitem">
+							<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Redis:</strong></span> registry.access.redhat.com/rhscl/redis-32-rhel7
+						</li></ul></div></section></section><section class="section" id="upgrade_to_v3_1_3_from_v3_0_z"><div class="titlepage"><div><div><h2 class="title">2.5. Upgrade to v3.1.3 from v3.0.z</h2></div></div></div><section class="section" id="target_images_5"><div class="titlepage"><div><div><h3 class="title">2.5.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.1.3
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Clair:</strong></span> quay.io/redhat/clair-jwt:v3.1.3
+						</li><li class="listitem">
+							<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Redis:</strong></span> registry.access.redhat.com/rhscl/redis-32-rhel7
+						</li></ul></div></section></section><section class="section" id="upgrade_to_v3_0_5_from_v2_y_z"><div class="titlepage"><div><div><h2 class="title">2.6. Upgrade to v3.0.5 from v2.y.z</h2></div></div></div><p>
+				For the v2.y.z to v3.0.5 upgrade, you can either do the whole upgrade with Red Hat Quay down (Synchronous) or only bring down Red Hat Quay for a few minutes and have the bulk of the upgrade continue with Red Hat Quay running (Background).
 			</p><p>
-				For this type of upgrade, you put Red Hat Quay into a compatibility mode, where you have a v3 quay container running, but it is running on the old data model while the upgrade completes. Here’s what you do:
-			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-						Pull the Red Hat Quay v3 container to all the nodes. Use the following container or later:
-					</p><div class="informalexample"><p>
-						quay.io/redhat/quay:v3.0.5
-					</p></div></li><li class="listitem">
-						Take down your entire Red Hat Quay cluster, including any quay-builder and clair containers.
+				In a background upgrade, it could take much longer to run the upgrade (depending on how many tags need to be processed), but it takes less total downtime. The downside of a background upgrade is that you won’t have access to the latest features until the upgrade completes (the cluster runs from the quay v3 container in v2 compatibility mode until the upgrade is done).
+			</p></section><section class="section" id="upgrade-v3-concept"><div class="titlepage"><div><div><h2 class="title">2.7. Overview of Red Hat Quay to v3.0.5 upgrade from v2.y.z</h2></div></div></div><p>
+				Follow the procedure below if you are beginning with a Red Hat Quay v2 cluster. Before upgrading to the latest Red Hat Quay 3.x version, you must first migrate that cluster to v3.0.z, as described here. Once your cluster is running v3.0.5, you can then upgrade to the latest 3.x version by sequentially upgrading to each minor version in turn (3.0 to 3.1 to 3.2, etc…​)
+			</p><p>
+				Before beginning your Red Hat Quay v2 to v3.0 upgrade, please note the following:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<span class="strong strong"><strong>Synchronous upgrade</strong></span>: For a synchronous upgrade, expect less than one hour of total downtime for small installations. Consider a small installation to contain a few thousand container image tags or fewer. For that size installation, you could probably get by with just a couple hours of scheduled downtime. The entire Red Hat Quay service is down for the duration, so if you were to try a synchronous upgrade on a registry with millions of tags, you could potentially be down for several days.
+					</li><li class="listitem">
+						<span class="strong strong"><strong>Background upgrade</strong></span>: For a background upgrade (also called a compatibility mode upgrade), after a short shutdown your Red Hat Quay cluster upgrade runs in the background. For large Red Hat Quay registries, this could take weeks to complete, but the cluster continues to operate in v2 mode for the duration of the upgrade. As a point of reference, one Red Hat Quay v3 upgrade took four days to process approximately 30 million tags across six machines.
+					</li><li class="listitem">
+						<span class="strong strong"><strong>Full features on completion</strong></span>: Before you have access to features associated with Docker version 2, schema 2 changes (such as support for containers of different architectures), the entire migration must complete. Other v3 features are immediately available when you switch over.
+					</li><li class="listitem">
+						<span class="strong strong"><strong>Upgrade complete</strong></span>: When the upgrade is complete, you need to set <span class="strong strong"><strong>V3_UPGRADE_MODE: complete</strong></span> in the Red Hat Quay <code class="literal">config.yaml</code> file for the new features to be available. All new Red Hat Quay v3 installations automatically have that set.
+					</li></ul></div></section><section class="section" id="quay-upgrade-prereq"><div class="titlepage"><div><div><h2 class="title">2.8. Prerequisites</h2></div></div></div><p>
+				To assure the best results, we recommend the following prerequisites:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						Back up your Red Hat Quay database before starting the upgrade (doing regular backups is a general best practice). A good time to do this is right after you have taken down the Red Hat Quay cluster to do the upgrade.
+					</li><li class="listitem">
+						Back up your storage (also a general best practice).
 					</li><li class="listitem"><p class="simpara">
-						Edit the <code class="literal">config.yaml</code> file on each node and set the upgrade mode to background as follows:
-					</p><div class="informalexample"><p>
-						V3_UPGRADE_MODE: background
-					</p></div></li><li class="listitem"><p class="simpara">
-						Bring the Red Hat Quay v3 container up on a single node and wait for the migrations to complete (should take a few minutes maximum). Here is an example of that command:
-					</p><p class="simpara">
-						Note that the quay container comes up on ports 8080 and 8443 for v3, instead of 80 and 443, as they did for v2. Therefore, we recommend remapping 8080 and 8443 into 80 and 443, respectively, as shown in this example:
-					</p><pre class="screen"># docker run --restart=always -p 443:8443 -p 80:8080 \
+						Upgrade your current Red Hat Quay 2.y.z setup to the latest 2.y.z version (currently 2.9.5) before starting the v3 upgrade. To do that:
+					</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+								While the Red Hat Quay cluster is still running, take one node and change the quay container on that system to a quay container that is running the latest 2.9.z version.
+							</li><li class="listitem">
+								Wait for all the database migrations to run, bringing the database up to the latest 2.9.z version. This should only take a few minutes to a half an hour.
+							</li><li class="listitem">
+								Once that is done, replace the quay container on all the existing nodes with the same latest 2.9.z version. With the entire Red Hat Quay cluster on the new version, you can proceed to the v3 upgrade.
+							</li></ul></div></li></ul></div></section><section class="section" id="upgrade-v3-proc"><div class="titlepage"><div><div><h2 class="title">2.9. Running the upgrade to Red Hat Quay v3.0.z from v2.y.z</h2></div></div></div><p>
+				Choose between a synchronous upgrade (complete the upgrade in downtime) and a background upgrade (complete the upgrade while Red Hat Quay is still running). Both of these major-release upgrades require that the Red Hat Quay cluster be down for at least a short period of time.
+			</p><p>
+				Regardless of which upgrade type you choose, during the time that the Red Hat Quay cluster is down, if you are using builder and clair images, you need to also upgrade to those new images:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						The builder image (quay.io/redhat/quay-builder:v3.0.5)
+					</li><li class="listitem">
+						The clair image (quay.io/redhat/clair-jwt:v3.0.5)
+					</li></ul></div><p>
+				Both of those images are available from the registry.redhat.io/quay repository.
+			</p><section class="section" id="sync-upgrade-v3"><div class="titlepage"><div><div><h3 class="title">2.9.1. Run a synchronous upgrade</h3></div></div></div><p>
+					To run a synchronous upgrade, where your whole cluster is down for the entire upgrade, do the following:
+				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+							Take down your entire Red Hat Quay cluster, including any quay-builder and clair containers.
+						</li><li class="listitem"><p class="simpara">
+							Add the following setting to the <code class="literal">config.yaml</code> file on all nodes:
+						</p><div class="informalexample"><p>
+							V3_UPGRADE_MODE: complete
+						</p></div></li><li class="listitem"><p class="simpara">
+							Pull and start up the v3 container on a single node and wait for however long it takes to do the upgrade (it should take just a few minutes). Use the following container or later:
+						</p><div class="informalexample"><p>
+							quay.io/redhat/quay:v3.0.5
+						</p></div><p class="simpara">
+							Note that the quay container comes up on ports 8080 and 8443 for v3, instead of 80 and 443, as they did for v2. Therefore, we recommend remapping 8080 and 8443 into 80 and 443, respectively, as shown in this example:
+						</p><pre class="screen"># docker run --restart=always -p 443:8443 -p 80:8080 \
    --sysctl net.core.somaxconn=4096 \
    --privileged=true \
    -v /mnt/quay/config:/conf/stack:Z \
    -v /mnt/quay/storage:/datastorage:Z \
    -d quay.io/redhat/quay:v3.0.5</pre></li><li class="listitem">
-						Bring the Red Hat Quay v3 container up on all the other nodes.
-					</li><li class="listitem">
-						Monitor the <code class="literal">/upgradeprogress</code> API endpoint until it reports done enough to move to the next step (the status reaches 99%). For example, view <code class="literal"><a class="link" href="https://myquay.example.com/upgradeprogress">https://myquay.example.com/upgradeprogress</a></code> or use some other tool to query the API.
-					</li><li class="listitem">
-						Once the background process is far enough along you have to schedule another maintenance window.
-					</li><li class="listitem">
-						During your scheduled maintenance, take the entire Red Hat Quay cluster down.
-					</li><li class="listitem"><p class="simpara">
-						Edit the <code class="literal">config.yaml</code> file on each node and set the upgrade mode to <code class="literal">complete</code> as follows:
-					</p><div class="informalexample"><p>
-						V3_UPGRADE_MODE: complete
-					</p></div></li><li class="listitem">
-						Bring Red Hat Quay back up on one node to have it do a final check.
-					</li><li class="listitem">
-						Once the final check is done, bring Red Hat Quay v3 back up on all the other nodes.
-					</li><li class="listitem">
-						Start v3.0.z versions of quay-builder and clair to replace any instances of those containers you want to return to your cluster.
-					</li><li class="listitem">
-						Verify Quay is working, including pushes and pulls of containers compatible with Docker version 2, schema 2. This can include windows container images and images of different computer architectures (arm, ppc, etc.).
-					</li></ol></div></section><section class="section" id="target_images_6"><div class="titlepage"><div><div><h2 class="title">9.3. Target images</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.0.5
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Clair:</strong></span> quay.io/redhat/clair-jwt:v3.0.5
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Redis:</strong></span> registry.access.redhat.com/rhscl/redis-32-rhel7
-					</li><li class="listitem">
-						<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Builder:</strong></span> quay.io/redhat/quay-builder:v3.0.5
-					</li></ul></div></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm46279834053840"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+							After the upgrade completes, bring the Red Hat Quay v3 container up on all other nodes.
+						</li><li class="listitem">
+							Start v3.0.z versions of quay-builder and clair to replace any instances of those containers you want to return to your cluster.
+						</li><li class="listitem">
+							Verify that Red Hat Quay is working, including pushes and pulls of containers compatible with Docker version 2, schema 2. This can include windows container images and images of different computer architectures (arm, ppc, etc.).
+						</li></ol></div></section><section class="section" id="background-upgrade-v3"><div class="titlepage"><div><div><h3 class="title">2.9.2. Run a background upgrade</h3></div></div></div><p>
+					To run a background upgrade, you need only bring down your cluster for a short period of time on two occasions. When you bring the cluster back up after the first downtime, the quay v3 container runs in v2 compatibility mode as it backfills the database. This background process can take hours or even days to complete. Background upgrades are recommended for large installations where downtime of more than a few hours would be a problem.
+				</p><p>
+					For this type of upgrade, you put Red Hat Quay into a compatibility mode, where you have a v3 quay container running, but it is running on the old data model while the upgrade completes. Here’s what you do:
+				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+							Pull the Red Hat Quay v3 container to all the nodes. Use the following container or later:
+						</p><div class="informalexample"><p>
+							quay.io/redhat/quay:v3.0.5
+						</p></div></li><li class="listitem">
+							Take down your entire Red Hat Quay cluster, including any quay-builder and clair containers.
+						</li><li class="listitem"><p class="simpara">
+							Edit the <code class="literal">config.yaml</code> file on each node and set the upgrade mode to background as follows:
+						</p><div class="informalexample"><p>
+							V3_UPGRADE_MODE: background
+						</p></div></li><li class="listitem"><p class="simpara">
+							Bring the Red Hat Quay v3 container up on a single node and wait for the migrations to complete (should take a few minutes maximum). Here is an example of that command:
+						</p><p class="simpara">
+							Note that the quay container comes up on ports 8080 and 8443 for v3, instead of 80 and 443, as they did for v2. Therefore, we recommend remapping 8080 and 8443 into 80 and 443, respectively, as shown in this example:
+						</p><pre class="screen"># docker run --restart=always -p 443:8443 -p 80:8080 \
+   --sysctl net.core.somaxconn=4096 \
+   --privileged=true \
+   -v /mnt/quay/config:/conf/stack:Z \
+   -v /mnt/quay/storage:/datastorage:Z \
+   -d quay.io/redhat/quay:v3.0.5</pre></li><li class="listitem">
+							Bring the Red Hat Quay v3 container up on all the other nodes.
+						</li><li class="listitem">
+							Monitor the <code class="literal">/upgradeprogress</code> API endpoint until it reports done enough to move to the next step (the status reaches 99%). For example, view <code class="literal"><a class="link" href="https://myquay.example.com/upgradeprogress">https://myquay.example.com/upgradeprogress</a></code> or use some other tool to query the API.
+						</li><li class="listitem">
+							Once the background process is far enough along you have to schedule another maintenance window.
+						</li><li class="listitem">
+							During your scheduled maintenance, take the entire Red Hat Quay cluster down.
+						</li><li class="listitem"><p class="simpara">
+							Edit the <code class="literal">config.yaml</code> file on each node and set the upgrade mode to <code class="literal">complete</code> as follows:
+						</p><div class="informalexample"><p>
+							V3_UPGRADE_MODE: complete
+						</p></div></li><li class="listitem">
+							Bring Red Hat Quay back up on one node to have it do a final check.
+						</li><li class="listitem">
+							Once the final check is done, bring Red Hat Quay v3 back up on all the other nodes.
+						</li><li class="listitem">
+							Start v3.0.z versions of quay-builder and clair to replace any instances of those containers you want to return to your cluster.
+						</li><li class="listitem">
+							Verify Quay is working, including pushes and pulls of containers compatible with Docker version 2, schema 2. This can include windows container images and images of different computer architectures (arm, ppc, etc.).
+						</li></ol></div></section><section class="section" id="target_images_6"><div class="titlepage"><div><div><h3 class="title">2.9.3. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.0.5
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Clair:</strong></span> quay.io/redhat/clair-jwt:v3.0.5
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Redis:</strong></span> registry.access.redhat.com/rhscl/redis-32-rhel7
+						</li><li class="listitem">
+							<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
+						</li><li class="listitem">
+							<span class="strong strong"><strong>Builder:</strong></span> quay.io/redhat/quay-builder:v3.0.5
+						</li></ul></div></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm46492549760384"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2021 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
