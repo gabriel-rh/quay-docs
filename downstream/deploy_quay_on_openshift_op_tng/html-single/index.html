@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay on OpenShift with the Quay Operator</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Deploy Red Hat Quay on an OpenShift Cluster with the Red Hat Quay Operator"/><link rel="next" href="#idm45088649485920" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45088649624992"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.4</span></div><div><h1 class="title">Deploy Red Hat Quay on OpenShift with the Quay Operator</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay on OpenShift with Quay Operator</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45088627791216">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay on OpenShift with the Quay Operator</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Deploy Red Hat Quay on an OpenShift Cluster with the Red Hat Quay Operator"/><link rel="next" href="#idm45983195896512" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45983199202624"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.5</span></div><div><h1 class="title">Deploy Red Hat Quay on OpenShift with the Quay Operator</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay on OpenShift with Quay Operator</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45983182901808">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Deploy Red Hat Quay on an OpenShift Cluster with the Red Hat Quay Operator
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm45088649485920">Preface</a></span></li><li><span class="chapter"><a href="#con-quay-openshift-prereq">1. Prerequisites for Red Hat Quay on OpenShift</a></span></li><li><span class="chapter"><a href="#installing_the_quay_operator">2. Installing the Quay Operator</a></span><ul><li><span class="section"><a href="#deploy-quay-openshift-operator-tng">2.1. Differences from Earlier Versions</a></span></li><li><span class="section"><a href="#before_installing_the_quay_operator">2.2. Before Installing the Quay Operator</a></span><ul><li><span class="section"><a href="#deciding_on_a_storage_solution">2.2.1. Deciding On a Storage Solution</a></span></li><li><span class="section"><a href="#enabling_openshift_container_storage">2.2.2. Enabling OpenShift Container Storage</a></span></li></ul></li><li><span class="section"><a href="#installing_the_operator_from_operatorhub">2.3. Installing the Operator from OperatorHub</a></span></li></ul></li><li><span class="chapter"><a href="#high_level_concepts">3. High Level Concepts</a></span><ul><li><span class="section"><a href="#quayregistry_api">3.1. QuayRegistry API</a></span><ul><li><span class="section"><a href="#components">3.1.1. Components</a></span></li><li><span class="section"><a href="#config_bundle_secret">3.1.2. Config Bundle Secret</a></span></li><li><span class="section"><a href="#aws_s3_cloudfront">3.1.3. AWS S3 CloudFront</a></span></li></ul></li><li><span class="section"><a href="#quayregistry_status">3.2. QuayRegistry Status</a></span><ul><li><span class="section"><a href="#registry_endpoint">3.2.1. Registry Endpoint</a></span></li><li><span class="section"><a href="#config_editor_endpoint">3.2.2. Config Editor Endpoint</a></span></li><li><span class="section"><a href="#config_editor_credentials_secret">3.2.3. Config Editor Credentials Secret</a></span></li><li><span class="section"><a href="#current_version">3.2.4. Current Version</a></span></li><li><span class="section"><a href="#conditions">3.2.5. Conditions</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#deploying_quay_using_the_quay_operator">4. Deploying Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#creating_a_quay_registry">4.1. Creating a Quay Registry</a></span><ul><li><span class="section"><a href="#openshift_console">4.1.1. OpenShift Console</a></span></li><li><span class="section"><a href="#command_line">4.1.2. Command Line</a></span></li></ul></li><li><span class="section"><a href="#deploying_quay_on_infrastructure_nodes">4.2. Deploying Quay on infrastructure nodes</a></span><ul><li><span class="section"><a href="#label_and_taint_nodes_for_infrastructure_use">4.2.1. Label and taint nodes for infrastructure use</a></span></li><li><span class="section"><a href="#create_a_project_with_node_selector_and_toleration">4.2.2. Create a Project with node selector and toleration</a></span></li><li><span class="section"><a href="#install_the_quay_operator_in_the_namespace">4.2.3. Install the Quay Operator in the namespace</a></span></li><li><span class="section"><a href="#create_the_registry">4.2.4. Create the registry</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#upgrading_quay_using_the_quay_operator">5. Upgrading Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#operator_lifecycle_manager">5.1. Operator Lifecycle Manager</a></span></li><li><span class="section"><a href="#upgrading_quay_by_upgrading_the_quay_operator">5.2. Upgrading Quay by upgrading the Quay Operator</a></span><ul><li><span class="section"><a href="#upgrading_quay">5.2.1. Upgrading Quay</a></span></li><li><span class="section"><a href="#changing_the_update_channel_for_an_operator">5.2.2. Changing the update channel for an Operator</a></span></li><li><span class="section"><a href="#manually_approving_a_pending_operator_upgrade">5.2.3. Manually approving a pending Operator upgrade</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayregistry">5.3. Upgrading a QuayRegistry</a></span></li><li><span class="section"><a href="#upgrading_a_quayecosystem">5.4. Upgrading a QuayEcosystem</a></span><ul><li><span class="section"><a href="#reverting_quayecosystem_upgrade">5.4.1. Reverting QuayEcosystem Upgrade</a></span></li><li><span class="section"><a href="#supported_quayecosystem_configurations_for_upgrades">5.4.2. Supported QuayEcosystem Configurations for Upgrades</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#advanced_concepts">6. Advanced Concepts</a></span><ul><li><span class="section"><a href="#customizing_the_quay_deployment">6.1. Customizing the Quay Deployment</a></span><ul><li><span class="section"><a href="#quay_application_configuration">6.1.1. Quay Application Configuration</a></span></li><li><span class="section"><a href="#customizing_external_access_to_the_registry">6.1.2. Customizing External Access to the Registry</a></span></li><li><span class="section"><a href="#disabling_route_component">6.1.3. Disabling Route Component</a></span></li><li><span class="section"><a href="#resizing_managed_storage">6.1.4. Resizing Managed Storage</a></span></li><li><span class="section"><a href="#disabling_the_horizontal_pod_autoscaler">6.1.5. Disabling the Horizontal Pod Autoscaler</a></span></li><li><span class="section"><a href="#customizing_default_operator_images">6.1.6. Customizing Default Operator Images</a></span></li></ul></li></ul></li></ul></div><section class="preface" id="idm45088649485920"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm45983195896512">Preface</a></span></li><li><span class="chapter"><a href="#con-quay-openshift-prereq">1. Prerequisites for Red Hat Quay on OpenShift</a></span></li><li><span class="chapter"><a href="#installing_the_quay_operator">2. Installing the Quay Operator</a></span><ul><li><span class="section"><a href="#deploy-quay-openshift-operator-tng">2.1. Differences from Earlier Versions</a></span></li><li><span class="section"><a href="#before_installing_the_quay_operator">2.2. Before Installing the Quay Operator</a></span><ul><li><span class="section"><a href="#deciding_on_a_storage_solution">2.2.1. Deciding On a Storage Solution</a></span></li><li><span class="section"><a href="#enabling_openshift_container_storage">2.2.2. Enabling OpenShift Container Storage</a></span></li></ul></li><li><span class="section"><a href="#installing_the_operator_from_operatorhub">2.3. Installing the Operator from OperatorHub</a></span></li></ul></li><li><span class="chapter"><a href="#high_level_concepts">3. High Level Concepts</a></span><ul><li><span class="section"><a href="#quayregistry_api">3.1. QuayRegistry API</a></span><ul><li><span class="section"><a href="#components">3.1.1. Components</a></span></li><li><span class="section"><a href="#config_bundle_secret">3.1.2. Config Bundle Secret</a></span></li><li><span class="section"><a href="#aws_s3_cloudfront">3.1.3. AWS S3 CloudFront</a></span></li></ul></li><li><span class="section"><a href="#quayregistry_status">3.2. QuayRegistry Status</a></span><ul><li><span class="section"><a href="#registry_endpoint">3.2.1. Registry Endpoint</a></span></li><li><span class="section"><a href="#config_editor_endpoint">3.2.2. Config Editor Endpoint</a></span></li><li><span class="section"><a href="#config_editor_credentials_secret">3.2.3. Config Editor Credentials Secret</a></span></li><li><span class="section"><a href="#current_version">3.2.4. Current Version</a></span></li><li><span class="section"><a href="#conditions">3.2.5. Conditions</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#deploying_quay_using_the_quay_operator">4. Deploying Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#creating_a_quay_registry">4.1. Creating a Quay Registry</a></span><ul><li><span class="section"><a href="#openshift_console">4.1.1. OpenShift Console</a></span></li><li><span class="section"><a href="#command_line">4.1.2. Command Line</a></span></li></ul></li><li><span class="section"><a href="#deploying_quay_on_infrastructure_nodes">4.2. Deploying Quay on infrastructure nodes</a></span><ul><li><span class="section"><a href="#label_and_taint_nodes_for_infrastructure_use">4.2.1. Label and taint nodes for infrastructure use</a></span></li><li><span class="section"><a href="#create_a_project_with_node_selector_and_toleration">4.2.2. Create a Project with node selector and toleration</a></span></li><li><span class="section"><a href="#install_the_quay_operator_in_the_namespace">4.2.3. Install the Quay Operator in the namespace</a></span></li><li><span class="section"><a href="#create_the_registry">4.2.4. Create the registry</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#upgrading_quay_using_the_quay_operator">5. Upgrading Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#operator_lifecycle_manager">5.1. Operator Lifecycle Manager</a></span></li><li><span class="section"><a href="#upgrading_quay_by_upgrading_the_quay_operator">5.2. Upgrading Quay by upgrading the Quay Operator</a></span><ul><li><span class="section"><a href="#upgrading_quay">5.2.1. Upgrading Quay</a></span></li><li><span class="section"><a href="#changing_the_update_channel_for_an_operator">5.2.2. Changing the update channel for an Operator</a></span></li><li><span class="section"><a href="#manually_approving_a_pending_operator_upgrade">5.2.3. Manually approving a pending Operator upgrade</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayregistry">5.3. Upgrading a QuayRegistry</a></span></li><li><span class="section"><a href="#upgrading_a_quayecosystem">5.4. Upgrading a QuayEcosystem</a></span><ul><li><span class="section"><a href="#reverting_quayecosystem_upgrade">5.4.1. Reverting QuayEcosystem Upgrade</a></span></li><li><span class="section"><a href="#supported_quayecosystem_configurations_for_upgrades">5.4.2. Supported QuayEcosystem Configurations for Upgrades</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#quay_operator_features">6. Quay Operator features</a></span><ul><li><span class="section"><a href="#helm_oci_support_and_red_hat_quay">6.1. Helm OCI Support and Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites">6.1.1. Prerequisites</a></span></li><li><span class="section"><a href="#using_helm_charts_with_quay">6.1.2. Using Helm charts with Quay</a></span></li><li><span class="section"><a href="#explicitly_enabling_oci_and_helm_support">6.1.3. Explicitly enabling OCI and Helm support</a></span></li></ul></li><li><span class="section"><a href="#console_monitoring_and_alerting">6.2. Console monitoring and alerting</a></span></li></ul></li><li><span class="chapter"><a href="#advanced_concepts">7. Advanced Concepts</a></span><ul><li><span class="section"><a href="#customizing_the_quay_deployment">7.1. Customizing the Quay Deployment</a></span><ul><li><span class="section"><a href="#quay_application_configuration">7.1.1. Quay Application Configuration</a></span></li><li><span class="section"><a href="#customizing_external_access_to_the_registry">7.1.2. Customizing External Access to the Registry</a></span></li><li><span class="section"><a href="#disabling_route_component">7.1.3. Disabling Route Component</a></span></li><li><span class="section"><a href="#resizing_managed_storage">7.1.4. Resizing Managed Storage</a></span></li><li><span class="section"><a href="#disabling_the_horizontal_pod_autoscaler">7.1.5. Disabling the Horizontal Pod Autoscaler</a></span></li><li><span class="section"><a href="#customizing_default_operator_images">7.1.6. Customizing Default Operator Images</a></span></li></ul></li></ul></li></ul></div><section class="preface" id="idm45983195896512"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
 			Red Hat Quay is an enterprise-quality container registry. Use Red Hat Quay to build and store container images, then make them available to deploy across your enterprise.
 		</p><p>
 			The Red Hat Quay Operator provides a simple method to deploy and manage a Red Hat Quay cluster. This is the preferred procedure for deploying Red Hat Quay on OpenShift and is covered in this guide.
@@ -371,31 +371,137 @@ quay-operator.v3.4.1-6f6597d8d8-bd4dp                  1/1     Runnin
 					<span class="strong strong"><strong>Repository Mirroring</strong></span>
 				</p><p>
 					Nothing special needed.
-				</p></section></section></section><section class="chapter" id="advanced_concepts"><div class="titlepage"><div><div><h1 class="title">Chapter 6. Advanced Concepts</h1></div></div></div><section class="section" id="customizing_the_quay_deployment"><div class="titlepage"><div><div><h2 class="title">6.1. Customizing the Quay Deployment</h2></div></div></div><p>
+				</p></section></section></section><section class="chapter" id="quay_operator_features"><div class="titlepage"><div><div><h1 class="title">Chapter 6. Quay Operator features</h1></div></div></div><section class="section" id="helm_oci_support_and_red_hat_quay"><div class="titlepage"><div><div><h2 class="title">6.1. Helm OCI Support and Red Hat Quay</h2></div></div></div><p>
+				Container registries such as Red Hat Quay were originally designed to support container images in the Docker image format. To promote the use of additional runtimes apart from Docker, the Open Container Initiative (OCI) was created to provide a standardization surrounding container runtimes and image formats. Most container registries support the OCI standardization as it is based on the <a class="link" href="https://docs.docker.com/registry/spec/manifest-v2-2/">Docker image manifest V2, Schema 2</a> format.
+			</p><p>
+				In addition to container images, a variety of artifacts have emerged that support not just individual applications, but the Kubernetes platform as a whole. These range from Open Policy Agent (OPA) policies for security and governance to Helm charts and Operators to aid in application deployment.
+			</p><p>
+				Red Hat Quay is a private container registry that not only stores container images, but supports an entire ecosystem of tooling to aid in the management of containers. With the release of Red Hat Quay 3.5, support for the use of OCI based artifacts, and specifically Helm Charts, has graduated from Technical Preview (TP) and now has General Availability (GA) status.
+			</p><p>
+				When Red Hat Quay 3.5 is deployed using the OpenShift Operator, support for Helm and OCI artifacts is now enabled by default. If you need to explicitly enable the feature, for example, if it has previously been disabled or if you have upgraded from a version where it is not enabled by default, see the section <a class="xref" href="#explicitly_enabling_oci_and_helm_support" title="6.1.3. Explicitly enabling OCI and Helm support">Section 6.1.3, “Explicitly enabling OCI and Helm support”</a>.
+			</p><section class="section" id="prerequisites"><div class="titlepage"><div><div><h3 class="title">6.1.1. Prerequisites</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+							<span class="strong strong"><strong>Trusted certificates:</strong></span> Communication between the Helm client and Quay is facilitated over HTTPS and as of Helm 3.5, support is only available for registries communicating over HTTPS with trusted certificates. In addition, the operating system must trust the certificates exposed by the registry. Support in future Helm releases will allow for communicating with remote registries insecurely. With that in mind, ensure that your operating system has been configured to trust the certificates used by Quay, for example:
+						</p><pre class="screen">$ sudo cp rootCA.pem   /etc/pki/ca-trust/source/anchors/
+$ sudo update-ca-trust extract</pre></li><li class="listitem">
+							<span class="strong strong"><strong>Experimental feature:</strong></span> Many of the commands for interacting with Helm and OCI registries make use of the <code class="literal">helm chart</code> subcommand. At the time of writing, OCI support in Helm is still marked as an “experimental” feature and must be enabled explicitly. This is accomplished by setting the environment variable <code class="literal">HELM_EXPERIMENTAL_OCI=1</code>.
+						</li><li class="listitem"><p class="simpara">
+							<span class="strong strong"><strong>Install Helm client:</strong></span> Download your desired version from <a class="link" href="https://github.com/helm/helm/releases">https://github.com/helm/helm/releases</a>, for example, <a class="link" href="https://get.helm.sh/helm-v3.5.3-linux-amd64.tar.gz">https://get.helm.sh/helm-v3.5.3-linux-amd64.tar.gz</a>. Unpack it and move the helm binary to its desired destination:
+						</p><pre class="screen">$ tar -zxvf helm-v3.5.3-linux-amd64.tar.gz
+$ mv linux-amd64/helm /usr/local/bin/helm</pre></li><li class="listitem">
+							<span class="strong strong"><strong>Create organization in Quay:</strong></span> Create a new organization for storing the Helm charts, using the Quay registry UI. For example, create an organization named <code class="literal">helm</code>.
+						</li></ul></div></section><section class="section" id="using_helm_charts_with_quay"><div class="titlepage"><div><div><h3 class="title">6.1.2. Using Helm charts with Quay</h3></div></div></div><p>
+					Helm, as a graduated project of the Cloud Native Computing Foundation (CNCF), has become the de facto package manager for Kubernetes as it simplifies how applications are packaged and deployed. Helm uses a packaging format called Charts which contain the Kubernetes resources representing an application. Charts can be made available for general distribution and consumption in repositories. A Helm repository is an HTTP server that serves an index.yaml metadata file and optionally a set of packaged charts. Beginning with Helm version 3, support was made available for distributing charts in OCI registries as an alternative to a traditional repository. To demonstrate how Quay can be used as a registry for Helm charts, an existing chart from a Helm repository will be used to showcase the interaction with OCI registries for chart developers and users.
+				</p><p>
+					In the following example, a sample etherpad chart is downloaded from from the Red Community of Practice (CoP) repository and pushed to a local Red Hat Quay repository using the following steps:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Add the appropriate repository
+						</li><li class="listitem">
+							Update the repository with the latest metadata
+						</li><li class="listitem">
+							Download and untar the chart to create a local directory called <code class="literal">etherpad</code>
+						</li></ul></div><p>
+					For example:
+				</p><pre class="screen">$ helm repo add redhat-cop https://redhat-cop.github.io/helm-charts
+$ helm repo update
+$ helm pull redhat-cop/etherpad --version=0.0.4 --untar</pre><p>
+					Tagging the chart requires use of the <code class="literal">helm chart save</code> command - this corresponds to using <code class="literal">podman tag</code> for tagging images.
+				</p><pre class="screen">$ helm chart save ./etherpad example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4
+
+ref:     example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4
+digest:  6850d9b21dd4b87cf20ad49f2e2c7def9655c52ea573e1ddb9d1464eeb6a46a6
+size:    3.5 KiB
+name:    etherpad
+version: 0.0.4
+0.0.4: saved</pre><p>
+					Use the <code class="literal">helm chart list</code> command to see the local instance of the chart:
+				</p><pre class="screen">helm chart list
+
+REF                                                                               NAME     VERSION DIGEST SIZE   CREATED
+example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4 etherpad 0.0.4   ce0233f 3.5 KiB 23 seconds</pre><p>
+					Before pushing the chart, log in to the repository using the <code class="literal">helm registry login</code> command:
+				</p><pre class="screen">$ helm registry login example-registry-quay-quay-enterprise.apps.user1.example.com
+Username: quayadmin
+Password:
+Login succeeded</pre><p>
+					Push the chart to your local Quay repository using the <code class="literal">helm chart push</code> command:
+				</p><pre class="screen">$ helm chart push example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4
+
+The push refers to repository [example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad]
+ref:     example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4
+digest:  ce0233fd014992b8e27cc648cdabbebd4dd6850aca8fb8e50f7eef6f2f49833d
+size:    3.5 KiB
+name:    etherpad
+version: 0.0.4
+0.0.4: pushed to remote (1 layer, 3.5 KiB total)</pre><p>
+					To test that the push worked, delete the local copy and then pull the chart from the repository:
+				</p><pre class="screen">$ helm chart rm example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4
+$ rm -rf etherpad
+$ helm chart pull example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4
+
+0.0.4: Pulling from example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad
+ref:     example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4
+digest:  6850d9b21dd4b87cf20ad49f2e2c7def9655c52ea573e1ddb9d1464eeb6a46a6
+size:    3.5 KiB
+name:    etherpad
+version: 0.0.4
+Status: Downloaded newer chart for example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4</pre><p>
+					Use the <code class="literal">helm chart export</code> command to extract the chart files:
+				</p><pre class="screen">$ helm chart export example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4
+
+ref:     example-registry-quay-quay-enterprise.apps.user1.example.com/helm/etherpad:0.0.4
+digest:  ce0233fd014992b8e27cc648cdabbebd4dd6850aca8fb8e50f7eef6f2f49833d
+size:    3.5 KiB
+name:    etherpad
+version: 0.0.4
+Exported chart to etherpad/</pre></section><section class="section" id="explicitly_enabling_oci_and_helm_support"><div class="titlepage"><div><div><h3 class="title">6.1.3. Explicitly enabling OCI and Helm support</h3></div></div></div><p>
+					Support for Helm and OCI artifacts is now enabled by default in Red Hat Quay 3.5. If you need to explicitly enable the feature, for example, if it has previously been disabled or if you have upgraded from a version where it is not enabled by default, you need to add two properties in the Quay configuration to enable the use of OCI artifacts:
+				</p><pre class="programlisting language-yaml">FEATURE_GENERAL_OCI_SUPPORT: true
+FEATURE_HELM_OCI_SUPPORT: true</pre><p>
+					Customizations to the configuration of Quay can be provided in a secret containing the configuration bundle. Execute the following command which will create a new secret called <code class="literal">quay-config-bundle</code>, in the appropriate namespace, containing the necessary properties to enable OCI support.
+				</p><div class="formalpara"><p class="title"><strong>quay-config-bundle.yaml</strong></p><p>
+						
+<pre class="programlisting language-yaml">apiVersion: v1
+stringData:
+  config.yaml: |
+    FEATURE_GENERAL_OCI_SUPPORT: true
+    FEATURE_HELM_OCI_SUPPORT: true
+kind: Secret
+metadata:
+  name: quay-config-bundle
+  namespace: quay-enterprise
+type: Opaque</pre>
+					</p></div><p>
+					Create the secret in the appropriate namespace, in this example <code class="literal">quay-enterprise</code>:
+				</p><pre class="screen">$ oc create -n quay-enterprise -f quay-config-bundle.yaml</pre><p>
+					Specify the secret for the <code class="literal">spec.configBundleSecret</code> field:
+				</p><div class="formalpara"><p class="title"><strong>quay-registry.yaml</strong></p><p>
+						
+<pre class="programlisting language-yaml">apiVersion: quay.redhat.com/v1
+kind: QuayRegistry
+metadata:
+  name: example-registry
+  namespace: quay-enterprise
+spec:
+  configBundleSecret: quay-config-bundle</pre>
+					</p></div><p>
+					Create the registry with the specified configuration:
+				</p><pre class="screen">$ oc create -n quay-enterprise -f quay-config-bundle.yaml</pre></section></section><section class="section" id="console_monitoring_and_alerting"><div class="titlepage"><div><div><h2 class="title">6.2. Console monitoring and alerting</h2></div></div></div></section></section><section class="chapter" id="advanced_concepts"><div class="titlepage"><div><div><h1 class="title">Chapter 7. Advanced Concepts</h1></div></div></div><section class="section" id="customizing_the_quay_deployment"><div class="titlepage"><div><div><h2 class="title">7.1. Customizing the Quay Deployment</h2></div></div></div><p>
 				The Quay Operator takes an opinionated strategy towards deploying Quay and its dependencies, however there are places where the Quay deployment can be customized.
-			</p><section class="section" id="quay_application_configuration"><div class="titlepage"><div><div><h3 class="title">6.1.1. Quay Application Configuration</h3></div></div></div><p>
+			</p><section class="section" id="quay_application_configuration"><div class="titlepage"><div><div><h3 class="title">7.1.1. Quay Application Configuration</h3></div></div></div><p>
 					Once deployed, the Quay application itself can be configured as normal using the config editor UI or by modifying the <code class="literal">Secret</code> containing the Quay configuration bundle. The Operator uses the <code class="literal">Secret</code> named in the <code class="literal">spec.configBundleSecret</code> field but does not watch this resource for changes. It is recommended that configuration changes be made to a new <code class="literal">Secret</code> resource and the <code class="literal">spec.configBundleSecret</code> field be updated to reflect the change. In the event there are issues with the new configuration, it is simple to revert the value of <code class="literal">spec.configBundleSecret</code> to the older <code class="literal">Secret</code>.
-				</p></section><section class="section" id="customizing_external_access_to_the_registry"><div class="titlepage"><div><div><h3 class="title">6.1.2. Customizing External Access to the Registry</h3></div></div></div><p>
-					When running on OpenShift, the <code class="literal">Routes</code> API is available and will automatically be used as a managed component. After creating the QuayRegistry, the external access point can be found in the status block of the <code class="literal">QuayRegistry</code>:
+				</p></section><section class="section" id="customizing_external_access_to_the_registry"><div class="titlepage"><div><div><h3 class="title">7.1.2. Customizing External Access to the Registry</h3></div></div></div><p>
+					When running on OpenShift, the <code class="literal">Routes</code> API is available and will automatically be used as a managed component. After creating the <code class="literal">QuayRegistry</code>, the external access point can be found in the status block of the <code class="literal">QuayRegistry</code>:
 				</p><pre class="programlisting language-yaml">status:
   registryEndpoint: some-quay.my-namespace.apps.mycluster.com</pre><p>
-					The Operator creates a Service of <code class="literal">type: Loadbalancer</code> for your registry. You can configure your DNS provider to point the <code class="literal">SERVER_HOSTNAME</code> to the external IP address of the service.
-				</p><pre class="screen">$ oc get services -n &lt;namespace&gt;
+					When running on native Kubernetes, the Operator creates a Service of <code class="literal">type: ClusterIP</code> for your registry. You are then responsible for external access (like <code class="literal">Ingress</code>).
+				</p><pre class="screen">$ kubectl get services -n &lt;namespace&gt;
 NAME                    TYPE        CLUSTER-IP       EXTERNAL-IP          PORT(S)             AGE
-some-quay               ClusterIP   172.30.143.199   34.123.133.39        443/TCP,9091/TCP    23h</pre><section class="section" id="using_a_custom_hostname_and_tls"><div class="titlepage"><div><div><h4 class="title">6.1.2.1. Using a Custom Hostname and TLS</h4></div></div></div><p>
+some-quay               ClusterIP   172.30.143.199   &lt;none&gt;               443/TCP,9091/TCP    23h</pre><section class="section" id="using_a_custom_hostname_and_tls"><div class="titlepage"><div><div><h4 class="title">7.1.2.1. Using a Custom Hostname and TLS</h4></div></div></div><p>
 						By default, a <code class="literal">Route</code> will be created with the default generated hostname and a certificate/key pair will be generated for TLS. If you want to access Red Hat Quay using a custom hostname and bring your own TLS certificate/key pair, follow these steps.
 					</p><p>
-						Because Quay will use TLS for in-cluster communication with other services within Kubernetes (like Clair), you must ensure that the certificate/key pair you use has Subject Alternative Names (SANs) for each of the following hostname patterns:
-					</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-								<code class="literal">&lt;quayregistry-name&gt;-quay-app</code>
-							</li><li class="listitem">
-								<code class="literal">&lt;quayregistry-name&gt;-quay-app.&lt;quayregistry-namespace&gt;.svc</code>
-							</li><li class="listitem">
-								<code class="literal">&lt;quayregistry-name&gt;-quay-app.&lt;quayregistry-namespace&gt;.svc.cluster.local</code>
-							</li></ul></div><p>
-						If <code class="literal">FEATURE_BUILD_SUPPORT: true</code>, then make sure the certificate/key pair also includes <code class="literal">BUILDMAN_HOSTNAME</code>.
+						If <code class="literal">FEATURE_BUILD_SUPPORT: true</code>, then make sure the certificate/key pair is also valid for the <code class="literal">BUILDMAN_HOSTNAME</code>.
 					</p><p>
-						If all of the above hostnames are not included as SANs, then the Quay Operator will reject your provided certificate/key pair and generate one to be used by Red Hat Quay.
+						If the given cert/key pair is invalid for the above hostnames, then the Quay Operator will reject your provided certificate/key pair and generate one to be used by Red Hat Quay.
 					</p><p>
 						Next, create a <code class="literal">Secret</code> with the following content:
 					</p><pre class="programlisting language-yaml">apiVersion: v1
@@ -412,7 +518,46 @@ kind: QuayRegistry
 metadata:
   name: some-quay
 spec:
-  configBundleSecret: my-config-bundle</pre></section></section><section class="section" id="disabling_route_component"><div class="titlepage"><div><div><h3 class="title">6.1.3. Disabling Route Component</h3></div></div></div><p>
+  configBundleSecret: my-config-bundle</pre></section><section class="section" id="using_openshift_provided_tls_certificate"><div class="titlepage"><div><div><h4 class="title">7.1.2.2. Using OpenShift Provided TLS Certificate</h4></div></div></div><p>
+						It is preferred to have TLS terminated in the Quay app container. Therefore, to use the OpenShift provided TLS, you must create a <code class="literal">Route</code> with type "reencrypt", which will use the OpenShift provided TLS at the edge, and Quay Operator-generated TLS within the cluster. This is achieved by marking the <code class="literal">route</code> component as unmanaged, and creating your own <code class="literal">Route</code> which <a class="link" href="https://docs.openshift.com/container-platform/4.7/networking/routes/secured-routes.html">reencrypts TLS</a> using the Operator-generated CA certificate.
+					</p><p>
+						Create a <code class="literal">Secret</code> with a <code class="literal">config.yaml</code> key containing the <code class="literal">SERVER_HOSTNAME</code> field of value <code class="literal">&lt;route-name&gt;-&lt;namespace&gt;.apps.&lt;cluster-domain&gt;</code> (the <code class="literal">Route</code> with this hostname will be created in a later step).
+					</p><pre class="programlisting language-yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: my-config-bundle
+data:
+  config.yaml: &lt;must include SERVER_HOSTNAME field with your custom hostname&gt;</pre><p>
+						Create a <code class="literal">QuayRegistry</code> referencing the above <code class="literal">Secret</code> and with the <code class="literal">route</code> component unmanaged:
+					</p><pre class="programlisting language-yaml">apiVersion: quay.redhat.com/v1
+kind: QuayRegistry
+metadata:
+  name: some-quay
+spec:
+  configBundleSecret: my-config-bundle
+  components:
+  - kind: route
+    managed: false</pre><p>
+						Wait for the <code class="literal">QuayRegistry</code> to be fully reconciled by the Quay Operator. Then, acquire the generated TLS certificate by finding the <code class="literal">Secret</code> being mounted into the Quay app pods and copying the <code class="literal">tls.cert</code> value.
+					</p><p>
+						Create a <code class="literal">Route</code> with TLS reencryption and the destination CA certificate you copied above:
+					</p><pre class="programlisting language-yaml">apiVersion: v1
+kind: Route
+metadata:
+  name: registry
+  namespace: &lt;namespace&gt;
+spec:
+  to:
+    kind: Service
+    name: &lt;quay-service-name&gt;
+  tls:
+    termination: reencrypt
+    destinationCACertificate:
+      -----BEGIN CERTIFICATE-----
+      [...]
+      -----END CERTIFICATE-----</pre><p>
+						You can now access your Quay registry using the created <code class="literal">Route</code>.
+					</p></section></section><section class="section" id="disabling_route_component"><div class="titlepage"><div><div><h3 class="title">7.1.3. Disabling Route Component</h3></div></div></div><p>
 					To prevent the Operator from creating a <code class="literal">Route</code>, mark the component as unmanaged in the <code class="literal">QuayRegistry</code>:
 				</p><pre class="programlisting language-yaml">apiVersion: quay.redhat.com/v1
 kind: QuayRegistry
@@ -423,9 +568,9 @@ spec:
     - kind: route
       managed: false</pre><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 						Disabling the default <code class="literal">Route</code> means you are now responsible for creating a <code class="literal">Route</code>, <code class="literal">Service</code>, or <code class="literal">Ingress</code> in order to access the Quay instance and that whatever DNS you use must match the <code class="literal">SERVER_HOSTNAME</code> in the Quay config.
-					</p></div></div></section><section class="section" id="resizing_managed_storage"><div class="titlepage"><div><div><h3 class="title">6.1.4. Resizing Managed Storage</h3></div></div></div><p>
+					</p></div></div></section><section class="section" id="resizing_managed_storage"><div class="titlepage"><div><div><h3 class="title">7.1.4. Resizing Managed Storage</h3></div></div></div><p>
 					The Quay Operator creates default object storage using the defaults provided by RHOCS when creating a <code class="literal">NooBaa</code> object (50 Gib). There are two ways to extend this storage; you can resize an existing PVC or add more PVCs to a new storage pool.
-				</p><section class="section" id="resize_noobaa_pvc"><div class="titlepage"><div><div><h4 class="title">6.1.4.1. Resize Noobaa PVC</h4></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+				</p><section class="section" id="resize_noobaa_pvc"><div class="titlepage"><div><div><h4 class="title">7.1.4.1. Resize Noobaa PVC</h4></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
 								Log into the OpenShift console and select <code class="literal">Storage</code> → <code class="literal">Persistent Volume Claims</code>.
 							</li><li class="listitem">
 								Select the <code class="literal">PersistentVolumeClaim</code> named like <code class="literal">noobaa-default-backing-store-noobaa-pvc-*</code>.
@@ -437,7 +582,7 @@ spec:
 						After a few minutes (depending on the size of the PVC), the expanded size should reflect in the PVC’s <code class="literal">Capacity</code> field.
 					</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 							Expanding CSI volumes is a Technology Preview feature only. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/openshift_container_platform/4.6/html/storage/expanding-persistent-volumes">https://access.redhat.com/documentation/en-us/openshift_container_platform/4.6/html/storage/expanding-persistent-volumes</a>.
-						</p></div></div></section><section class="section" id="add_another_storage_pool"><div class="titlepage"><div><div><h4 class="title">6.1.4.2. Add Another Storage Pool</h4></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						</p></div></div></section><section class="section" id="add_another_storage_pool"><div class="titlepage"><div><div><h4 class="title">7.1.4.2. Add Another Storage Pool</h4></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
 								Log into the OpenShift console and select <code class="literal">Networking</code> → <code class="literal">Routes</code>. Make sure the <code class="literal">openshift-storage</code> project is selected.
 							</li><li class="listitem">
 								Click on the <code class="literal">Location</code> field for the <code class="literal">noobaa-mgmt</code> Route.
@@ -455,7 +600,7 @@ spec:
 								Click <code class="literal">Deploy</code>.
 							</li></ol></div><p>
 						After a few minutes, the additional storage pool will be added to the Noobaa resources and available for use by Red Hat Quay.
-					</p></section></section><section class="section" id="disabling_the_horizontal_pod_autoscaler"><div class="titlepage"><div><div><h3 class="title">6.1.5. Disabling the Horizontal Pod Autoscaler</h3></div></div></div><p>
+					</p></section></section><section class="section" id="disabling_the_horizontal_pod_autoscaler"><div class="titlepage"><div><div><h3 class="title">7.1.5. Disabling the Horizontal Pod Autoscaler</h3></div></div></div><p>
 					If you wish to disable autoscaling or create your own <code class="literal">HorizontalPodAutoscaler</code>, simply specify the component as unmanaged in the <code class="literal">QuayRegistry</code> instance:
 				</p><pre class="programlisting language-yaml">apiVersion: quay.redhat.com/v1
 kind: QuayRegistry
@@ -464,11 +609,11 @@ metadata:
 spec:
   components:
     - kind: horizontalpodautoscaler
-      managed: false</pre></section><section class="section" id="customizing_default_operator_images"><div class="titlepage"><div><div><h3 class="title">6.1.6. Customizing Default Operator Images</h3></div></div></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+      managed: false</pre></section><section class="section" id="customizing_default_operator_images"><div class="titlepage"><div><div><h3 class="title">7.1.6. Customizing Default Operator Images</h3></div></div></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 						Using this mechanism is not supported for production Quay environments and is strongly encouraged only for development/testing purposes. There is no guarantee your deployment will work correctly when using non-default images with the Quay Operator.
 					</p></div></div><p>
 					In certain circumstances, it may be useful to override the default images used by the Operator. This can be done by setting one or more environment variables in the Quay Operator <code class="literal">ClusterServiceVersion</code>.
-				</p><section class="section" id="environment_variables"><div class="titlepage"><div><div><h4 class="title">6.1.6.1. Environment Variables</h4></div></div></div><p>
+				</p><section class="section" id="environment_variables"><div class="titlepage"><div><div><h4 class="title">7.1.6.1. Environment Variables</h4></div></div></div><p>
 						The following environment variables are used in the Operator to override component images:
 					</p><div class="informaltable"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 50%; " class="col_2"/></colgroup><tbody><tr><td align="left" valign="top">
 									<p>
@@ -512,7 +657,7 @@ spec:
 									</p>
 									</td></tr></tbody></table></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 							Override images <span class="strong strong"><strong>must</strong></span> be referenced by manifest (@sha256:), not by tag (:latest).
-						</p></div></div></section><section class="section" id="applying_overrides_to_a_running_operator"><div class="titlepage"><div><div><h4 class="title">6.1.6.2. Applying Overrides to a Running Operator</h4></div></div></div><p>
+						</p></div></div></section><section class="section" id="applying_overrides_to_a_running_operator"><div class="titlepage"><div><div><h4 class="title">7.1.6.2. Applying Overrides to a Running Operator</h4></div></div></div><p>
 						When the Quay Operator is installed in a cluster via the <a class="link" href="https://docs.openshift.com/container-platform/4.6/operators/understanding/olm/olm-understanding-olm.html">Operator Lifecycle Manager (OLM)</a>, the managed component container images can be easily overridden by modifying the <code class="literal">ClusterServiceVersion</code> object, which is OLM’s representation of a running Operator in the cluster. Find the Quay Operator’s <code class="literal">ClusterServiceVersion</code> either by using a Kubernetes UI or <code class="literal">kubectl</code>/<code class="literal">oc</code>:
 					</p><pre class="screen">$ oc get clusterserviceversions -n &lt;your-namespace&gt;</pre><p>
 						Using the UI, <code class="literal">oc edit</code>, or any other method, modify the Quay <code class="literal">ClusterServiceVersion</code> to include the environment variables outlined above to point to the override images:
@@ -529,7 +674,7 @@ spec:
 						Note that this is done at the Operator level, so every QuayRegistry will be deployed using these same overrides.
 					</p><h2 id="additional_resources">Additional resources</h2><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 								For more details on the Red Hat Quay Operator, see the upstream <a class="link" href="https://github.com/quay/quay-operator/">quay-operator</a> project.
-							</li></ul></div></section></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm45088627791216"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+							</li></ul></div></section></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm45983182901808"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2021 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
