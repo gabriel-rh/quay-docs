@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Manage Red Hat Quay</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Manage Red Hat Quay"/><link rel="next" href="#idm45487219408464" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45487221870064"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.5</span></div><div><h1 class="title">Manage Red Hat Quay</h1></div><div><h2 class="subtitle">Manage Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45487216499392">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Manage Red Hat Quay</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Manage Red Hat Quay"/><link rel="next" href="#idm45247330754208" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45247327535568"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.5</span></div><div><h1 class="title">Manage Red Hat Quay</h1></div><div><h2 class="subtitle">Manage Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45247325729552">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Manage Red Hat Quay
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm45487219408464">Preface</a></span></li><li><span class="chapter"><a href="#advanced-quay-configuration">1. Advanced Red Hat Quay configuration</a></span><ul><li><span class="section"><a href="#using-the-config-tool">1.1. Using Red Hat Quay Config Tool to modify Red Hat Quay</a></span><ul><li><span class="section"><a href="#running_the_config_tool_from_the_red_hat_quay_operator">1.1.1. Running the Config Tool from the Red Hat Quay Operator</a></span></li><li><span class="section"><a href="#running_the_config_tool_from_the_command_line">1.1.2. Running the Config Tool from the command line</a></span></li></ul></li><li><span class="section"><a href="#overview-advanced-config">1.2. Using the API to modify Red Hat Quay</a></span></li><li><span class="section"><a href="#editing_the_literal_config_yaml_literal_file_to_modify_red_hat_quay">1.3. Editing the <code class="literal">config.yaml</code> file to modify Red Hat Quay</a></span><ul><li><span class="section"><a href="#add_name_and_company_to_red_hat_quay_sign_in">1.3.1. Add name and company to Red Hat Quay sign-in</a></span></li><li><span class="section"><a href="#disable_tls_protocols">1.3.2. Disable TLS Protocols</a></span></li><li><span class="section"><a href="#rate_limit_api_calls">1.3.3. Rate limit API calls</a></span></li><li><span class="section"><a href="#adjust_database_connection_pooling">1.3.4. Adjust database connection pooling</a></span></li></ul></li><li><span class="section"><a href="#using_the_configuration_api">1.4. Using the configuration API</a></span><ul><li><span class="section"><a href="#retrieving_the_default_configuration">1.4.1. Retrieving the default configuration</a></span></li><li><span class="section"><a href="#retrieving_the_current_configuration">1.4.2. Retrieving the current configuration</a></span></li><li><span class="section"><a href="#validating_configuration_using_the_api">1.4.3. Validating configuration using the API</a></span></li><li><span class="section"><a href="#determining_the_required_fields">1.4.4. Determining the required fields</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#release-notifications">2. Getting Red Hat Quay release notifications</a></span></li><li><span class="chapter"><a href="#using-ssl-to-protect-quay">3. Using SSL to protect connections to Red Hat Quay</a></span><ul><li><span class="section"><a href="#create-a-ca-and-sign-a-certificate">3.1. Create a CA and sign a certificate</a></span></li><li><span class="section"><a href="#configuring-quay-to-use-the-new-certificate">3.2. Configure Red Hat Quay to use the new certificate</a></span><ul><li><span class="section"><a href="#configure-with-superuser-gui-in-quay">3.2.1. Configure SSL from the Red Hat Quay Setup screen</a></span></li><li><span class="section"><a href="#to-configure-with-the-command-line">3.2.2. Configure with the command line</a></span></li><li><span class="section"><a href="#test-the-secure-connection">3.2.3. Test the secure connection</a></span></li></ul></li><li><span class="section"><a href="#configuring-docker-to-trust-a-certificate-authority">3.3. Configuring Docker to Trust a Certificate Authority</a></span></li></ul></li><li><span class="chapter"><a href="#adding-tls-certificates-to-the-quay-enterprise-container">4. Adding TLS Certificates to the Red Hat Quay Container</a></span><ul><li><span class="section"><a href="#add-certificates-to-quay-container">4.1. Add TLS certificates to Red Hat Quay</a></span></li><li><span class="section"><a href="#add-certs-when-deployed-on-kubernetes">4.2. Add certs when deployed on Kubernetes</a></span></li></ul></li><li><span class="chapter"><a href="#proc_manage-log-storage">5. Configuring action log storage for Elasticsearch</a></span></li><li><span class="chapter"><a href="#clair-v4">6. Clair Security Scanning</a></span><ul><li><span class="section"><a href="#what_is_clair">6.1. What is Clair?</a></span><ul><li><span class="section"><a href="#running_clair_v4_and_clair_v2_simultaneously">6.1.1. Running Clair V4 and Clair V2 Simultaneously</a></span></li></ul></li><li><span class="section"><a href="#setting_up_clair_on_a_red_hat_quay_openshift_deloyment">6.2. Setting Up Clair on a Red Hat Quay OpenShift deloyment</a></span><ul><li><span class="section"><a href="#deploying_via_the_quay_operator">6.2.1. Deploying Via the Quay Operator</a></span></li><li><span class="section"><a href="#manually_deploying_clair">6.2.2. Manually Deploying Clair</a></span></li></ul></li><li><span class="section"><a href="#setting_up_clair_on_a_non_openshift_red_hat_quay_deployment">6.3. Setting up Clair on a non-OpenShift Red Hat Quay deployment</a></span></li><li><span class="section"><a href="#using_clair">6.4. Using Clair</a></span></li><li><span class="section"><a href="#clair_notifications">6.5. Clair Notifications</a></span></li><li><span class="section"><a href="#configuring_clair_for_disconnected_environments">6.6. Configuring Clair for Disconnected Environments</a></span></li><li><span class="section"><a href="#clair_updater_urls">6.7. Clair updater URLs</a></span></li><li><span class="section"><a href="#additional_information">6.8. Additional Information</a></span></li></ul></li><li><span class="chapter"><a href="#container-security-operator-setup">7. Scan pod images with the Container Security Operator</a></span><ul><li><span class="section"><a href="#run_the_cso_in_openshift">7.1. Run the CSO in OpenShift</a></span></li><li><span class="section"><a href="#query_image_vulnerabilities_from_the_cli">7.2. Query image vulnerabilities from the CLI</a></span></li></ul></li><li><span class="chapter"><a href="#quay-bridge-operator">8. Integrate Red Hat Quay into OpenShift with the Bridge Operator</a></span><ul><li><span class="section"><a href="#running_the_quay_bridge_operator">8.1. Running the Quay Bridge Operator</a></span><ul><li><span class="section"><a href="#prerequisites-1">8.1.1. Prerequisites</a></span></li><li><span class="section"><a href="#setting_up_and_configuring_openshift_and_red_hat_quay">8.1.2. Setting up and configuring OpenShift and Red Hat Quay</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#repository_mirroring">9. Repository mirroring</a></span><ul><li><span class="section"><a href="#repo-mirroring-in-red-hat-quay">9.1. Introduction to repository mirroring in Red Hat Quay</a></span></li><li><span class="section"><a href="#repository_mirroring_vs_georeplication">9.2. Repository Mirroring vs. Georeplication</a></span></li><li><span class="section"><a href="#using_repository_mirroring">9.3. Using repository mirroring</a></span></li><li><span class="section"><a href="#mirroring_configuration">9.4. Mirroring configuration</a></span></li><li><span class="section"><a href="#mirroring_worker">9.5. Mirroring worker</a></span></li><li><span class="section"><a href="#create-mirrored-repo">9.6. Creating a mirrored repository</a></span><ul><li><span class="section"><a href="#repository_mirroring_settings">9.6.1. Repository mirroring settings</a></span></li><li><span class="section"><a href="#advanced_settings">9.6.2. Advanced settings</a></span></li><li><span class="section"><a href="#synchronize_now">9.6.3. Synchronize now</a></span></li></ul></li><li><span class="section"><a href="#tag-patterns">9.7. Tag Patterns</a></span></li><li><span class="section"><a href="#working-with-mirrored-repo">9.8. Working with mirrored repositories</a></span></li></ul></li><li><span class="chapter"><a href="#ldap-authentication-setup-for-quay-enterprise">10. LDAP Authentication Setup for Red Hat Quay</a></span><ul><li><span class="section"><a href="#setup-ldap-configuration">10.1. Set Up LDAP Configuration</a></span><ul><li><span class="section"><a href="#full_ldap_uri">10.1.1. Full LDAP URI</a></span></li><li><span class="section"><a href="#team_synchronization">10.1.2. Team Synchronization</a></span></li><li><span class="section"><a href="#base_and_relative_distinguished_names">10.1.3. Base and Relative Distinguished Names</a></span></li><li><span class="section"><a href="#additional_user_filters">10.1.4. Additional User Filters</a></span></li><li><span class="section"><a href="#administrator_dn">10.1.5. Administrator DN</a></span></li><li><span class="section"><a href="#uid_and_mail_attributes">10.1.6. UID and Mail attributes</a></span></li><li><span class="section"><a href="#validation">10.1.7. Validation</a></span></li></ul></li><li><span class="section"><a href="#common-issues">10.2. Common Issues</a></span></li><li><span class="section"><a href="#configure-ldap-superuser">10.3. Configure an LDAP user as superuser</a></span></li></ul></li><li><span class="chapter"><a href="#prometheus-metrics-under-quay-enterprise">11. Prometheus and Grafana metrics under Red Hat Quay</a></span><ul><li><span class="section"><a href="#exposing-the-prometheus-endpoint">11.1. Exposing the Prometheus endpoint</a></span><ul><li><span class="section"><a href="#setting-up-prometheus-to-consume-metrics">11.1.1. Setting up Prometheus to consume metrics</a></span></li><li><span class="section"><a href="#dns-configuration-under-kubernetes">11.1.2. DNS configuration under Kubernetes</a></span></li><li><span class="section"><a href="#dns-configuration-for-a-manual-cluster">11.1.3. DNS configuration for a manual cluster</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#georeplication-of-storage-in-quay">12. Georeplication of storage in Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites">12.1. Prerequisites</a></span></li><li><span class="section"><a href="#visit-the-management-panel_manage_quay">12.2. Visit the Config Tool</a></span></li><li><span class="section"><a href="#enable-storage-replication">12.3. Enable storage replication</a></span></li><li><span class="section"><a href="#run-quay-with-storage-preferences">12.4. Run Red Hat Quay with storage preferences</a></span></li></ul></li><li><span class="chapter"><a href="#quay-troubleshooting-guides">13. Red Hat Quay Troubleshooting</a></span></li><li><span class="chapter"><a href="#quay-schema">14. Schema for Red Hat Quay configuration</a></span></li></ul></div><section class="preface" id="idm45487219408464"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm45247330754208">Preface</a></span></li><li><span class="chapter"><a href="#advanced-quay-configuration">1. Advanced Red Hat Quay configuration</a></span><ul><li><span class="section"><a href="#using-the-config-tool">1.1. Using Red Hat Quay Config Tool to modify Red Hat Quay</a></span><ul><li><span class="section"><a href="#running_the_config_tool_from_the_red_hat_quay_operator">1.1.1. Running the Config Tool from the Red Hat Quay Operator</a></span></li><li><span class="section"><a href="#running_the_config_tool_from_the_command_line">1.1.2. Running the Config Tool from the command line</a></span></li></ul></li><li><span class="section"><a href="#overview-advanced-config">1.2. Using the API to modify Red Hat Quay</a></span></li><li><span class="section"><a href="#editing_the_literal_config_yaml_literal_file_to_modify_red_hat_quay">1.3. Editing the <code class="literal">config.yaml</code> file to modify Red Hat Quay</a></span><ul><li><span class="section"><a href="#add_name_and_company_to_red_hat_quay_sign_in">1.3.1. Add name and company to Red Hat Quay sign-in</a></span></li><li><span class="section"><a href="#disable_tls_protocols">1.3.2. Disable TLS Protocols</a></span></li><li><span class="section"><a href="#rate_limit_api_calls">1.3.3. Rate limit API calls</a></span></li><li><span class="section"><a href="#adjust_database_connection_pooling">1.3.4. Adjust database connection pooling</a></span></li></ul></li><li><span class="section"><a href="#using_the_configuration_api">1.4. Using the configuration API</a></span><ul><li><span class="section"><a href="#retrieving_the_default_configuration">1.4.1. Retrieving the default configuration</a></span></li><li><span class="section"><a href="#retrieving_the_current_configuration">1.4.2. Retrieving the current configuration</a></span></li><li><span class="section"><a href="#validating_configuration_using_the_api">1.4.3. Validating configuration using the API</a></span></li><li><span class="section"><a href="#determining_the_required_fields">1.4.4. Determining the required fields</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#release-notifications">2. Getting Red Hat Quay release notifications</a></span></li><li><span class="chapter"><a href="#using-ssl-to-protect-quay">3. Using SSL to protect connections to Red Hat Quay</a></span><ul><li><span class="section"><a href="#introduction_to_using_ssl">3.1. Introduction to using SSL</a></span></li><li><span class="section"><a href="#create-a-ca-and-sign-a-certificate">3.2. Create a Certificate Authority and sign a certificate</a></span><ul><li><span class="section"><a href="#create_a_certificate_authority">3.2.1. Create a Certificate Authority</a></span></li><li><span class="section"><a href="#sign_a_certificate">3.2.2. Sign a certificate</a></span></li></ul></li><li><span class="section"><a href="#configuring_ssl_using_the_command_line">3.3. Configuring SSL using the command line</a></span></li><li><span class="section"><a href="#configuring_ssl_using_the_ui">3.4. Configuring SSL using the UI</a></span></li><li><span class="section"><a href="#testing_ssl_configuration_using_the_command_line">3.5. Testing SSL configuration using the command line</a></span></li><li><span class="section"><a href="#testing_ssl_configuration_using_the_browser">3.6. Testing SSL configuration using the browser</a></span></li><li><span class="section"><a href="#configuring_the_system_to_trust_the_certificate_authority">3.7. Configuring the system to trust the certificate authority</a></span></li><li><span class="section"><a href="#configuring_podman_to_trust_the_certificate_authority">3.8. Configuring podman to trust the Certificate Authority</a></span></li></ul></li><li><span class="chapter"><a href="#adding-tls-certificates-to-the-quay-enterprise-container">4. Adding TLS Certificates to the Red Hat Quay Container</a></span><ul><li><span class="section"><a href="#add-certificates-to-quay-container">4.1. Add TLS certificates to Red Hat Quay</a></span></li><li><span class="section"><a href="#add-certs-when-deployed-on-kubernetes">4.2. Add certs when deployed on Kubernetes</a></span></li></ul></li><li><span class="chapter"><a href="#proc_manage-log-storage">5. Configuring action log storage for Elasticsearch</a></span></li><li><span class="chapter"><a href="#clair-v4">6. Clair Security Scanning</a></span><ul><li><span class="section"><a href="#what_is_clair">6.1. What is Clair?</a></span><ul><li><span class="section"><a href="#running_clair_v4_and_clair_v2_simultaneously">6.1.1. Running Clair V4 and Clair V2 Simultaneously</a></span></li></ul></li><li><span class="section"><a href="#setting_up_clair_on_a_red_hat_quay_openshift_deloyment">6.2. Setting Up Clair on a Red Hat Quay OpenShift deloyment</a></span><ul><li><span class="section"><a href="#deploying_via_the_quay_operator">6.2.1. Deploying Via the Quay Operator</a></span></li><li><span class="section"><a href="#manually_deploying_clair">6.2.2. Manually Deploying Clair</a></span></li></ul></li><li><span class="section"><a href="#setting_up_clair_on_a_non_openshift_red_hat_quay_deployment">6.3. Setting up Clair on a non-OpenShift Red Hat Quay deployment</a></span></li><li><span class="section"><a href="#using_clair">6.4. Using Clair</a></span></li><li><span class="section"><a href="#clair_notifications">6.5. Clair Notifications</a></span></li><li><span class="section"><a href="#configuring_clair_for_disconnected_environments">6.6. Configuring Clair for Disconnected Environments</a></span></li><li><span class="section"><a href="#clair_updater_urls">6.7. Clair updater URLs</a></span></li><li><span class="section"><a href="#additional_information">6.8. Additional Information</a></span></li></ul></li><li><span class="chapter"><a href="#container-security-operator-setup">7. Scan pod images with the Container Security Operator</a></span><ul><li><span class="section"><a href="#run_the_cso_in_openshift">7.1. Run the CSO in OpenShift</a></span></li><li><span class="section"><a href="#query_image_vulnerabilities_from_the_cli">7.2. Query image vulnerabilities from the CLI</a></span></li></ul></li><li><span class="chapter"><a href="#quay-bridge-operator">8. Integrate Red Hat Quay into OpenShift with the Bridge Operator</a></span><ul><li><span class="section"><a href="#running_the_quay_bridge_operator">8.1. Running the Quay Bridge Operator</a></span><ul><li><span class="section"><a href="#prerequisites-1">8.1.1. Prerequisites</a></span></li><li><span class="section"><a href="#setting_up_and_configuring_openshift_and_red_hat_quay">8.1.2. Setting up and configuring OpenShift and Red Hat Quay</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#repository_mirroring">9. Repository mirroring</a></span><ul><li><span class="section"><a href="#repo-mirroring-in-red-hat-quay">9.1. Introduction to repository mirroring in Red Hat Quay</a></span></li><li><span class="section"><a href="#repository_mirroring_vs_georeplication">9.2. Repository Mirroring vs. Georeplication</a></span></li><li><span class="section"><a href="#using_repository_mirroring">9.3. Using repository mirroring</a></span></li><li><span class="section"><a href="#mirroring_configuration">9.4. Mirroring configuration</a></span></li><li><span class="section"><a href="#mirroring_worker">9.5. Mirroring worker</a></span></li><li><span class="section"><a href="#create-mirrored-repo">9.6. Creating a mirrored repository</a></span><ul><li><span class="section"><a href="#repository_mirroring_settings">9.6.1. Repository mirroring settings</a></span></li><li><span class="section"><a href="#advanced_settings">9.6.2. Advanced settings</a></span></li><li><span class="section"><a href="#synchronize_now">9.6.3. Synchronize now</a></span></li></ul></li><li><span class="section"><a href="#tag-patterns">9.7. Tag Patterns</a></span></li><li><span class="section"><a href="#working-with-mirrored-repo">9.8. Working with mirrored repositories</a></span></li></ul></li><li><span class="chapter"><a href="#ldap-authentication-setup-for-quay-enterprise">10. LDAP Authentication Setup for Red Hat Quay</a></span><ul><li><span class="section"><a href="#setup-ldap-configuration">10.1. Set Up LDAP Configuration</a></span><ul><li><span class="section"><a href="#full_ldap_uri">10.1.1. Full LDAP URI</a></span></li><li><span class="section"><a href="#team_synchronization">10.1.2. Team Synchronization</a></span></li><li><span class="section"><a href="#base_and_relative_distinguished_names">10.1.3. Base and Relative Distinguished Names</a></span></li><li><span class="section"><a href="#additional_user_filters">10.1.4. Additional User Filters</a></span></li><li><span class="section"><a href="#administrator_dn">10.1.5. Administrator DN</a></span></li><li><span class="section"><a href="#uid_and_mail_attributes">10.1.6. UID and Mail attributes</a></span></li><li><span class="section"><a href="#validation">10.1.7. Validation</a></span></li></ul></li><li><span class="section"><a href="#common-issues">10.2. Common Issues</a></span></li><li><span class="section"><a href="#configure-ldap-superuser">10.3. Configure an LDAP user as superuser</a></span></li></ul></li><li><span class="chapter"><a href="#prometheus-metrics-under-quay-enterprise">11. Prometheus and Grafana metrics under Red Hat Quay</a></span><ul><li><span class="section"><a href="#exposing-the-prometheus-endpoint">11.1. Exposing the Prometheus endpoint</a></span><ul><li><span class="section"><a href="#setting-up-prometheus-to-consume-metrics">11.1.1. Setting up Prometheus to consume metrics</a></span></li><li><span class="section"><a href="#dns-configuration-under-kubernetes">11.1.2. DNS configuration under Kubernetes</a></span></li><li><span class="section"><a href="#dns-configuration-for-a-manual-cluster">11.1.3. DNS configuration for a manual cluster</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#georeplication-of-storage-in-quay">12. Georeplication of storage in Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites">12.1. Prerequisites</a></span></li><li><span class="section"><a href="#visit-the-management-panel_manage_quay">12.2. Visit the Config Tool</a></span></li><li><span class="section"><a href="#enable-storage-replication">12.3. Enable storage replication</a></span></li><li><span class="section"><a href="#run-quay-with-storage-preferences">12.4. Run Red Hat Quay with storage preferences</a></span></li></ul></li><li><span class="chapter"><a href="#quay-troubleshooting-guides">13. Red Hat Quay Troubleshooting</a></span></li><li><span class="chapter"><a href="#quay-schema">14. Schema for Red Hat Quay configuration</a></span></li></ul></div><section class="preface" id="idm45247330754208"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
 			Once you have deployed a Red Hat Quay registry, there are many ways you can further configure and manage that deployment. Topics covered here include:
 		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 					Advanced Red Hat Quay configuration
@@ -152,51 +152,51 @@
 										environment variable: WORKER_COUNT_SECSCAN
 									</li></ul></div></li></ul></div></section><section class="section" id="environment_variables"><div class="titlepage"><div><div><h4 class="title">1.3.4.4. Environment variables</h4></div></div></div><p>
 						Red Hat Quay allows overriding default behavior using environment variables. This table lists and describes each variable and the values they can expect.
-					</p><div class="table" id="idm45487219675088"><p class="title"><strong>Table 1.1. Worker count environment variables</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 33%; " class="col_1"/><col style="width: 33%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45487219466240" scope="col">Variable</th><th align="left" valign="top" id="idm45487219465152" scope="col">Description</th><th align="left" valign="top" id="idm45487219464064" scope="col">Values</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45487219466240">
+					</p><div class="table" id="idm45247328880928"><p class="title"><strong>Table 1.1. Worker count environment variables</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 33%; " class="col_1"/><col style="width: 33%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45247328875200" scope="col">Variable</th><th align="left" valign="top" id="idm45247328958512" scope="col">Description</th><th align="left" valign="top" id="idm45247328957424" scope="col">Values</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45247328875200">
 									<p>
 										WORKER_COUNT_REGISTRY
 									</p>
-									</td><td align="left" valign="top" headers="idm45487219465152">
+									</td><td align="left" valign="top" headers="idm45247328958512">
 									<p>
 										Specifies the number of processes to handle Registry requests within the Quay container.
 									</p>
-									</td><td align="left" valign="top" headers="idm45487219464064">
+									</td><td align="left" valign="top" headers="idm45247328957424">
 									<p>
 										Integer between 8 and 64
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm45487219466240">
+									</td></tr><tr><td align="left" valign="top" headers="idm45247328875200">
 									<p>
 										WORKER_COUNT_WEB
 									</p>
-									</td><td align="left" valign="top" headers="idm45487219465152">
+									</td><td align="left" valign="top" headers="idm45247328958512">
 									<p>
 										Specifies the number of processes to handle UI/Web requests within the container.
 									</p>
-									</td><td align="left" valign="top" headers="idm45487219464064">
+									</td><td align="left" valign="top" headers="idm45247328957424">
 									<p>
 										Integer between 2 and 32
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm45487219466240">
+									</td></tr><tr><td align="left" valign="top" headers="idm45247328875200">
 									<p>
 										WORKER_COUNT_SECSCAN
 									</p>
-									</td><td align="left" valign="top" headers="idm45487219465152">
+									</td><td align="left" valign="top" headers="idm45247328958512">
 									<p>
 										Specifies the number of processes to handle Security Scanning (e.g. Clair) integration within the container.
 									</p>
-									</td><td align="left" valign="top" headers="idm45487219464064">
+									</td><td align="left" valign="top" headers="idm45247328957424">
 									<p>
 										Integer between 2 and 4
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm45487219466240">
+									</td></tr><tr><td align="left" valign="top" headers="idm45247328875200">
 									<p>
 										DB_CONNECTION_POOLING
 									</p>
-									</td><td align="left" valign="top" headers="idm45487219465152">
+									</td><td align="left" valign="top" headers="idm45247328958512">
 									<p>
 										Toggle database connection pooling. In 3.4, it is disabled by default.
 									</p>
-									</td><td align="left" valign="top" headers="idm45487219464064">
+									</td><td align="left" valign="top" headers="idm45247328957424">
 									<p>
 										"true" or "false"
 									</p>
@@ -350,30 +350,41 @@
 					<span class="inlinemediaobject"><img src="images/notification-follow.png" alt="Select Products from notifications box"/></span>
 				</li><li class="listitem">
 					Select the SAVE NOTIFICATION button. Going forward, you will receive notifications when there are changes to the Red Hat Quay product, such as a new release.
-				</li></ol></div></section><section class="chapter" id="using-ssl-to-protect-quay"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Using SSL to protect connections to Red Hat Quay</h1></div></div></div><p>
-			This document assumes you have deployed Red Hat Quay in a <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.5/html-single/getting_started_with_red_hat_quay/">single-node</a> or <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.5/html-single/deploy_red_hat_quay_-_high_availability">highly available</a> deployment.
-		</p><p>
-			To configure Red Hat Quay with a <a class="link" href="https://en.wikipedia.org/wiki/Self-signed_certificate">self-signed certificate</a>, you need to create a Certificate Authority (CA), then generate the required key and certificate files. You then enter those files using the Red Hat Quay Config Tool or command line.
-		</p><section class="section" id="create-a-ca-and-sign-a-certificate"><div class="titlepage"><div><div><h2 class="title">3.1. Create a CA and sign a certificate</h2></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-						Create a root CA.
-					</p><pre class="screen">$ openssl genrsa -out rootCA.key 2048
-$ openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem</pre><p class="simpara">
-						The result are rootCA.key and rootCA.pem files in the current directory.
-					</p></li><li class="listitem"><p class="simpara">
-						<span class="strong strong"><strong>Create certificate and private key</strong></span>: If you are having Red Hat Quay handle TLS, you need to create a certificate and private key to provide during configuration. You can get those files from a certificate signing authority. Here we show how to create those files using the self-signed certificate authority you just created.
-					</p><p class="simpara">
-						In this example, you create device.crt and device.key files, which will be uploaded to Red Hat Quay and renamed ssl.cert and ssl.key, respectively.
-					</p><p class="simpara">
-						Because OpenShift creates long fully qualified domain names, consider using a wildcard to identify the larger domain, instead of the specific route to the Red Hat Quay application. For example, use something like *.apps.openshift.example.com when prompted for the server’s hostname:
-					</p><pre class="screen">Common Name (eg, your name or your server's hostname) []:*apps.openshift.example.com</pre><pre class="screen">$ openssl genrsa -out device.key 2048
-$ openssl req -new -key device.key -out device.csr</pre><p class="simpara">
-						Then sign the certificate with the root CA created earlier:
-					</p><pre class="screen">$ openssl x509 -req -in device.csr -CA rootCA.pem \
-       -CAkey rootCA.key -CAcreateserial -out device.crt -days 500 -sha256</pre></li></ol></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-					Instead generating the *.key and *.crt files as just shown, you could create an <code class="literal">openssl.cnf</code> file. This lets you add more information to the resulting certificate than you can get by just responding to the prompts in the command for generating the certificate request. In this example of an <code class="literal">openssl.cnf</code> file, replace <code class="literal">DNS.1</code> and <code class="literal">IP.1</code> with the hostname and IP address of the Red Hat Quay server:
-				</p><p>
-					<code class="literal">openssl.cnf</code>
-				</p><pre class="screen">[req]
+				</li></ol></div></section><section class="chapter" id="using-ssl-to-protect-quay"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Using SSL to protect connections to Red Hat Quay</h1></div></div></div><section class="section" id="introduction_to_using_ssl"><div class="titlepage"><div><div><h2 class="title">3.1. Introduction to using SSL</h2></div></div></div><p>
+				To configure Red Hat Quay with a <a class="link" href="https://en.wikipedia.org/wiki/Self-signed_certificate">self-signed certificate</a>, you need to create a Certificate Authority (CA) and then generate the required key and certificate files.
+			</p><p>
+				The following examples assume you have configured the server hostname <code class="literal">quay-server.example.com</code> using DNS or another naming mechanism, such as an entry in your <code class="literal">/etc/hosts</code> file:
+			</p><pre class="literallayout">$ cat /etc/hosts
+...
+192.168.1.112   quay-server.example.com</pre></section><section class="section" id="create-a-ca-and-sign-a-certificate"><div class="titlepage"><div><div><h2 class="title">3.2. Create a Certificate Authority and sign a certificate</h2></div></div></div><p>
+				At the end of this procedure, you will have a certificate file and a primary key file, named <code class="literal">ssl.cert</code> and <code class="literal">ssl.key</code> respectively.
+			</p><section class="section" id="create_a_certificate_authority"><div class="titlepage"><div><div><h3 class="title">3.2.1. Create a Certificate Authority</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+							Generate the root CA key:
+						</p><pre class="screen">$ openssl genrsa -out rootCA.key 2048</pre></li><li class="listitem"><p class="simpara">
+							Generate the root CA cert:
+						</p><pre class="screen">$ openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem</pre><p class="simpara">
+							You are asked to enter information that will be incorporated into your certificate request, including the server hostname, for example:
+						</p><pre class="screen">Country Name (2 letter code) [XX]:IE
+State or Province Name (full name) []:GALWAY
+Locality Name (eg, city) [Default City]:GALWAY
+Organization Name (eg, company) [Default Company Ltd]:QUAY
+Organizational Unit Name (eg, section) []:DOCS
+Common Name (eg, your name or your server's hostname) []:quay-server.example.com</pre></li></ol></div></section><section class="section" id="sign_a_certificate"><div class="titlepage"><div><div><h3 class="title">3.2.2. Sign a certificate</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+							Generate the server key:
+						</p><pre class="screen">$ openssl genrsa -out ssl.key 2048</pre></li><li class="listitem"><p class="simpara">
+							Generate a signing request:
+						</p><pre class="screen">$ openssl req -new -key ssl.key -out ssl.csr</pre><p class="simpara">
+							Enter information that will be incorporated into your certificate request, including the server hostname, for example:
+						</p><pre class="screen">Country Name (2 letter code) [XX]:IE
+State or Province Name (full name) []:GALWAY
+Locality Name (eg, city) [Default City]:GALWAY
+Organization Name (eg, company) [Default Company Ltd]:QUAY
+Organizational Unit Name (eg, section) []:DOCS
+Common Name (eg, your name or your server's hostname) []:quay-server.example.com</pre></li><li class="listitem"><p class="simpara">
+							Create a configuration file <code class="literal">openssl.cnf</code>, specifying the server hostname, for example:
+						</p><div class="formalpara"><p class="title"><strong>opensssl.cnf</strong></p><p>
+								
+<pre class="screen">[req]
 req_extensions = v3_req
 distinguished_name = req_distinguished_name
 [req_distinguished_name]
@@ -382,67 +393,83 @@ basicConstraints = CA:FALSE
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 subjectAltName = @alt_names
 [alt_names]
-DNS.1 = reg.example.com
-IP.1 = 12.345.678.9</pre><p>
-					You could then generate the key as follows:
-				</p><pre class="screen">$ openssl x509 -req -in ssl.csr -CA rootCA.pem \
-   -CAkey rootCA.key -CAcreateserial -out ssl.cert \
-   -days 356 -extensions v3_req -extfile openssl.cnf</pre></div></div></section><section class="section" id="configuring-quay-to-use-the-new-certificate"><div class="titlepage"><div><div><h2 class="title">3.2. Configure Red Hat Quay to use the new certificate</h2></div></div></div><p>
-				The next step can be accomplished either in the Red Hat Quay screen or from the terminal.
-			</p><section class="section" id="configure-with-superuser-gui-in-quay"><div class="titlepage"><div><div><h3 class="title">3.2.1. Configure SSL from the Red Hat Quay Setup screen</h3></div></div></div><p>
-					Start the quay container in config mode, as described in each deployment guide. In the server Configuration section, enable SSL as follows:
-				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
-							Set the <code class="literal">Server Hostname</code> to the appropriate value and check the <code class="literal">Enable SSL</code> box, then upload the <code class="literal">ssl.key</code> and <code class="literal">ssl.cert</code> files (in our example, named <code class="literal">device.key</code> and <code class="literal">device.crt</code>, respectively): 
-							<span class="inlinemediaobject"><img src="images/server-config.png" alt="Enable SSL"/></span>
-						</li><li class="listitem">
-							Save the configuration. Red Hat Quay will automatically validate the SSL certificate: 
-							<span class="inlinemediaobject"><img src="images/save-configuration.png" alt="validating SSL"/></span>
-						</li><li class="listitem">
-							Restart the container 
-							<span class="inlinemediaobject"><img src="images/restart-container.png" alt="restart the container"/></span>
-						</li></ol></div></section><section class="section" id="to-configure-with-the-command-line"><div class="titlepage"><div><div><h3 class="title">3.2.2. Configure with the command line</h3></div></div></div><p>
-					By not using the web interface the configuration checking mechanism built into Red Hat Quay is unavailable. It is suggested to use the web interface if possible. For non-OpenShift installations, you can configure SSL from the command-line interface as follows:
-				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-							Copy the <code class="literal">ssl.key</code> and <code class="literal">ssl.cert</code> into the specified <code class="literal">config</code> directory. In this example, the config directory for Red Hat Quay is on a host named reg.example.com in a directory named /mnt/quay/config.
-						</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-								The certificate/key files must be named ssl.key and ssl.cert.
-							</p></div></div><pre class="screen">$ ls
-ssl.cert  ssl.key
-$ scp ssl.* root@reg.example.com:/mnt/quay/config/
-[root@reg.example.com ~]$ ls /mnt/quay/config/
-config.yaml  ssl.cert  ssl.key</pre></li><li class="listitem"><p class="simpara">
-							Modify the <code class="literal">PREFERRED_URL_SCHEME:</code> parameter in config.yaml from <code class="literal">http</code> to <code class="literal">https</code>
-						</p><pre class="screen">PREFERRED_URL_SCHEME: https</pre></li><li class="listitem"><p class="simpara">
-							Restart the Red Hat Quay container:
-						</p><pre class="screen">$ sudo podman ps
-CONTAINER ID  IMAGE                     COMMAND                 CREATED       STATUS      PORTS                   NAMES
-eaf45a4aa12d  ...redhat.io/rhel8/redis-5 "/usr/bin/redis-serve" 22 hours ago  Up 22 hours 0.0.0.0:6379-&gt;6379/tcp  dreamy...
-cbe7b0fa39d8  quay.io/redhat/quay       "/sbin/my_init"         22 hours ago  Up one hour 80/tcp,443/tcp,443/tcp  ferv...
-705fe7311940  rhel8/mysql-80                 "/entrypoint.sh mysql"  23 hours ago  Up 22 hours 0.0.0.0:3306-&gt;3306/tcp  mysql
-$ sudo podman restart cbe7b0fa39d8</pre></li></ol></div></section><section class="section" id="test-the-secure-connection"><div class="titlepage"><div><div><h3 class="title">3.2.3. Test the secure connection</h3></div></div></div><p>
-					Confirm the configuration by visiting the URL from a browser <code class="literal"><a class="link" href="https://reg.example.com/">https://reg.example.com/</a></code>
-					<span class="inlinemediaobject"><img src="images/https-browser.png" alt="restart the container"/></span>
-					 "Your Connection is not secure" means the CA is untrusted but confirms that SSL is functioning properly. To avoid these messages, you need to get a certificate from a trusted certificate authority.
-				</p></section></section><section class="section" id="configuring-docker-to-trust-a-certificate-authority"><div class="titlepage"><div><div><h2 class="title">3.3. Configuring Docker to Trust a Certificate Authority</h2></div></div></div><p>
-				Docker requires that custom certs be installed to <code class="literal">/etc/docker/certs.d/</code> under a directory with the same name as the hostname private registry. It is also required for the cert to be called <code class="literal">ca.crt</code>. Here is how to do that:
-			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-						Copy the rootCA file.
-					</p><pre class="screen">$ cp tmp/rootCA.pem /etc/docker/certs.d/reg.example.com/ca.crt</pre></li><li class="listitem"><p class="simpara">
-						After you have copied the rootCA.pem file, <code class="literal">docker login</code> should authenticate successfully and pushing to the repository should succeed.
-					</p><pre class="screen">$ sudo docker push reg.example.com/kbrwn/hello
-The push refers to a repository [reg.example.com/kbrwn/hello]
-5f70bf18a086: Layer already exists
-e493e9cb9dac: Pushed
-1770dbc4af14: Pushed
-a7bb4eb71da7: Pushed
-9fad7adcbd46: Pushed
-2cec07a74a9f: Pushed
-f342e0a3e445: Pushed
-b12f995330bb: Pushed
-2016366cdd69: Pushed
-a930437ab3a5: Pushed
-15eb0f73cd14: Pushed
-latest: digest: sha256:c24be6d92b0a4e2bb8a8cc7c9bd044278d6abdf31534729b1660a485b1cd315c size: 7864</pre></li></ol></div></section></section><section class="chapter" id="adding-tls-certificates-to-the-quay-enterprise-container"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Adding TLS Certificates to the Red Hat Quay Container</h1></div></div></div><p>
+DNS.1 = quay-server.example.com
+IP.1 = 192.168.1.112</pre>
+							</p></div></li><li class="listitem"><p class="simpara">
+							Use the configuration file to generate the certificate <code class="literal">ssl.cert</code>:
+						</p><pre class="screen">$ openssl x509 -req -in ssl.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out ssl.cert -days 356 -extensions v3_req -extfile openssl.cnf</pre></li></ol></div></section></section><section class="section" id="configuring_ssl_using_the_command_line"><div class="titlepage"><div><div><h2 class="title">3.3. Configuring SSL using the command line</h2></div></div></div><p>
+				Use the following steps to set up Quay to handle TLS:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Copy the certificate file and primary key file to the configuration directory, ensuring they are named <code class="literal">ssl.cert</code> and <code class="literal">ssl.key</code> respectively.
+					</li><li class="listitem"><p class="simpara">
+						Edit the <code class="literal">config.yaml</code> file and specify that you want Quay to handle TLS:
+					</p><div class="formalpara"><p class="title"><strong>config.yaml</strong></p><p>
+							
+<pre class="programlisting language-yaml">...
+SERVER_HOSTNAME: quay-server.example.com
+...
+PREFERRED_URL_SCHEME: https
+...</pre>
+						</p></div></li><li class="listitem">
+						Restart the registry for the configuration changes to take effect
+					</li></ol></div></section><section class="section" id="configuring_ssl_using_the_ui"><div class="titlepage"><div><div><h2 class="title">3.4. Configuring SSL using the UI</h2></div></div></div><p>
+				Start the Quay container in configuration mode and in the Server Configuration section, specify that you want Quay to handle TLS:
+			</p><p>
+				<span class="inlinemediaobject"><img src="images/ssl-config.png" alt="Enable SSL"/></span>
+			</p><p>
+				Upload the certificate file and private key file created earlier, ensuring that the Server Hostname matches the value used when creating the certs. Validate and download the updated configuration and the restart the registry.
+			</p></section><section class="section" id="testing_ssl_configuration_using_the_command_line"><div class="titlepage"><div><div><h2 class="title">3.5. Testing SSL configuration using the command line</h2></div></div></div><p>
+				Use the <code class="literal">podman login</code> command to attempt to log in to the Quay registry with SSL enabled:
+			</p><pre class="screen">$ sudo podman login quay-server.example.com
+Username: quayadmin
+Password:
+
+Error: error authenticating creds for "quay-server.example.com": error pinging docker registry quay-server.example.com: Get "https://quay-server.example.com/v2/": x509: certificate signed by unknown authority</pre><p>
+				Podman does not trust self-signed certificates, so as a workaround, you can use the <code class="literal">--tls-verify</code> option:
+			</p><pre class="screen">$ sudo podman login --tls-verify=false quay-server.example.com
+Username: quayadmin
+Password:
+
+Login Succeeded!</pre><p>
+				Configuring Podman to trust the root Certificate Authority (CA) is covered in a subsequent section.
+			</p></section><section class="section" id="testing_ssl_configuration_using_the_browser"><div class="titlepage"><div><div><h2 class="title">3.6. Testing SSL configuration using the browser</h2></div></div></div><p>
+				When you attempt to access the Quay registry, in this case, <code class="literal"><a class="link" href="https://quay-server.example.com">https://quay-server.example.com</a></code>, the browser warns of the potential risk:
+			</p><p>
+				<span class="inlinemediaobject"><img src="images/ssl-potential-risk.png" alt="Potential risk"/></span>
+			</p><p>
+				Proceed to the log in screen, and the browser will notify you that the connection is not secure:
+			</p><p>
+				<span class="inlinemediaobject"><img src="images/ssl-connection-not-secure.png" alt="Connection not secure"/></span>
+			</p><p>
+				Configuring the browser to trust the root Certificate Authority (CA) is covered in a subsequent section.
+			</p></section><section class="section" id="configuring_the_system_to_trust_the_certificate_authority"><div class="titlepage"><div><div><h2 class="title">3.7. Configuring the system to trust the certificate authority</h2></div></div></div><p>
+				Copy the root CA file to the consolidated system-wide trust store:
+			</p><pre class="screen">$ sudo cp rootCA.pem /etc/pki/ca-trust/source/anchors/</pre><p>
+				Update the system-wide trust store configuration:
+			</p><pre class="screen">$ sudo update-ca-trust extract</pre><p>
+				You can use the <code class="literal">trust list</code> command to ensure that the Quay server has been configured:
+			</p><pre class="screen">$ trust list | grep quay
+    label: quay-server.example.com</pre><p>
+				Now, when you browse to the registry at <code class="literal"><a class="link" href="https://quay-server.example.com">https://quay-server.example.com</a></code>, the lock icon shows that the connection is secure:
+			</p><p>
+				<span class="inlinemediaobject"><img src="images/ssl-connection-secure.png" alt="Connection not secure"/></span>
+			</p><p>
+				To remove the root CA from system-wide trust, delete the file and update the configuration:
+			</p><pre class="screen">$ sudo rm /etc/pki/ca-trust/source/anchors/rootCA.pem
+$ sudo update-ca-trust extract
+$ trust list | grep quay</pre><p>
+				More information can be found in the RHEL 8 documentation in the chapter <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/using-shared-system-certificates_security-hardening">Using shared system certificates</a>.
+			</p></section><section class="section" id="configuring_podman_to_trust_the_certificate_authority"><div class="titlepage"><div><div><h2 class="title">3.8. Configuring podman to trust the Certificate Authority</h2></div></div></div><p>
+				Podman uses two paths to locate the CA file, namely, <code class="literal">/etc/containers/certs.d/</code> and <code class="literal">/etc/docker/certs.d/</code>. Copy the root CA file to one of these locations, with the path determined by the server hostname, and using the filename <code class="literal">ca.crt</code>:
+			</p><pre class="screen">sudo cp rootCA.pem /etc/containers/certs.d/quay-server.example.com/ca.crt</pre><p>
+				Alternatively, if you have are using Docker, you can copy the root CA file to the equivalent Docker directory:
+			</p><pre class="screen">sudo cp rootCA.pem /etc/docker/certs.d/quay-server.example.com/ca.crt</pre><p>
+				You should no longer need to use the <code class="literal">--tls-verify=false</code> option when logging in to the registry:
+			</p><pre class="screen">sudo podman login quay-server.example.com
+
+Username: quayadmin
+Password:
+Login Succeeded!</pre></section></section><section class="chapter" id="adding-tls-certificates-to-the-quay-enterprise-container"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Adding TLS Certificates to the Red Hat Quay Container</h1></div></div></div><p>
 			To add custom TLS certificates to Red Hat Quay, create a new directory named <code class="literal">extra_ca_certs/</code> beneath the Red Hat Quay config directory. Copy any required site-specific TLS certificates to this new directory.
 		</p><section class="section" id="add-certificates-to-quay-container"><div class="titlepage"><div><div><h2 class="title">4.1. Add TLS certificates to Red Hat Quay</h2></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
 						View certificate to be added to the container
@@ -1120,7 +1147,7 @@ spec:
 						Create mirrored repositories in the Red Hat Quay UI
 					</li></ul></div></section><section class="section" id="repository_mirroring_vs_georeplication"><div class="titlepage"><div><div><h2 class="title">9.2. Repository Mirroring vs. Georeplication</h2></div></div></div><p>
 				With repository mirroring, you mirror a specific subset of content, between two or more distinct registries, to selected datacenters, clusters, or regions. By contrast, Georeplication provides a single, globally distributed Red Hat Quay to serve container images from localized storage. The two approaches to sharing content differ in the following ways:
-			</p><div class="table" id="idm45487218466912"><p class="title"><strong>Table 9.1. Red Hat Quay Repository Mirroring vs. Georeplication</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 33%; " class="col_1"/><col style="width: 33%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><tbody><tr><td align="left" valign="top">
+			</p><div class="table" id="idm45247326561600"><p class="title"><strong>Table 9.1. Red Hat Quay Repository Mirroring vs. Georeplication</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 33%; " class="col_1"/><col style="width: 33%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><tbody><tr><td align="left" valign="top">
 							<p>
 								Feature / Capability
 							</p>
@@ -2515,7 +2542,7 @@ USER_EVENTS_REDIS</pre><div class="itemizedlist"><ul class="itemizedlist" type="
 					<span class="strong strong"><strong>WEBHOOK_HOSTNAME_BLACKLIST</strong></span> [array]: The set of hostnames to disallow from webhooks when validating, beyond localhost.
 				</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
 							<span class="strong strong"><strong>Example</strong></span>: <code class="literal">someexternaldomain.com</code>
-						</li></ul></div></li></ul></div><h2 id="additional_resources">Additional resources</h2></section><div><div xml:lang="en-US" class="legalnotice" id="idm45487216499392"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+						</li></ul></div></li></ul></div><h2 id="additional_resources">Additional resources</h2></section><div><div xml:lang="en-US" class="legalnotice" id="idm45247325729552"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2021 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
