@@ -1,34 +1,217 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Configure Red Hat Quay</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Configure Red Hat Quay"/><link rel="next" href="#getting_started_with_configuration" title="Chapter 1. Getting started with configuration"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm44927251020976"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.5</span></div><div><h1 class="title">Configure Red Hat Quay</h1></div><div><h2 class="subtitle">Customizing Red Hat Quay using configuration options</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm44927234257392">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Configure Red Hat Quay</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Configure Red Hat Quay"/><link rel="next" href="#getting_started_with_configuration" title="Chapter 1. Getting started with configuration"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45954531154176"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.5</span></div><div><h1 class="title">Configure Red Hat Quay</h1></div><div><h2 class="subtitle">Customizing Red Hat Quay using configuration options</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45954521919280">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Configure Red Hat Quay
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="chapter"><a href="#getting_started_with_configuration">1. Getting started with configuration</a></span></li><li><span class="chapter"><a href="#editing_the_configuration_file">2. Editing the configuration file</a></span><ul><li><span class="section"><a href="#location_of_configuration_file_in_a_standalone_deployment">2.1. Location of configuration file in a standalone deployment</a></span></li><li><span class="section"><a href="#configuring_ssl_using_the_command_line">2.2. Configuring SSL using the command line</a></span></li></ul></li><li><span class="chapter"><a href="#using_the_configuration_api">3. Using the configuration API</a></span><ul><li><span class="section"><a href="#retrieving_the_default_configuration">3.1. Retrieving the default configuration</a></span></li><li><span class="section"><a href="#retrieving_the_current_configuration">3.2. Retrieving the current configuration</a></span></li><li><span class="section"><a href="#validating_configuration_using_the_api">3.3. Validating configuration using the API</a></span></li><li><span class="section"><a href="#determining_the_required_fields">3.4. Determining the required fields</a></span></li></ul></li><li><span class="chapter"><a href="#using_the_configuration_tool">4. Using the configuration tool</a></span><ul><li><span class="section"><a href="#configuring_ssl_using_the_ui">4.1. Configuring SSL using the UI</a></span></li></ul></li></ul></div><section class="chapter" id="getting_started_with_configuration"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Getting started with configuration</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="chapter"><a href="#getting_started_with_configuration">1. Getting started with configuration</a></span><ul><li><span class="section"><a href="#editing_the_configuration_file">1.1. Editing the configuration file</a></span></li><li><span class="section"><a href="#location_of_configuration_file_in_a_standalone_deployment">1.2. Location of configuration file in a standalone deployment</a></span></li><li><span class="section"><a href="#minimal_configuration">1.3. Minimal configuration</a></span><ul><li><span class="section"><a href="#sample_minimal_configuration_file">1.3.1. Sample minimal configuration file</a></span></li><li><span class="section"><a href="#local_storage">1.3.2. Local storage</a></span></li><li><span class="section"><a href="#cloud_storage">1.3.3. Cloud storage</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#configuration_fields">2. Configuration fields</a></span></li><li><span class="chapter"><a href="#image_storage">3. Image storage</a></span><ul><li><span class="section"><a href="#examples_of_storage_config">3.1. Examples of storage config</a></span></li><li><span class="section"><a href="#configuring_ssl_using_the_command_line">3.2. Configuring SSL using the command line</a></span></li></ul></li><li><span class="chapter"><a href="#using_the_configuration_api">4. Using the configuration API</a></span><ul><li><span class="section"><a href="#retrieving_the_default_configuration">4.1. Retrieving the default configuration</a></span></li><li><span class="section"><a href="#retrieving_the_current_configuration">4.2. Retrieving the current configuration</a></span></li><li><span class="section"><a href="#validating_configuration_using_the_api">4.3. Validating configuration using the API</a></span></li><li><span class="section"><a href="#determining_the_required_fields">4.4. Determining the required fields</a></span></li></ul></li><li><span class="chapter"><a href="#using_the_configuration_tool">5. Using the configuration tool</a></span><ul><li><span class="section"><a href="#configuring_ssl_using_the_ui">5.1. Configuring SSL using the UI</a></span></li></ul></li></ul></div><section class="chapter" id="getting_started_with_configuration"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Getting started with configuration</h1></div></div></div><p>
 			Red Hat Quay can be deployed in a standalone manner, or on an existing OpenShift cluster using the Operator. The methods you use to create, retrieve, update and validate the Red Hat Quay configuration vary slightly, depending on the type of deployment you are using. However, the core configuration options are fundamentally the same for all types of deployment, and these options can be manipulated:
 		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-					Directly, by editing the <code class="literal">config.yaml</code> file. See the section <a class="link" href="#editing_the_configuration_file" title="Chapter 2. Editing the configuration file">Editing the configuration file</a>.
+					Directly, by editing the <code class="literal">config.yaml</code> file. See the section <a class="link" href="#editing_the_configuration_file" title="1.1. Editing the configuration file">Editing the configuration file</a>.
 				</li><li class="listitem">
-					Programmatically, using the configuration API. See the section <a class="link" href="#using_the_configuration_api" title="Chapter 3. Using the configuration API">Using the configuration API</a>.
+					Programmatically, using the configuration API. See the section <a class="link" href="#using_the_configuration_api" title="Chapter 4. Using the configuration API">Using the configuration API</a>.
 				</li><li class="listitem">
-					Visually, using the configuration tool UI. See the section <a class="link" href="#using_the_configuration_tool" title="Chapter 4. Using the configuration tool">Using the configuration tool</a>.
+					Visually, using the configuration tool UI. See the section <a class="link" href="#using_the_configuration_tool" title="Chapter 5. Using the configuration tool">Using the configuration tool</a>.
 				</li></ul></div><p>
-			You can install Quay on OpenShift using the Operator, without the need to supply any initial configuration, as the Operator will supply sensible defaults to deploy the registry. For a standalone deployment, however, you must supply a minimal level of configuration before the registry can be started. The minimal requirements can be determined using the <a class="link" href="#retrieving_the_current_configuration" title="3.2. Retrieving the current configuration">configuration API</a> and are documented in the section
+			You can install Quay on OpenShift using the Operator, without the need to supply any initial configuration, as the Operator will supply sensible defaults to deploy the registry. For a standalone deployment, however, you must supply a minimal level of configuration before the registry can be started. The minimal requirements can be determined using the <a class="link" href="#retrieving_the_current_configuration" title="4.2. Retrieving the current configuration">configuration API</a> and are documented in the section
 		</p><p>
 			Once you have Quay deployed with your initial configuration, you should retrieve and save the full configuration from the running system as it may contain extra, generated values that you will need in future when restarting or upgrading your system.
-		</p></section><section class="chapter" id="editing_the_configuration_file"><div class="titlepage"><div><div><h1 class="title">Chapter 2. Editing the configuration file</h1></div></div></div><p>
-			Deploying the registry in standalone mode requires a minimal configuration - see section …​
-		</p><p>
-			The configuration file is validated on startup of the registry, and any issue will be highlighted in the output:
-		</p><p>
-			It is possible to use the configuration API to validate the configuration, but this requires starting the Quay container in config mode
-		</p><p>
-			For changes to take effect, the registry needs to be restarted.
-		</p><section class="section" id="location_of_configuration_file_in_a_standalone_deployment"><div class="titlepage"><div><div><h2 class="title">2.1. Location of configuration file in a standalone deployment</h2></div></div></div><p>
-				For a standalone deployment, the <code class="literal">config.yaml</code> file must be supplied when starting the Quay registry. This file is located in the config volume, so in the following example, the config file is located at <code class="literal">$QUAY/config/config.yaml</code>:
+		</p><section class="section" id="editing_the_configuration_file"><div class="titlepage"><div><div><h2 class="title">1.1. Editing the configuration file</h2></div></div></div><p>
+				Deploying the registry in standalone mode requires a minimal configuration - see section …​
+			</p><p>
+				The configuration file is validated on startup of the registry, and any issue will be highlighted in the output:
+			</p><p>
+				It is possible to use the configuration API to validate the configuration, but this requires starting the Quay container in config mode
+			</p><p>
+				For changes to take effect, the registry needs to be restarted.
+			</p></section><section class="section" id="location_of_configuration_file_in_a_standalone_deployment"><div class="titlepage"><div><div><h2 class="title">1.2. Location of configuration file in a standalone deployment</h2></div></div></div><p>
+				For a standalone deployment, the <code class="literal">config.yaml</code> file must be specified when starting the Quay registry. This file is located in the config volume, so in the following example, the config file is located at <code class="literal">$QUAY/config/config.yaml</code>:
 			</p><pre class="literallayout">$ sudo podman run -d --rm -p 80:8080 -p 443:8443 \
    --name=quay \
    -v $QUAY/config:/conf/stack:Z \
    -v $QUAY/storage:/datastorage:Z \
-   registry.redhat.io/quay/quay-rhel8:v3.5.1</pre></section><section class="section" id="configuring_ssl_using_the_command_line"><div class="titlepage"><div><div><h2 class="title">2.2. Configuring SSL using the command line</h2></div></div></div><p>
+   registry.redhat.io/quay/quay-rhel8:v3.5.1</pre></section><section class="section" id="minimal_configuration"><div class="titlepage"><div><div><h2 class="title">1.3. Minimal configuration</h2></div></div></div><p>
+				For a standalone deployment, configuration options are required for the following features:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						Server hostname
+					</li><li class="listitem">
+						HTTP or HTTPS
+					</li><li class="listitem">
+						Authentication type, for example, Database or LDAP
+					</li><li class="listitem">
+						Storage for images
+					</li><li class="listitem">
+						Database for metadata
+					</li><li class="listitem">
+						Redis for build logs and user events
+					</li><li class="listitem">
+						Secret keys for encrypting data
+					</li><li class="listitem">
+						Tag expiration options
+					</li></ul></div><section class="section" id="sample_minimal_configuration_file"><div class="titlepage"><div><div><h3 class="title">1.3.1. Sample minimal configuration file</h3></div></div></div><p>
+					A sample minimal config file, using local storage for images, is shown below:
+				</p><div class="formalpara"><p class="title"><strong>$QUAY/config/config.yaml</strong></p><p>
+						
+<pre class="programlisting language-yaml">AUTHENTICATION_TYPE: Database
+BUILDLOGS_REDIS:
+    host: quay-server.example.com
+    password: strongpassword
+    port: 6379
+DATABASE_SECRET_KEY: 0ce4f796-c295-415b-bf9d-b315114704b8
+DB_URI: postgresql://quayuser:quaypass@quay-server.example.com:5432/quay
+DEFAULT_TAG_EXPIRATION: 2w
+DISTRIBUTED_STORAGE_CONFIG:
+    default:
+        - LocalStorage
+        - storage_path: /datastorage/registry
+DISTRIBUTED_STORAGE_DEFAULT_LOCATIONS: []
+DISTRIBUTED_STORAGE_PREFERENCE:
+    - default
+PREFERRED_URL_SCHEME: http
+SECRET_KEY: e8f9fe68-1f84-48a8-a05f-02d72e6eccba
+SERVER_HOSTNAME: quay-server.example.com
+SETUP_COMPLETE: true
+TAG_EXPIRATION_OPTIONS:
+    - 0s
+    - 1d
+    - 1w
+    - 2w
+    - 4w
+USER_EVENTS_REDIS:
+    host: quay-server.example.com
+    password: strongpassword
+    port: 6379</pre>
+					</p></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+						The <code class="literal">SETUP_COMPLETE</code> field is an artefact left over from earlier versions of the software and currently it must be specified, with a value of <code class="literal">true</code>.
+					</p></div></div></section><section class="section" id="local_storage"><div class="titlepage"><div><div><h3 class="title">1.3.2. Local storage</h3></div></div></div><p>
+					Using local storage for images is only recommended when deploying a registry for proof of concept purposes. In this case, storage is specified on the command line when starting the registry, mapping a local directory <code class="literal">$QUAY/storage</code> to the <code class="literal">/datastorage</code> path in the container:
+				</p><pre class="literallayout">$ sudo podman run -d --rm -p 80:8080 -p 443:8443 \
+   --name=quay \
+   -v $QUAY/config:/conf/stack:Z \
+   -v $QUAY/storage:/datastorage:Z \
+   registry.redhat.io/quay/quay-rhel8:v3.5.1</pre></section><section class="section" id="cloud_storage"><div class="titlepage"><div><div><h3 class="title">1.3.3. Cloud storage</h3></div></div></div><p>
+					Storage configuration is detailed in the section TODO. It is useful to compare the difference when using cloud storage, for example, on Google Cloud Platform:
+				</p><div class="formalpara"><p class="title"><strong>$QUAY/config/config.yaml</strong></p><p>
+						
+<pre class="programlisting language-yaml">DISTRIBUTED_STORAGE_CONFIG:
+    default:
+        - GoogleCloudStorage
+        - access_key: GOOGQIMFB3ABCDEFGHIJKLMN
+          bucket_name: quay_bucket
+          secret_key: FhDAYe2HeuAKfvZCAGyOioNaaRABCDEFGHIJKLMN
+          storage_path: /datastorage/registry
+DISTRIBUTED_STORAGE_DEFAULT_LOCATIONS: []
+DISTRIBUTED_STORAGE_PREFERENCE:
+    - default</pre>
+					</p></div><p>
+					When starting the registry using cloud storage, no configuration is required on the command line:
+				</p><pre class="literallayout">$ sudo podman run -d --rm -p 80:8080 -p 443:8443 \
+   --name=quay \
+   -v $QUAY/config:/conf/stack:Z \
+   registry.redhat.io/quay/quay-rhel8:v3.5.1</pre></section></section></section><section class="chapter" id="configuration_fields"><div class="titlepage"><div><div><h1 class="title">Chapter 2. Configuration fields</h1></div></div></div></section><section class="chapter" id="image_storage"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Image storage</h1></div></div></div><p>
+			You specify a list of all storage engines using the DISTRIBUTED_STORAGE_CONFIG field, and choose you preferred storage engine(s) using the DISTRIBUTED_STORAGE_PREFERENCE field.
+		</p><p>
+			The DISTRIBUTED_STORAGE_DEFAULT_LOCATIONS field is used to control which locations will have their images replicated by default.
+		</p><div class="table" id="idm45954532423344"><p class="title"><strong>Table 3.1. Storage config</strong></p><div class="table-contents"><table class="gt-4-cols lt-7-rows"><colgroup><col style="width: 22%; " class="col_1"/><col style="width: 22%; " class="col_2"/><col style="width: 33%; " class="col_3"/><col style="width: 22%; " class="col_4"/></colgroup><thead><tr><th align="left" valign="top" id="idm45954537857376" scope="col">Field</th><th align="left" valign="top" id="idm45954537701856" scope="col">Type</th><th align="left" valign="top" id="idm45954537709056" scope="col">Description</th><th align="left" valign="top" id="idm45954537743856" scope="col">Values</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45954537857376">
+						<p>
+							DISTRIBUTED_STORAGE_CONFIG<br/> (Required)
+						</p>
+						</td><td align="left" valign="top" headers="idm45954537701856">
+						<p>
+							Object
+						</p>
+						</td><td align="left" valign="top" headers="idm45954537709056">
+						<p>
+							Configuration for storage engine(s) to use in Red Hat Quay. Each key represents an unique identifier for a storage engine. The value consists of a tuple of (key, value) forming an object describing the storage engine parameters.
+						</p>
+						</td><td align="left" valign="top" headers="idm45954537743856"> </td></tr><tr><td align="left" valign="top" headers="idm45954537857376">
+						<p>
+							DISTRIBUTED_STORAGE_DEFAULT_LOCATIONS<br/> (Required)
+						</p>
+						</td><td align="left" valign="top" headers="idm45954537701856">
+						<p>
+							Array of string
+						</p>
+						</td><td align="left" valign="top" headers="idm45954537709056">
+						<p>
+							The list of storage engine(s) (by ID in DISTRIBUTED_STORAGE_CONFIG) whose images should be fully replicated, by default, to all other storage engines.
+						</p>
+						</td><td align="left" valign="top" headers="idm45954537743856">
+						<p>
+							<span class="strong strong"><strong>Default:</strong></span><br/><code class="literal">[]</code>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm45954537857376">
+						<p>
+							DISTRIBUTED_STORAGE_PREFERENCE<br/> (Required)
+						</p>
+						</td><td align="left" valign="top" headers="idm45954537701856">
+						<p>
+							Array of string
+						</p>
+						</td><td align="left" valign="top" headers="idm45954537709056">
+						<p>
+							The preferred storage engine(s) (by ID in DISTRIBUTED_STORAGE_CONFIG) to use. A preferred engine means it is first checked for pulling and images are pushed to it.
+						</p>
+						</td><td align="left" valign="top" headers="idm45954537743856">
+						<p>
+							<span class="strong strong"><strong>Default:</strong></span><br/><code class="literal">[]</code>
+						</p>
+						</td></tr></tbody></table></div></div><section class="section" id="examples_of_storage_config"><div class="titlepage"><div><div><h2 class="title">3.1. Examples of storage config</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+						Local storage
+					</p><pre class="screen">default:
+  - LocalStorage
+  - storage_path: /datastorage/registry`</pre></li><li class="listitem"><p class="simpara">
+						OCS/NooBaa
+					</p><pre class="screen">rhocsStorage:
+  - RHOCSStorage
+  - access_key: access_key_here
+    secret_key: secret_key_here
+    bucket_name: quay-datastore-9b2108a3-29f5-43f2-a9d5-2872174f9a56
+    hostname: s3.openshift-storage.svc.cluster.local
+    is_secure: 'true'
+    port: '443'
+    storage_path: /datastorage/registry</pre></li><li class="listitem"><p class="simpara">
+						<span class="strong strong"><strong>Ceph / RadosGW Storage / Hitachi HCP</strong></span>:
+					</p><pre class="screen">radosGWStorage:
+  - RadosGWStorage
+  - access_key: access_key_here
+    secret_key: secret_key_here
+    bucket_name: bucket_name_here
+    hostname: hostname_here
+    is_secure: 'true'
+    port: '443'
+    storage_path: /datastorage/registry</pre></li><li class="listitem"><p class="simpara">
+						<span class="strong strong"><strong>AWS S3 Storage</strong></span>:
+					</p><pre class="screen">s3Storage:
+  - S3Storage
+  - host: s3.ap-southeast-2.amazonaws.com
+    s3_access_key: s3_access_key_here
+    s3_secret_key: s3_secret_key_here
+    s3_bucket: s3_bucket_here
+    storage_path: /datastorage/registry</pre></li><li class="listitem"><p class="simpara">
+						<span class="strong strong"><strong>Azure Storage</strong></span>:
+					</p><pre class="screen">azureStorage:
+  - AzureStorage
+  - azure_account_name: azure_account_name_here
+    azure_account_key: azure_account_key_here
+    azure_container: azure_container_here
+    sas_token: some/path/
+    storage_path: /datastorage/registry</pre></li><li class="listitem"><p class="simpara">
+						<span class="strong strong"><strong>Google Cloud Storage</strong></span>:
+					</p><pre class="screen">googleCloudStorage:
+  - GoogleCloudStorage
+  - access_key: access_key_here
+    secret_key: secret_key_here
+    bucket_name: bucket_name_here
+    storage_path: /datastorage/registry</pre></li><li class="listitem"><p class="simpara">
+						<span class="strong strong"><strong>Swift Storage</strong></span>:
+					</p><pre class="screen">swiftStorage:
+  - SwiftStorage
+  - swift_user: swift_user_here
+    swift_password: swift_password_here
+    swift_container: swift_container_here
+    auth_url: https://example.org/swift/v1/quay
+    auth_version: 1
+    ca_cert_path: /conf/stack/swift.cert"
+    storage_path: /datastorage/registry</pre></li></ul></div></section><section class="section" id="configuring_ssl_using_the_command_line"><div class="titlepage"><div><div><h2 class="title">3.2. Configuring SSL using the command line</h2></div></div></div><p>
 				Use the following steps to set up Quay to handle TLS:
 			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
 						Copy the certificate file and primary key file to the configuration directory, ensuring they are named <code class="literal">ssl.cert</code> and <code class="literal">ssl.key</code> respectively.
@@ -43,9 +226,9 @@ PREFERRED_URL_SCHEME: https
 ...</pre>
 						</p></div></li><li class="listitem">
 						Restart the registry for the configuration changes to take effect
-					</li></ol></div></section></section><section class="chapter" id="using_the_configuration_api"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Using the configuration API</h1></div></div></div><p>
+					</li></ol></div></section></section><section class="chapter" id="using_the_configuration_api"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Using the configuration API</h1></div></div></div><p>
 			The configuration tool exposes 4 endpoints that can be used to build, validate, bundle and deploy a configuration. The config-tool API is documented at <a class="link" href="https://github.com/quay/config-tool/blob/master/pkg/lib/editor/API.md">https://github.com/quay/config-tool/blob/master/pkg/lib/editor/API.md</a>. In this section, you will see how to use the API to retrieve the current configuration and how to validate any changes you make.
-		</p><section class="section" id="retrieving_the_default_configuration"><div class="titlepage"><div><div><h2 class="title">3.1. Retrieving the default configuration</h2></div></div></div><p>
+		</p><section class="section" id="retrieving_the_default_configuration"><div class="titlepage"><div><div><h2 class="title">4.1. Retrieving the default configuration</h2></div></div></div><p>
 				If you are running the configuration tool for the first time, and do not have an existing configuration, you can retrieve the default configuration. Start the container in config mode:
 			</p><pre class="literallayout">$ sudo podman run --rm -it --name quay_config \
   -p 8080:8080 \
@@ -69,7 +252,7 @@ PREFERRED_URL_SCHEME: https
     ....
   }
 
-}</pre></section><section class="section" id="retrieving_the_current_configuration"><div class="titlepage"><div><div><h2 class="title">3.2. Retrieving the current configuration</h2></div></div></div><p>
+}</pre></section><section class="section" id="retrieving_the_current_configuration"><div class="titlepage"><div><div><h2 class="title">4.2. Retrieving the current configuration</h2></div></div></div><p>
 				If you have already configured and deployed the Quay registry, stop the container and restart it in configuration mode, loading the existing configuration as a volume:
 			</p><pre class="literallayout">$ sudo podman run --rm -it --name quay_config \
   -p 8080:8080 \
@@ -99,7 +282,7 @@ PREFERRED_URL_SCHEME: https
 
   }
 
-}</pre></section><section class="section" id="validating_configuration_using_the_api"><div class="titlepage"><div><div><h2 class="title">3.3. Validating configuration using the API</h2></div></div></div><p>
+}</pre></section><section class="section" id="validating_configuration_using_the_api"><div class="titlepage"><div><div><h2 class="title">4.3. Validating configuration using the API</h2></div></div></div><p>
 				You can validate a configuration by posting it to the <code class="literal">config/validate</code> endpoint:
 			</p><pre class="literallayout">curl -u quayconfig:secret --header 'Content-Type: application/json' --request POST --data '
 {
@@ -124,7 +307,7 @@ PREFERRED_URL_SCHEME: https
 
 } http://quay-server:8080/api/v1/config/validate | jq</pre><p>
 				The returned value is an array containing the errors found in the configuration. If the configuration is valid, an empty array <code class="literal">[]</code> is returned.
-			</p></section><section class="section" id="determining_the_required_fields"><div class="titlepage"><div><div><h2 class="title">3.4. Determining the required fields</h2></div></div></div><p>
+			</p></section><section class="section" id="determining_the_required_fields"><div class="titlepage"><div><div><h2 class="title">4.4. Determining the required fields</h2></div></div></div><p>
 				You can determine the required fields by posting an empty configuration structure to the <code class="literal">config/validate</code> endpoint:
 			</p><pre class="literallayout">curl -u quayconfig:secret --header 'Content-Type: application/json' --request POST --data '
 {
@@ -169,13 +352,13 @@ PREFERRED_URL_SCHEME: https
     ],
     "Message": "BUILDLOGS_REDIS is required"
   }
-]</pre></section></section><section class="chapter" id="using_the_configuration_tool"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Using the configuration tool</h1></div></div></div><section class="section" id="configuring_ssl_using_the_ui"><div class="titlepage"><div><div><h2 class="title">4.1. Configuring SSL using the UI</h2></div></div></div><p>
+]</pre></section></section><section class="chapter" id="using_the_configuration_tool"><div class="titlepage"><div><div><h1 class="title">Chapter 5. Using the configuration tool</h1></div></div></div><section class="section" id="configuring_ssl_using_the_ui"><div class="titlepage"><div><div><h2 class="title">5.1. Configuring SSL using the UI</h2></div></div></div><p>
 				Start the Quay container in configuration mode and in the Server Configuration section, specify that you want Quay to handle TLS:
 			</p><p>
 				<span class="inlinemediaobject"><img src="images/ssl-config.png" alt="Enable SSL"/></span>
 			</p><p>
 				Upload the certificate file and private key file created earlier, ensuring that the Server Hostname matches the value used when creating the certs. Validate and download the updated configuration and then restart the registry.
-			</p></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm44927234257392"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+			</p></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm45954521919280"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2021 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
