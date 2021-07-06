@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay on OpenShift with the Quay Operator</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Deploy Red Hat Quay on an OpenShift Cluster with the Red Hat Quay Operator"/><link rel="next" href="#idm46143538717408" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46143538947200"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.5</span></div><div><h1 class="title">Deploy Red Hat Quay on OpenShift with the Quay Operator</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay on OpenShift with Quay Operator</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm46143519536496">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay on OpenShift with the Quay Operator</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Deploy Red Hat Quay on an OpenShift Cluster with the Red Hat Quay Operator"/><link rel="next" href="#idm46016693919712" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46016697206384"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.5</span></div><div><h1 class="title">Deploy Red Hat Quay on OpenShift with the Quay Operator</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay on OpenShift with Quay Operator</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm46016676302768">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Deploy Red Hat Quay on an OpenShift Cluster with the Red Hat Quay Operator
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm46143538717408">Preface</a></span></li><li><span class="chapter"><a href="#con-quay-openshift-prereq">1. Prerequisites for Red Hat Quay on OpenShift</a></span></li><li><span class="chapter"><a href="#installing_the_quay_operator">2. Installing the Quay Operator</a></span><ul><li><span class="section"><a href="#deploy-quay-openshift-operator-tng">2.1. Differences from Earlier Versions</a></span></li><li><span class="section"><a href="#before_installing_the_quay_operator">2.2. Before Installing the Quay Operator</a></span><ul><li><span class="section"><a href="#deciding_on_a_storage_solution">2.2.1. Deciding On a Storage Solution</a></span></li><li><span class="section"><a href="#about_the_standalone_object_gateway">2.2.2. About The Standalone Object Gateway</a></span></li><li><span class="section"><a href="#create_a_standalone_object_gateway">2.2.3. Create A Standalone Object Gateway</a></span></li></ul></li><li><span class="section"><a href="#installing_the_operator_from_operatorhub">2.3. Installing the Operator from OperatorHub</a></span></li></ul></li><li><span class="chapter"><a href="#high_level_concepts">3. High Level Concepts</a></span><ul><li><span class="section"><a href="#quayregistry_api">3.1. QuayRegistry API</a></span><ul><li><span class="section"><a href="#components">3.1.1. Components</a></span></li><li><span class="section"><a href="#config_bundle_secret">3.1.2. Config Bundle Secret</a></span></li><li><span class="section"><a href="#aws_s3_cloudfront">3.1.3. AWS S3 CloudFront</a></span></li></ul></li><li><span class="section"><a href="#quayregistry_status">3.2. QuayRegistry Status</a></span><ul><li><span class="section"><a href="#registry_endpoint">3.2.1. Registry Endpoint</a></span></li><li><span class="section"><a href="#config_editor_endpoint">3.2.2. Config Editor Endpoint</a></span></li><li><span class="section"><a href="#config_editor_credentials_secret">3.2.3. Config Editor Credentials Secret</a></span></li><li><span class="section"><a href="#current_version">3.2.4. Current Version</a></span></li><li><span class="section"><a href="#conditions">3.2.5. Conditions</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#deploying_quay_using_the_quay_operator">4. Deploying Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#creating_a_quay_registry">4.1. Creating a Quay Registry</a></span><ul><li><span class="section"><a href="#openshift_console">4.1.1. OpenShift Console</a></span></li><li><span class="section"><a href="#command_line">4.1.2. Command Line</a></span></li></ul></li><li><span class="section"><a href="#deploying_quay_on_infrastructure_nodes">4.2. Deploying Quay on infrastructure nodes</a></span><ul><li><span class="section"><a href="#label_and_taint_nodes_for_infrastructure_use">4.2.1. Label and taint nodes for infrastructure use</a></span></li><li><span class="section"><a href="#create_a_project_with_node_selector_and_toleration">4.2.2. Create a Project with node selector and toleration</a></span></li><li><span class="section"><a href="#install_the_quay_operator_in_the_namespace">4.2.3. Install the Quay Operator in the namespace</a></span></li><li><span class="section"><a href="#create_the_registry">4.2.4. Create the registry</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#upgrading_quay_using_the_quay_operator">5. Upgrading Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#operator_lifecycle_manager">5.1. Operator Lifecycle Manager</a></span></li><li><span class="section"><a href="#upgrading_quay_by_upgrading_the_quay_operator">5.2. Upgrading Quay by upgrading the Quay Operator</a></span><ul><li><span class="section"><a href="#upgrading_quay">5.2.1. Upgrading Quay</a></span></li><li><span class="section"><a href="#changing_the_update_channel_for_an_operator">5.2.2. Changing the update channel for an Operator</a></span></li><li><span class="section"><a href="#manually_approving_a_pending_operator_upgrade">5.2.3. Manually approving a pending Operator upgrade</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayregistry">5.3. Upgrading a QuayRegistry</a></span></li><li><span class="section"><a href="#enabling_new_features_in_quay_3_5">5.4. Enabling new features in Quay 3.5</a></span><ul><li><span class="section"><a href="#console_monitoring_and_alerting">5.4.1. Console monitoring and alerting</a></span></li><li><span class="section"><a href="#oci_and_helm_support">5.4.2. OCI and Helm support</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayecosystem">5.5. Upgrading a QuayEcosystem</a></span><ul><li><span class="section"><a href="#reverting_quayecosystem_upgrade">5.5.1. Reverting QuayEcosystem Upgrade</a></span></li><li><span class="section"><a href="#supported_quayecosystem_configurations_for_upgrades">5.5.2. Supported QuayEcosystem Configurations for Upgrades</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#quay_operator_features">6. Quay Operator features</a></span><ul><li><span class="section"><a href="#helm_oci_support_and_red_hat_quay">6.1. Helm OCI Support and Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites">6.1.1. Prerequisites</a></span></li><li><span class="section"><a href="#using_helm_charts_with_quay">6.1.2. Using Helm charts with Quay</a></span></li><li><span class="section"><a href="#explicitly_enabling_oci_and_helm_support">6.1.3. Explicitly enabling OCI and Helm support</a></span></li></ul></li><li><span class="section"><a href="#console_monitoring_and_alerting_2">6.2. Console monitoring and alerting</a></span><ul><li><span class="section"><a href="#dashboard">6.2.1. Dashboard</a></span></li><li><span class="section"><a href="#metrics">6.2.2. Metrics</a></span></li><li><span class="section"><a href="#alerting">6.2.3. Alerting</a></span></li></ul></li><li><span class="section"><a href="#manually_updating_the_vulnerability_databases_for_clair_in_an_air_gapped_openshift_cluster">6.3. Manually updating the vulnerability databases for Clair in an air-gapped OpenShift cluster</a></span><ul><li><span class="section"><a href="#obtaining_clairctl">6.3.1. Obtaining clairctl</a></span></li><li><span class="section"><a href="#retrieving_the_clair_config">6.3.2. Retrieving the Clair config</a></span></li><li><span class="section"><a href="#exporting_the_updaters_bundle">6.3.3. Exporting the updaters bundle</a></span></li><li><span class="section"><a href="#configuring_access_to_the_clair_database_in_the_air_gapped_openshift_cluster">6.3.4. Configuring access to the Clair database in the air-gapped OpenShift cluster</a></span></li><li><span class="section"><a href="#importing_the_updaters_bundle_into_the_air_gapped_environment">6.3.5. Importing the updaters bundle into the air-gapped environment</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#advanced_concepts">7. Advanced Concepts</a></span><ul><li><span class="section"><a href="#customizing_the_quay_deployment">7.1. Customizing the Quay Deployment</a></span><ul><li><span class="section"><a href="#quay_application_configuration">7.1.1. Quay Application Configuration</a></span></li><li><span class="section"><a href="#customizing_external_access_to_the_registry">7.1.2. Customizing External Access to the Registry</a></span></li><li><span class="section"><a href="#disabling_route_component">7.1.3. Disabling Route Component</a></span></li><li><span class="section"><a href="#resizing_managed_storage">7.1.4. Resizing Managed Storage</a></span></li><li><span class="section"><a href="#disabling_the_horizontal_pod_autoscaler">7.1.5. Disabling the Horizontal Pod Autoscaler</a></span></li><li><span class="section"><a href="#customizing_default_operator_images">7.1.6. Customizing Default Operator Images</a></span></li></ul></li></ul></li></ul></div><section class="preface" id="idm46143538717408"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm46016693919712">Preface</a></span></li><li><span class="chapter"><a href="#con-quay-openshift-prereq">1. Prerequisites for Red Hat Quay on OpenShift</a></span></li><li><span class="chapter"><a href="#installing_the_quay_operator">2. Installing the Quay Operator</a></span><ul><li><span class="section"><a href="#deploy-quay-openshift-operator-tng">2.1. Differences from Earlier Versions</a></span></li><li><span class="section"><a href="#before_installing_the_quay_operator">2.2. Before Installing the Quay Operator</a></span><ul><li><span class="section"><a href="#deciding_on_a_storage_solution">2.2.1. Deciding On a Storage Solution</a></span></li><li><span class="section"><a href="#about_the_standalone_object_gateway">2.2.2. About The Standalone Object Gateway</a></span></li><li><span class="section"><a href="#create_a_standalone_object_gateway">2.2.3. Create A Standalone Object Gateway</a></span></li></ul></li><li><span class="section"><a href="#installing_the_operator_from_operatorhub">2.3. Installing the Operator from OperatorHub</a></span></li></ul></li><li><span class="chapter"><a href="#high_level_concepts">3. High Level Concepts</a></span><ul><li><span class="section"><a href="#operator-quayregistry-api">3.1. QuayRegistry API</a></span></li><li><span class="section"><a href="#operator-components-intro">3.2. Quay components</a></span></li><li><span class="section"><a href="#operator-components-managed">3.3. Using managed components</a></span></li><li><span class="section"><a href="#operator-components-unmanaged">3.4. Using unmanaged components for dependencies</a></span><ul><li><span class="section"><a href="#operator-components-unmanaged-postgres">3.4.1. Using an existing Postgres database</a></span></li><li><span class="section"><a href="#operator-components-unmanaged-storage">3.4.2. Unmanaged storage</a></span></li><li><span class="section"><a href="#operator-components-unmanaged-hpa">3.4.3. Disabling the Horizontal Pod Autoscaler</a></span></li></ul></li><li><span class="section"><a href="#operator-config-bundle-secret">3.5. Config bundle secret</a></span></li><li><span class="section"><a href="#operator-quayregistry-status">3.6. QuayRegistry Status</a></span><ul><li><span class="section"><a href="#registry_endpoint">3.6.1. Registry Endpoint</a></span></li><li><span class="section"><a href="#config_editor_endpoint">3.6.2. Config Editor Endpoint</a></span></li><li><span class="section"><a href="#config_editor_credentials_secret">3.6.3. Config Editor Credentials Secret</a></span></li><li><span class="section"><a href="#current_version">3.6.4. Current Version</a></span></li><li><span class="section"><a href="#conditions">3.6.5. Conditions</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#deploying_quay_using_the_quay_operator">4. Deploying Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#creating_a_quay_registry">4.1. Creating a Quay Registry</a></span><ul><li><span class="section"><a href="#openshift_console">4.1.1. OpenShift Console</a></span></li><li><span class="section"><a href="#command_line">4.1.2. Command Line</a></span></li></ul></li><li><span class="section"><a href="#deploying_quay_on_infrastructure_nodes">4.2. Deploying Quay on infrastructure nodes</a></span><ul><li><span class="section"><a href="#label_and_taint_nodes_for_infrastructure_use">4.2.1. Label and taint nodes for infrastructure use</a></span></li><li><span class="section"><a href="#create_a_project_with_node_selector_and_toleration">4.2.2. Create a Project with node selector and toleration</a></span></li><li><span class="section"><a href="#install_the_quay_operator_in_the_namespace">4.2.3. Install the Quay Operator in the namespace</a></span></li><li><span class="section"><a href="#create_the_registry">4.2.4. Create the registry</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#upgrading_quay_using_the_quay_operator">5. Upgrading Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#operator_lifecycle_manager">5.1. Operator Lifecycle Manager</a></span></li><li><span class="section"><a href="#upgrading_quay_by_upgrading_the_quay_operator">5.2. Upgrading Quay by upgrading the Quay Operator</a></span><ul><li><span class="section"><a href="#upgrading_quay">5.2.1. Upgrading Quay</a></span></li><li><span class="section"><a href="#changing_the_update_channel_for_an_operator">5.2.2. Changing the update channel for an Operator</a></span></li><li><span class="section"><a href="#manually_approving_a_pending_operator_upgrade">5.2.3. Manually approving a pending Operator upgrade</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayregistry">5.3. Upgrading a QuayRegistry</a></span></li><li><span class="section"><a href="#enabling_new_features_in_quay_3_5">5.4. Enabling new features in Quay 3.5</a></span><ul><li><span class="section"><a href="#console_monitoring_and_alerting">5.4.1. Console monitoring and alerting</a></span></li><li><span class="section"><a href="#oci_and_helm_support">5.4.2. OCI and Helm support</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayecosystem">5.5. Upgrading a QuayEcosystem</a></span><ul><li><span class="section"><a href="#reverting_quayecosystem_upgrade">5.5.1. Reverting QuayEcosystem Upgrade</a></span></li><li><span class="section"><a href="#supported_quayecosystem_configurations_for_upgrades">5.5.2. Supported QuayEcosystem Configurations for Upgrades</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#quay_operator_features">6. Quay Operator features</a></span><ul><li><span class="section"><a href="#helm_oci_support_and_red_hat_quay">6.1. Helm OCI Support and Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites">6.1.1. Prerequisites</a></span></li><li><span class="section"><a href="#using_helm_charts_with_quay">6.1.2. Using Helm charts with Quay</a></span></li><li><span class="section"><a href="#explicitly_enabling_oci_and_helm_support">6.1.3. Explicitly enabling OCI and Helm support</a></span></li></ul></li><li><span class="section"><a href="#console_monitoring_and_alerting_2">6.2. Console monitoring and alerting</a></span><ul><li><span class="section"><a href="#dashboard">6.2.1. Dashboard</a></span></li><li><span class="section"><a href="#metrics">6.2.2. Metrics</a></span></li><li><span class="section"><a href="#alerting">6.2.3. Alerting</a></span></li></ul></li><li><span class="section"><a href="#manually_updating_the_vulnerability_databases_for_clair_in_an_air_gapped_openshift_cluster">6.3. Manually updating the vulnerability databases for Clair in an air-gapped OpenShift cluster</a></span><ul><li><span class="section"><a href="#obtaining_clairctl">6.3.1. Obtaining clairctl</a></span></li><li><span class="section"><a href="#retrieving_the_clair_config">6.3.2. Retrieving the Clair config</a></span></li><li><span class="section"><a href="#exporting_the_updaters_bundle">6.3.3. Exporting the updaters bundle</a></span></li><li><span class="section"><a href="#configuring_access_to_the_clair_database_in_the_air_gapped_openshift_cluster">6.3.4. Configuring access to the Clair database in the air-gapped OpenShift cluster</a></span></li><li><span class="section"><a href="#importing_the_updaters_bundle_into_the_air_gapped_environment">6.3.5. Importing the updaters bundle into the air-gapped environment</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#advanced_concepts">7. Advanced Concepts</a></span><ul><li><span class="section"><a href="#customizing_the_quay_deployment">7.1. Customizing the Quay Deployment</a></span><ul><li><span class="section"><a href="#quay_application_configuration">7.1.1. Quay Application Configuration</a></span></li><li><span class="section"><a href="#customizing_external_access_to_the_registry">7.1.2. Customizing External Access to the Registry</a></span></li><li><span class="section"><a href="#disabling_route_component">7.1.3. Disabling Route Component</a></span></li><li><span class="section"><a href="#resizing_managed_storage">7.1.4. Resizing Managed Storage</a></span></li><li><span class="section"><a href="#customizing_default_operator_images">7.1.5. Customizing Default Operator Images</a></span></li><li><span class="section"><a href="#aws_s3_cloudfront">7.1.6. AWS S3 CloudFront</a></span></li></ul></li></ul></li></ul></div><section class="preface" id="idm46016693919712"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
 			Red Hat Quay is an enterprise-quality container registry. Use Red Hat Quay to build and store container images, then make them available to deploy across your enterprise.
 		</p><p>
 			The Red Hat Quay Operator provides a simple method to deploy and manage a Red Hat Quay cluster. This is the preferred procedure for deploying Red Hat Quay on OpenShift and is covered in this guide.
@@ -92,6 +92,7 @@ spec:
    requests:
      cpu: '0.1'
      memory: 1Gi
+ dbType: postgres
  coreResources:
    requests:
      cpu: '0.1'
@@ -154,95 +155,158 @@ backingstore.noobaa.io/noobaa-pv-backing-store created</pre><p class="simpara">
 						Select Install.
 					</li><li class="listitem">
 						After a minute you will see the Operator installed successfully in the Installed Operators page.
-					</li></ol></div></section></section><section class="chapter" id="high_level_concepts"><div class="titlepage"><div><div><h1 class="title">Chapter 3. High Level Concepts</h1></div></div></div><section class="section" id="quayregistry_api"><div class="titlepage"><div><div><h2 class="title">3.1. QuayRegistry API</h2></div></div></div><p>
-				The Quay Operator provides the <code class="literal">QuayRegistry</code> custom resource API to declaratively manage Quay container registries on the cluster. Use either the OpenShift UI or a command-line tool to interact with this API.
+					</li></ol></div></section></section><section class="chapter" id="high_level_concepts"><div class="titlepage"><div><div><h1 class="title">Chapter 3. High Level Concepts</h1></div></div></div><section class="section" id="operator-quayregistry-api"><div class="titlepage"><div><div><h2 class="title">3.1. QuayRegistry API</h2></div></div></div><p>
+				The Quay Operator provides the <code class="literal">QuayRegistry</code> custom resource API to declaratively manage <code class="literal">Quay</code> container registries on the cluster. Use either the OpenShift UI or a command-line tool to interact with this API.
 			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 						Creating a <code class="literal">QuayRegistry</code> will result in the Operator deploying and configuring all necessary resources needed to run Quay on the cluster.
 					</li><li class="listitem">
 						Editing a <code class="literal">QuayRegistry</code> will result in the Operator reconciling the changes and creating/updating/deleting objects to match the desired configuration.
 					</li><li class="listitem">
-						Deleting a <code class="literal">QuayRegistry</code> will result in garbage collection of all previously created resources and the Quay container registry will no longer be available.
+						Deleting a <code class="literal">QuayRegistry</code> will result in garbage collection of all previously created resources and the <code class="literal">Quay</code> container registry will no longer be available.
 					</li></ul></div><p>
 				The <code class="literal">QuayRegistry</code> API is fairly simple, and the fields are outlined in the following sections.
-			</p><section class="section" id="components"><div class="titlepage"><div><div><h3 class="title">3.1.1. Components</h3></div></div></div><p>
-					Quay is a powerful container registry platform and as a result, requires a decent number of dependencies. These include a database, object storage, Redis, and others. The Quay Operator manages an opinionated deployment of Quay and its dependencies on Kubernetes. These dependencies are treated as <span class="emphasis"><em>components</em></span> and are configured through the <code class="literal">QuayRegistry</code> API.
-				</p><p>
-					In the <code class="literal">QuayRegistry</code> custom resource, the <code class="literal">spec.components</code> field configures components. Each component contains two fields: <code class="literal">kind</code> - the name of the component, and <code class="literal">managed</code> - boolean whether the component lifecycle is handled by the Operator. By default (omitting this field), all components are managed and will be autofilled upon reconciliation for visibility:
-				</p><pre class="programlisting language-yaml">spec:
+			</p></section><section class="section" id="operator-components-intro"><div class="titlepage"><div><div><h2 class="title">3.2. Quay components</h2></div></div></div><p>
+				Quay is a powerful container registry platform and as a result, requires a decent number of dependencies. These include a database, object storage, Redis, and others. The Quay Operator manages an opinionated deployment of Quay and its dependencies on Kubernetes. These dependencies are treated as <span class="emphasis"><em>components</em></span> and are configured through the <code class="literal">QuayRegistry</code> API.
+			</p><p>
+				In the <code class="literal">QuayRegistry</code> custom resource, the <code class="literal">spec.components</code> field configures components. Each component contains two fields: <code class="literal">kind</code> - the name of the component, and <code class="literal">managed</code> - boolean whether the component lifecycle is handled by the Operator. By default (omitting this field), all components are managed and will be autofilled upon reconciliation for visibility:
+			</p><pre class="programlisting language-yaml">spec:
   components:
-    - kind: postgres
-      managed: true
-    ...</pre><p>
-					Unless your <code class="literal">QuayRegistry</code> custom resource specifies otherwise, the Operator will use defaults for the following managed components:
-				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-							<code class="literal">postgres</code> Stores the registry metadata. Uses a version of Postgres 10 from the <a class="link" href="https://www.softwarecollections.org/en/">Software Collections</a>.
-						</li><li class="listitem">
-							<code class="literal">redis</code> Handles Quay builder coordination and some internal logging.
-						</li><li class="listitem">
-							<code class="literal">objectstorage</code> Stores image layer blobs. Utilizes the <code class="literal">ObjectBucketClaim</code> Kubernetes API which is provided by Noobaa/RHOCS.
-						</li><li class="listitem">
-							<code class="literal">clair</code> Provides image vulnerability scanning.
-						</li><li class="listitem">
-							<code class="literal">horizontalpodautoscaler</code> Adjusts the number of Quay pods depending on memory/cpu consumption.
-						</li><li class="listitem">
-							<code class="literal">mirror</code> Configures a repository mirror worker (to support optional repository mirroring).
-						</li><li class="listitem">
-							<code class="literal">route</code> Provides an external entrypoint to the Quay registry from outside of OpenShift.
-						</li></ul></div><section class="section" id="considerations_for_managed_components"><div class="titlepage"><div><div><h4 class="title">3.1.1.1. Considerations For Managed Components</h4></div></div></div><p>
-						While the Operator will handle any required configuration and installation work needed for Red Hat Quay to use the managed components, there are several considerations to keep in mind.
-					</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-								Database backups should be performed regularly using either the supplied tools on the Postgres image or your own backup infrastructure. The Operator does not currently ensure the Postgres database is backed up.
-							</li><li class="listitem">
-								Restoring the Postgres database from a backup must be done using Postgres tools and procedures. Be aware that your Quay <code class="literal">Pods</code> should not be running while the database restore is in progress.
-							</li><li class="listitem">
-								Database disk space is allocated automatically by the Operator with 50 GiB. This number represents a usable amount of storage for most small to medium Red Hat Quay installations but may not be sufficient for your use cases. Resizing the database volume is currently not handled by the Operator.
-							</li><li class="listitem">
-								Object storage disk space is allocated automatically by the Operator with 50 GiB. This number represents a usable amount of storage for most small to medium Red Hat Quay installations but may not be sufficient for your use cases. Resizing the RHOCS volume is currently not handled by the Operator. See the section below on resizing managed storage for more details.
-							</li><li class="listitem">
-								The Operator will deploy an OpenShift <code class="literal">Route</code> as the default entrypoint to the registry. If you prefer a different entrypoint (e.g. <code class="literal">Ingress</code> or direct <code class="literal">Service</code> access that configuration will need to be done manually).
-							</li></ul></div><p>
-						If any of these considerations are unacceptable for your environment, it would be suggested to provide the Operator with unmanaged resources or overrides as described in the following sections.
-					</p></section><section class="section" id="using_existing_un_managed_components_with_the_quay_operator"><div class="titlepage"><div><div><h4 class="title">3.1.1.2. Using Existing (Un-Managed) Components With the Quay Operator</h4></div></div></div><p>
-						If you have existing components such as Postgres, Redis or object storage that you would like to use with Quay, you first configure them within the Quay configuration bundle (<code class="literal">config.yaml</code>) and then reference the bundle in your <code class="literal">QuayRegistry</code> (as a Kubernetes <code class="literal">Secret</code>) while indicating which components are unmanaged.
-					</p><p>
-						For example, to use an existing Postgres database:
-					</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-								Create a <code class="literal">Secret</code> with the necessary database fields in a <code class="literal">config.yaml</code> file:
-							</p><div class="formalpara"><p class="title"><strong>config.yaml:</strong></p><p>
-									
+    - managed: true
+      kind: clair
+    - managed: true
+      kind: postgres
+    - managed: true
+      kind: objectstorage
+    - managed: true
+      kind: redis
+    - managed: true
+      kind: horizontalpodautoscaler
+    - managed: true
+      kind: route
+    - managed: true
+      kind: mirror
+    - managed: true
+      kind: monitoring</pre><p>
+				Unless your <code class="literal">QuayRegistry</code> custom resource specifies otherwise, the Operator will use defaults for the following managed components:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<code class="literal">postgres</code> Stores the registry metadata. Uses a version of Postgres 10 from the <a class="link" href="https://www.softwarecollections.org/en/">Software Collections</a>.
+					</li><li class="listitem">
+						<code class="literal">redis</code> Handles Quay builder coordination and some internal logging.
+					</li><li class="listitem">
+						<code class="literal">objectstorage</code> Stores image layer blobs. Utilizes the <code class="literal">ObjectBucketClaim</code> Kubernetes API which is provided by Noobaa/RHOCS.
+					</li><li class="listitem">
+						<code class="literal">clair</code> Provides image vulnerability scanning.
+					</li><li class="listitem">
+						<code class="literal">horizontalpodautoscaler</code> Adjusts the number of Quay pods depending on memory/cpu consumption.
+					</li><li class="listitem">
+						<code class="literal">mirror</code> Configures a repository mirror worker (to support optional repository mirroring).
+					</li><li class="listitem">
+						<code class="literal">route</code> Provides an external entrypoint to the Quay registry from outside of OpenShift.
+					</li><li class="listitem">
+						<code class="literal">monitoring</code> Features include a Grafana dashboard, access to individual metrics, and alerting to notify for frequently restarting Quay pods.
+					</li></ul></div></section><section class="section" id="operator-components-managed"><div class="titlepage"><div><div><h2 class="title">3.3. Using managed components</h2></div></div></div><p>
+				While the Operator will handle any required configuration and installation work needed for Red Hat Quay to use the managed components, there are several considerations to keep in mind.
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						Database backups should be performed regularly using either the supplied tools on the Postgres image or your own backup infrastructure. The Operator does not currently ensure the Postgres database is backed up.
+					</li><li class="listitem">
+						Restoring the Postgres database from a backup must be done using Postgres tools and procedures. Be aware that your Quay <code class="literal">Pods</code> should not be running while the database restore is in progress.
+					</li><li class="listitem">
+						Database disk space is allocated automatically by the Operator with 50 GiB. This number represents a usable amount of storage for most small to medium Red Hat Quay installations but may not be sufficient for your use cases. Resizing the database volume is currently not handled by the Operator.
+					</li><li class="listitem">
+						Object storage disk space is allocated automatically by the Operator with 50 GiB. This number represents a usable amount of storage for most small to medium Red Hat Quay installations but may not be sufficient for your use cases. Resizing the RHOCS volume is currently not handled by the Operator. See the section below on resizing managed storage for more details.
+					</li><li class="listitem">
+						The Operator will deploy an OpenShift <code class="literal">Route</code> as the default entrypoint to the registry. If you prefer a different entrypoint (e.g. <code class="literal">Ingress</code> or direct <code class="literal">Service</code> access that configuration will need to be done manually).
+					</li></ul></div><p>
+				If any of these considerations are unacceptable for your environment, it would be suggested to provide the Operator with unmanaged resources or overrides as described in the following sections.
+			</p></section><section class="section" id="operator-components-unmanaged"><div class="titlepage"><div><div><h2 class="title">3.4. Using unmanaged components for dependencies</h2></div></div></div><p>
+				If you have existing components such as Postgres, Redis or object storage that you would like to use with Quay, you first configure them within the Quay configuration bundle (<code class="literal">config.yaml</code>) and then reference the bundle in your <code class="literal">QuayRegistry</code> (as a Kubernetes <code class="literal">Secret</code>) while indicating which components are unmanaged.
+			</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+					The Quay config editor can also be used to create or modify an existing config bundle and simplify the process of updating the Kubernetes <code class="literal">Secret</code>, especially for multiple changes. When Quay’s configuration is changed via the config editor and sent to the Operator, the Quay deployment will be updated to reflect the new configuration.
+				</p></div></div><section class="section" id="operator-components-unmanaged-postgres"><div class="titlepage"><div><div><h3 class="title">3.4.1. Using an existing Postgres database</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+							Create a configuration file <code class="literal">config.yaml</code> with the necessary database fields:
+						</p><div class="formalpara"><p class="title"><strong>config.yaml:</strong></p><p>
+								
 <pre class="programlisting language-yaml">DB_URI: postgresql://test-quay-database:postgres@test-quay-database:5432/test-quay-database</pre>
-								</p></div><pre class="screen">$ kubectl create secret generic --from-file config.yaml=./config.yaml test-config-bundle</pre></li><li class="listitem"><p class="simpara">
-								Create a QuayRegistry which marks postgres component as unmanaged and references the created Secret:
-							</p><div class="formalpara"><p class="title"><strong>quayregistry.yaml</strong></p><p>
-									
+							</p></div></li><li class="listitem"><p class="simpara">
+							Create a Secret using the configuration file:
+						</p><pre class="screen">$ kubectl create secret generic --from-file config.yaml=./config.yaml config-bundle-secret</pre></li><li class="listitem"><p class="simpara">
+							Create a QuayRegistry YAML file <code class="literal">quayregistry.yaml</code> which marks postgres component as unmanaged and references the created Secret:
+						</p><div class="formalpara"><p class="title"><strong>quayregistry.yaml</strong></p><p>
+								
 <pre class="programlisting language-yaml">apiVersion: quay.redhat.com/v1
 kind: QuayRegistry
 metadata:
   name: test
 spec:
-  configBundleSecret: test-config-bundle
+  configBundleSecret: config-bundle-secret
   components:
     - kind: postgres
       managed: false</pre>
-								</p></div><p class="simpara">
-								The deployed Quay application will now use the external database.
-							</p></li></ol></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-							The Quay config editor can also be used to create or modify an existing config bundle and simplify the process of updating the Kubernetes <code class="literal">Secret</code>, especially for multiple changes. When Quay’s configuration is changed via the config editor and sent to the Operator, the Quay deployment will be updated to reflect the new configuration.
-						</p></div></div></section></section><section class="section" id="config_bundle_secret"><div class="titlepage"><div><div><h3 class="title">3.1.2. Config Bundle Secret</h3></div></div></div><p>
-					The <code class="literal">spec.configBundleSecret</code> field is a reference to the <code class="literal">metadata.name</code> of a <code class="literal">Secret</code> in the same namespace as the <code class="literal">QuayRegistry</code>. This <code class="literal">Secret</code> must contain a <code class="literal">config.yaml</code> key/value pair. This <code class="literal">config.yaml</code> file is a Quay config YAML file. This field is optional, and will be auto-filled by the Operator if not provided. If provided, it serves as the base set of config fields which are later merged with other fields from any managed components to form a final output <code class="literal">Secret</code>, which is then mounted into the Quay application pods.
-				</p></section><section class="section" id="aws_s3_cloudfront"><div class="titlepage"><div><div><h3 class="title">3.1.3. AWS S3 CloudFront</h3></div></div></div><p>
-					If you use AWS S3 CloudFront for backend registry storage, specify the private key as shown in the following example:
-				</p><pre class="literallayout">$ oc create secret generic --from-file config.yaml=./config_awss3cloudfront.yaml --from-file default-cloudfront-signing-key.pem=./default-cloudfront-signing-key.pem test-config-bundle</pre></section></section><section class="section" id="quayregistry_status"><div class="titlepage"><div><div><h2 class="title">3.2. QuayRegistry Status</h2></div></div></div><p>
+							</p></div></li><li class="listitem"><p class="simpara">
+							Create the QuayRegistry:
+						</p><pre class="screen">$ oc create -f quayregistry.yaml</pre></li></ol></div><p>
+					The deployed Quay application will now use the external database.
+				</p></section><section class="section" id="operator-components-unmanaged-storage"><div class="titlepage"><div><div><h3 class="title">3.4.2. Unmanaged storage</h3></div></div></div><p>
+					The following example uses NooBaa storage, but can be applied to other image storage options such as Azure, S3, etc.
+				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+							Create a NooBaa Object Bucket Claim in the console at Storage → Object Bucket Claims.
+						</li><li class="listitem">
+							Retrieve the Object Bucket Claim Data details including the Access Key, Bucket Name, Endpoint (hostname) and Secret Key.
+						</li><li class="listitem"><p class="simpara">
+							Create a <code class="literal">config.yaml</code> configuration file, using the information for the Object Bucket Claim:
+						</p><pre class="screen">DISTRIBUTED_STORAGE_CONFIG:
+  default:
+    - RHOCSStorage
+    - access_key: WmrXtSGk8B3nABCDEFGH
+      bucket_name: my-noobaa-bucket-claim-8b844191-dc6c-444e-9ea4-87ece0abcdef
+      hostname: s3.openshift-storage.svc
+      is_secure: true
+      port: "443"
+      secret_key: X9P5SDGJtmSuHFCMSLMbdNCMfUABCDEFGH+C5QD
+      storage_path: /datastorage/registry
+DISTRIBUTED_STORAGE_DEFAULT_LOCATIONS: []
+DISTRIBUTED_STORAGE_PREFERENCE:
+  - default</pre></li><li class="listitem"><p class="simpara">
+							Create a Secret using the configuration file:
+						</p><pre class="screen">$ kubectl create secret generic --from-file config.yaml=./config.yaml config-bundle-secret</pre></li><li class="listitem"><p class="simpara">
+							Create a QuayRegistry YAML file <code class="literal">quayregistry.yaml</code> which marks storage component as unmanaged and references the created Secret:
+						</p><div class="formalpara"><p class="title"><strong>quayregistry.yaml</strong></p><p>
+								
+<pre class="programlisting language-yaml">apiVersion: quay.redhat.com/v1
+kind: QuayRegistry
+metadata:
+  name: test
+spec:
+  configBundleSecret: config-bundle-secret
+  components:
+    - kind: storage
+      managed: false</pre>
+							</p></div></li><li class="listitem"><p class="simpara">
+							Create the QuayRegistry:
+						</p><pre class="screen">oc create -f quayregistry.yaml</pre></li></ol></div><p>
+					The deployed Quay application will now use the created storage.
+				</p></section><section class="section" id="operator-components-unmanaged-hpa"><div class="titlepage"><div><div><h3 class="title">3.4.3. Disabling the Horizontal Pod Autoscaler</h3></div></div></div><p>
+					If you wish to disable autoscaling or create your own <code class="literal">HorizontalPodAutoscaler</code>, simply specify the component as unmanaged in the <code class="literal">QuayRegistry</code> instance:
+				</p><pre class="programlisting language-yaml">apiVersion: quay.redhat.com/v1
+kind: QuayRegistry
+metadata:
+  name: some-quay
+spec:
+  components:
+    - kind: horizontalpodautoscaler
+      managed: false</pre></section></section><section class="section" id="operator-config-bundle-secret"><div class="titlepage"><div><div><h2 class="title">3.5. Config bundle secret</h2></div></div></div><p>
+				The <code class="literal">spec.configBundleSecret</code> field is a reference to the <code class="literal">metadata.name</code> of a <code class="literal">Secret</code> in the same namespace as the <code class="literal">QuayRegistry</code>. This <code class="literal">Secret</code> must contain a <code class="literal">config.yaml</code> key/value pair. This <code class="literal">config.yaml</code> file is a Quay config YAML file. This field is optional, and will be auto-filled by the Operator if not provided. If provided, it serves as the base set of config fields which are later merged with other fields from any managed components to form a final output <code class="literal">Secret</code>, which is then mounted into the Quay application pods.
+			</p></section><section class="section" id="operator-quayregistry-status"><div class="titlepage"><div><div><h2 class="title">3.6. QuayRegistry Status</h2></div></div></div><p>
 				Lifecycle observability for a given Quay deployment is reported in the <code class="literal">status</code> section of the corresponding <code class="literal">QuayRegistry</code> object. The Operator constantly updates this section, and this should be the first place to look for any problems or state changes in Quay or its managed dependencies.
-			</p><section class="section" id="registry_endpoint"><div class="titlepage"><div><div><h3 class="title">3.2.1. Registry Endpoint</h3></div></div></div><p>
+			</p><section class="section" id="registry_endpoint"><div class="titlepage"><div><div><h3 class="title">3.6.1. Registry Endpoint</h3></div></div></div><p>
 					Once Quay is ready to be used, the <code class="literal">status.registryEndpoint</code> field will be populated with the publicly available hostname of the registry.
-				</p></section><section class="section" id="config_editor_endpoint"><div class="titlepage"><div><div><h3 class="title">3.2.2. Config Editor Endpoint</h3></div></div></div><p>
+				</p></section><section class="section" id="config_editor_endpoint"><div class="titlepage"><div><div><h3 class="title">3.6.2. Config Editor Endpoint</h3></div></div></div><p>
 					Access Quay’s UI-based config editor using <code class="literal">status.configEditorEndpoint</code>.
-				</p></section><section class="section" id="config_editor_credentials_secret"><div class="titlepage"><div><div><h3 class="title">3.2.3. Config Editor Credentials Secret</h3></div></div></div><p>
+				</p></section><section class="section" id="config_editor_credentials_secret"><div class="titlepage"><div><div><h3 class="title">3.6.3. Config Editor Credentials Secret</h3></div></div></div><p>
 					The username/password for the config editor UI will be stored in a <code class="literal">Secret</code> in the same namespace as the <code class="literal">QuayRegistry</code> referenced by <code class="literal">status.configEditorCredentialsSecret</code>.
-				</p></section><section class="section" id="current_version"><div class="titlepage"><div><div><h3 class="title">3.2.4. Current Version</h3></div></div></div><p>
+				</p></section><section class="section" id="current_version"><div class="titlepage"><div><div><h3 class="title">3.6.4. Current Version</h3></div></div></div><p>
 					The current version of Quay that is running will be reported in <code class="literal">status.currentVersion</code>.
-				</p></section><section class="section" id="conditions"><div class="titlepage"><div><div><h3 class="title">3.2.5. Conditions</h3></div></div></div><p>
+				</p></section><section class="section" id="conditions"><div class="titlepage"><div><div><h3 class="title">3.6.5. Conditions</h3></div></div></div><p>
 					Certain conditions will be reported in <code class="literal">status.conditions</code>.
 				</p></section></section></section><section class="chapter" id="deploying_quay_using_the_quay_operator"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Deploying Quay using the Quay Operator</h1></div></div></div><section class="section" id="creating_a_quay_registry"><div class="titlepage"><div><div><h2 class="title">4.1. Creating a Quay Registry</h2></div></div></div><p>
 				The default configuration tells the Operator to manage all of Quay’s dependencies (database, Redis, object storage, etc).
@@ -652,7 +716,7 @@ notifier:
   -p 8081:8081 -p 8089:8089 \
   -e CLAIR_CONF=/clair/config.yaml -e CLAIR_MODE=combo \
   -v /etc/clairv4/config:/clair:Z \
-  registry.redhat.io/quay/clair-rhel8:v3.5.1</pre></section><section class="section" id="exporting_the_updaters_bundle"><div class="titlepage"><div><div><h3 class="title">6.3.3. Exporting the updaters bundle</h3></div></div></div><p>
+  registry.redhat.io/quay/clair-rhel8:v3.5.2</pre></section><section class="section" id="exporting_the_updaters_bundle"><div class="titlepage"><div><div><h3 class="title">6.3.3. Exporting the updaters bundle</h3></div></div></div><p>
 					From a Clair instance that has access to the internet, use <code class="literal">clairctl</code> with the appropriate configuration file to export the updaters bundle:
 				</p><pre class="screen">$ ./clairctl --config ./config.yaml export-updaters updates.gz</pre></section><section class="section" id="configuring_access_to_the_clair_database_in_the_air_gapped_openshift_cluster"><div class="titlepage"><div><div><h3 class="title">6.3.4. Configuring access to the Clair database in the air-gapped OpenShift cluster</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 							Use <code class="literal">kubectl</code> to determine the Clair database service:
@@ -789,20 +853,11 @@ spec:
 								Click <code class="literal">Deploy</code>.
 							</li></ol></div><p>
 						After a few minutes, the additional storage pool will be added to the Noobaa resources and available for use by Red Hat Quay.
-					</p></section></section><section class="section" id="disabling_the_horizontal_pod_autoscaler"><div class="titlepage"><div><div><h3 class="title">7.1.5. Disabling the Horizontal Pod Autoscaler</h3></div></div></div><p>
-					If you wish to disable autoscaling or create your own <code class="literal">HorizontalPodAutoscaler</code>, simply specify the component as unmanaged in the <code class="literal">QuayRegistry</code> instance:
-				</p><pre class="programlisting language-yaml">apiVersion: quay.redhat.com/v1
-kind: QuayRegistry
-metadata:
-  name: some-quay
-spec:
-  components:
-    - kind: horizontalpodautoscaler
-      managed: false</pre></section><section class="section" id="customizing_default_operator_images"><div class="titlepage"><div><div><h3 class="title">7.1.6. Customizing Default Operator Images</h3></div></div></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+					</p></section></section><section class="section" id="customizing_default_operator_images"><div class="titlepage"><div><div><h3 class="title">7.1.5. Customizing Default Operator Images</h3></div></div></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 						Using this mechanism is not supported for production Quay environments and is strongly encouraged only for development/testing purposes. There is no guarantee your deployment will work correctly when using non-default images with the Quay Operator.
 					</p></div></div><p>
 					In certain circumstances, it may be useful to override the default images used by the Operator. This can be done by setting one or more environment variables in the Quay Operator <code class="literal">ClusterServiceVersion</code>.
-				</p><section class="section" id="environment_variables"><div class="titlepage"><div><div><h4 class="title">7.1.6.1. Environment Variables</h4></div></div></div><p>
+				</p><section class="section" id="environment_variables"><div class="titlepage"><div><div><h4 class="title">7.1.5.1. Environment Variables</h4></div></div></div><p>
 						The following environment variables are used in the Operator to override component images:
 					</p><div class="informaltable"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 50%; " class="col_2"/></colgroup><tbody><tr><td align="left" valign="top">
 									<p>
@@ -846,7 +901,7 @@ spec:
 									</p>
 									</td></tr></tbody></table></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 							Override images <span class="strong strong"><strong>must</strong></span> be referenced by manifest (@sha256:), not by tag (:latest).
-						</p></div></div></section><section class="section" id="applying_overrides_to_a_running_operator"><div class="titlepage"><div><div><h4 class="title">7.1.6.2. Applying Overrides to a Running Operator</h4></div></div></div><p>
+						</p></div></div></section><section class="section" id="applying_overrides_to_a_running_operator"><div class="titlepage"><div><div><h4 class="title">7.1.5.2. Applying Overrides to a Running Operator</h4></div></div></div><p>
 						When the Quay Operator is installed in a cluster via the <a class="link" href="https://docs.openshift.com/container-platform/4.6/operators/understanding/olm/olm-understanding-olm.html">Operator Lifecycle Manager (OLM)</a>, the managed component container images can be easily overridden by modifying the <code class="literal">ClusterServiceVersion</code> object, which is OLM’s representation of a running Operator in the cluster. Find the Quay Operator’s <code class="literal">ClusterServiceVersion</code> either by using a Kubernetes UI or <code class="literal">kubectl</code>/<code class="literal">oc</code>:
 					</p><pre class="screen">$ oc get clusterserviceversions -n &lt;your-namespace&gt;</pre><p>
 						Using the UI, <code class="literal">oc edit</code>, or any other method, modify the Quay <code class="literal">ClusterServiceVersion</code> to include the environment variables outlined above to point to the override images:
@@ -861,9 +916,11 @@ spec:
 - name: RELATED_IMAGE_COMPONENT_REDIS
   value: centos/redis-32-centos7@sha256:06dbb609484330ec6be6090109f1fa16e936afcf975d1cbc5fff3e6c7cae7542</pre><p>
 						Note that this is done at the Operator level, so every QuayRegistry will be deployed using these same overrides.
-					</p><h2 id="additional_resources">Additional resources</h2><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-								For more details on the Red Hat Quay Operator, see the upstream <a class="link" href="https://github.com/quay/quay-operator/">quay-operator</a> project.
-							</li></ul></div></section></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm46143519536496"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+					</p></section></section><section class="section" id="aws_s3_cloudfront"><div class="titlepage"><div><div><h3 class="title">7.1.6. AWS S3 CloudFront</h3></div></div></div><p>
+					If you use AWS S3 CloudFront for backend registry storage, specify the private key as shown in the following example:
+				</p><pre class="literallayout">$ oc create secret generic --from-file config.yaml=./config_awss3cloudfront.yaml --from-file default-cloudfront-signing-key.pem=./default-cloudfront-signing-key.pem test-config-bundle</pre><h2 id="additional_resources">Additional resources</h2><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							For more details on the Red Hat Quay Operator, see the upstream <a class="link" href="https://github.com/quay/quay-operator/">quay-operator</a> project.
+						</li></ul></div></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm46016676302768"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2021 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
