@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Red Hat Quay Quick Start Guide</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Red Hat Quay Quick start guide"/><link rel="next" href="#general" title="Chapter 1. General"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45064541197792"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.5</span></div><div><h1 class="title">Red Hat Quay Quick Start Guide</h1></div><div><h2 class="subtitle">Red Hat Quay Quick start guide</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45064522310992">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Red Hat Quay Quick Start Guide</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Red Hat Quay Quick start guide"/><link rel="next" href="#general" title="Chapter 1. General"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45766730022480"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.5</span></div><div><h1 class="title">Red Hat Quay Quick Start Guide</h1></div><div><h2 class="subtitle">Red Hat Quay Quick start guide</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45766704832896">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Red Hat Quay Quick start guide
 			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="chapter"><a href="#general">1. General</a></span><ul><li><span class="section"><a href="#using_ssl_to_protect_connections_to_red_hat_quay">1.1. Using SSL to protect connections to Red Hat Quay</a></span><ul><li><span class="section"><a href="#introduction_to_using_ssl">1.1.1. Introduction to using SSL</a></span></li><li><span class="section"><a href="#create-a-ca-and-sign-a-certificate">1.1.2. Create a Certificate Authority and sign a certificate</a></span></li><li><span class="section"><a href="#configuring_ssl_using_the_ui">1.1.3. Configuring SSL using the UI</a></span></li><li><span class="section"><a href="#configuring_ssl_using_the_command_line">1.1.4. Configuring SSL using the command line</a></span></li><li><span class="section"><a href="#testing_ssl_configuration_using_the_command_line">1.1.5. Testing SSL configuration using the command line</a></span></li><li><span class="section"><a href="#testing_ssl_configuration_using_the_browser">1.1.6. Testing SSL configuration using the browser</a></span></li><li><span class="section"><a href="#configuring_podman_to_trust_the_certificate_authority">1.1.7. Configuring podman to trust the Certificate Authority</a></span></li><li><span class="section"><a href="#configuring_the_system_to_trust_the_certificate_authority">1.1.8. Configuring the system to trust the certificate authority</a></span></li></ul></li><li><span class="section"><a href="#quay_superuser">1.2. Quay superuser</a></span><ul><li><span class="section"><a href="#adding_a_superuser_to_quay_using_the_ui">1.2.1. Adding a superuser to Quay using the UI</a></span></li><li><span class="section"><a href="#editing_the_config_yaml_file_to_add_a_superuser">1.2.2. Editing the config.yaml file to add a superuser</a></span></li><li><span class="section"><a href="#accessing_the_superuser_admin_panel">1.2.3. Accessing the superuser admin panel</a></span></li></ul></li><li><span class="section"><a href="#repository_mirroring">1.3. Repository Mirroring</a></span><ul><li><span class="section"><a href="#mirroring-intro">1.3.1. Repository mirroring</a></span></li><li><span class="section"><a href="#mirroring_configuration_ui">1.3.2. Mirroring configuration UI</a></span></li><li><span class="section"><a href="#mirroring-worker">1.3.3. Mirroring worker</a></span></li><li><span class="section"><a href="#mirroring-creating-repo">1.3.4. Creating a mirrored repository</a></span></li><li><span class="section"><a href="#mirroring-tag-patterns">1.3.5. Mirroring tag patterns</a></span></li></ul></li></ul></li></ul></div><section class="chapter" id="general"><div class="titlepage"><div><div><h1 class="title">Chapter 1. General</h1></div></div></div><section class="section" id="using_ssl_to_protect_connections_to_red_hat_quay"><div class="titlepage"><div><div><h2 class="title">1.1. Using SSL to protect connections to Red Hat Quay</h2></div></div></div><section class="section" id="introduction_to_using_ssl"><div class="titlepage"><div><div><h3 class="title">1.1.1. Introduction to using SSL</h3></div></div></div><p>
 					To configure Red Hat Quay with a <a class="link" href="https://en.wikipedia.org/wiki/Self-signed_certificate">self-signed certificate</a>, you need to create a Certificate Authority (CA) and then generate the required key and certificate files.
@@ -53,7 +53,7 @@ IP.1 = 192.168.1.112</pre>
 					This section configures SSL using the Quay UI. To configure SSL using the command line interface, see the following section.
 				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
 							Start the <code class="literal">Quay</code> container in configuration mode:
-						</p><pre class="screen">$ sudo podman run --rm -it --name quay_config -p 80:8080 -p 443:8443 registry.redhat.io/quay/quay-rhel8:v3.5.3 config secret</pre></li><li class="listitem">
+						</p><pre class="screen">$ sudo podman run --rm -it --name quay_config -p 80:8080 -p 443:8443 registry.redhat.io/quay/quay-rhel8:v3.5.4 config secret</pre></li><li class="listitem">
 							In the Server Configuration section, select <code class="literal">Red Hat Quay handles TLS</code> for TLS. Upload the certificate file and private key file created earlier, ensuring that the Server Hostname matches the value used when creating the certs. Validate and download the updated configuration.
 						</li><li class="listitem"><p class="simpara">
 							Stop the <code class="literal">Quay</code> container and then restart the registry:
@@ -62,7 +62,7 @@ $ sudo podman run -d --rm -p 80:8080 -p 443:8443 \
 --name=quay \
 -v $QUAY/config:/conf/stack:Z \
 -v $QUAY/storage:/datastorage:Z \
-registry.redhat.io/quay/quay-rhel8:v3.5.3</pre></li></ol></div></section><section class="section" id="configuring_ssl_using_the_command_line"><div class="titlepage"><div><div><h3 class="title">1.1.4. Configuring SSL using the command line</h3></div></div></div><p>
+registry.redhat.io/quay/quay-rhel8:v3.5.4</pre></li></ol></div></section><section class="section" id="configuring_ssl_using_the_command_line"><div class="titlepage"><div><div><h3 class="title">1.1.4. Configuring SSL using the command line</h3></div></div></div><p>
 					Another option when configuring SSL is to use the command line interface.
 				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
 							Copy the certificate file and primary key file to your configuration directory, ensuring they are named <code class="literal">ssl.cert</code> and <code class="literal">ssl.key</code> respectively:
@@ -84,7 +84,7 @@ $ sudo podman run -d --rm -p 80:8080 -p 443:8443 \
   --name=quay \
   -v $QUAY/config:/conf/stack:Z \
   -v $QUAY/storage:/datastorage:Z \
-  registry.redhat.io/quay/quay-rhel8:v3.5.3</pre></li></ol></div></section><section class="section" id="testing_ssl_configuration_using_the_command_line"><div class="titlepage"><div><div><h3 class="title">1.1.5. Testing SSL configuration using the command line</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+  registry.redhat.io/quay/quay-rhel8:v3.5.4</pre></li></ol></div></section><section class="section" id="testing_ssl_configuration_using_the_command_line"><div class="titlepage"><div><div><h3 class="title">1.1.5. Testing SSL configuration using the command line</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 							Use the <code class="literal">podman login</code> command to attempt to log in to the Quay registry with SSL enabled:
 						</p><pre class="screen">$ sudo podman login quay-server.example.com
 Username: quayadmin
@@ -160,7 +160,7 @@ $</pre></li></ol></div><p>
   -p 8080:8080 \
   -p 443:8443 \
   -v $QUAY/config:/conf/stack:Z \
-  registry.redhat.io/quay/quay-rhel8:v3.5.3 config secret</pre></li><li class="listitem">
+  registry.redhat.io/quay/quay-rhel8:v3.5.4 config secret</pre></li><li class="listitem">
 							Under the <code class="literal">Access Settings</code> section of the UI, enter the name of the user (in this instance, <code class="literal">quayadmin</code>) in the <code class="literal">Super Users</code> field and click <code class="literal">Add</code>.
 						</li><li class="listitem"><p class="simpara">
 							Validate and download the <code class="literal">configuration</code> file and then terminate the <code class="literal">Quay</code> container that is running in config mode. Extract the <code class="literal">config.yaml</code> file to the configuration directory and restart the <code class="literal">Quay</code> container in registry mode:
@@ -169,7 +169,7 @@ $ sudo podman run -d --rm -p 80:8080 -p 443:8443 \
 --name=quay \
 -v $QUAY/config:/conf/stack:Z \
 -v $QUAY/storage:/datastorage:Z \
-registry.redhat.io/quay/quay-rhel8:v3.5.3</pre></li></ol></div></section><section class="section" id="editing_the_config_yaml_file_to_add_a_superuser"><div class="titlepage"><div><div><h3 class="title">1.2.2. Editing the config.yaml file to add a superuser</h3></div></div></div><p>
+registry.redhat.io/quay/quay-rhel8:v3.5.4</pre></li></ol></div></section><section class="section" id="editing_the_config_yaml_file_to_add_a_superuser"><div class="titlepage"><div><div><h3 class="title">1.2.2. Editing the config.yaml file to add a superuser</h3></div></div></div><p>
 					You can also add a superuser by editing the <code class="literal">config.yaml</code> file directly. The list of superuser accounts is stored as an array in the field <code class="literal">SUPER_USERS</code>.
 				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 							Stop the container registry if it is running, and add the <code class="literal">SUPER_USERS</code> array to the <code class="literal">config.yaml</code> file:
@@ -187,7 +187,7 @@ $ sudo podman run -d --rm -p 80:8080 -p 443:8443 \
 --name=quay \
 -v $QUAY/config:/conf/stack:Z \
 -v $QUAY/storage:/datastorage:Z \
-registry.redhat.io/quay/quay-rhel8:v3.5.3</pre></li><li class="listitem"><p class="simpara">
+registry.redhat.io/quay/quay-rhel8:v3.5.4</pre></li><li class="listitem"><p class="simpara">
 							Access the Super User Admin Panel by clicking on the current user’s name or avatar in the top right-hand corner of the UI. If the user has been added as a superuser, an extra item is presented in the drop-down list called Super User Admin Panel.
 						</p><p class="simpara">
 							<span class="inlinemediaobject"><img src="images/super-user-admin-panel.png" alt="Super User Admin Panel"/></span>
@@ -239,12 +239,12 @@ registry.redhat.io/quay/quay-rhel8:v3.5.3</pre></li><li class="listitem"><p clas
 							To run the repository mirroring worker, start by running a <code class="literal">Quay</code> pod with the <code class="literal">repomirror</code> option:
 						</p><pre class="screen">$ sudo podman run -d --name mirroring-worker \
   -v $QUAY/config:/conf/stack:Z \
-  registry.redhat.io/quay/quay-rhel8:v3.5.3 repomirror</pre></li><li class="listitem"><p class="simpara">
+  registry.redhat.io/quay/quay-rhel8:v3.5.4 repomirror</pre></li><li class="listitem"><p class="simpara">
 							If you have configured TLS communications using a certificate <code class="literal">/root/ca.crt</code>, then the following example shows how to start the mirroring worker:
 						</p><pre class="screen">$ sudo podman run -d --name mirroring-worker \
   -v $QUAY/config:/conf/stack:Z \
   -v /root/ca.crt:/etc/pki/ca-trust/source/anchors/ca.crt \
-  registry.redhat.io/quay/quay-rhel8:v3.5.3 repomirror</pre></li></ul></div></section><section class="section" id="mirroring-creating-repo"><div class="titlepage"><div><div><h3 class="title">1.3.4. Creating a mirrored repository</h3></div></div></div><p>
+  registry.redhat.io/quay/quay-rhel8:v3.5.4 repomirror</pre></li></ul></div></section><section class="section" id="mirroring-creating-repo"><div class="titlepage"><div><div><h3 class="title">1.3.4. Creating a mirrored repository</h3></div></div></div><p>
 					The steps shown in this section assume you already have enabled repository mirroring in the configuration for your Red Hat Quay cluster and that you have a deployed a mirroring worker.
 				</p><p>
 					When mirroring a repository from an external container registry, create a new private repository. Typically the same name is used as the target repository, for example, <code class="literal">quay-rhel8</code>:
@@ -400,7 +400,7 @@ registry.redhat.io/quay/quay-rhel8:v3.5.3</pre></li><li class="listitem"><p clas
 									<p>
 										v3.2, v3.2-4beta, v3.3
 									</p>
-									</td></tr></tbody></table></div></section></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm45064522310992"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+									</td></tr></tbody></table></div></section></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm45766704832896"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2021 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
